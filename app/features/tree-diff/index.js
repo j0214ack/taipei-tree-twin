@@ -86,7 +86,7 @@ function bind(root, ctx) {
   const p = period(), holder = root.querySelector('[data-map]');
   try { diffMap?.remove(); } catch {} diffMap = null;
   diffMap = new maplibregl.Map({ container: holder, center: [121.54, 25.06], zoom: 10.7,
-    style: { version: 8, sources: { osm: { type: 'raster', tiles: ['https://tile.openstreetmap.org/{z}/{x}/{y}.png'], tileSize: 256, attribution: '© OpenStreetMap' } }, layers: [{ id: 'osm', type: 'raster', source: 'osm' }] } });
+    style: 'https://tiles.openfreemap.org/styles/positron' }); // 不用 OSM 官方圖磚（tile policy）
   diffMap.addControl(new maplibregl.NavigationControl({ showCompass: false }), 'top-right');
   diffMap.on('load', () => {
     diffMap.addSource('diff', { type: 'geojson', data: geojson(p) });

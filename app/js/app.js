@@ -236,12 +236,8 @@ async function cleanPhoto(file) {
 
 // ---------- map ----------
 const BASE = 'https://tiles.openfreemap.org/styles/positron';
-// 底圖抓不到時退回 OpenStreetMap 標準圖磚（demo 用量很小）
-const FALLBACK = {
-  version: 8,
-  sources: { osm: { type: 'raster', tiles: ['https://tile.openstreetmap.org/{z}/{x}/{y}.png'], tileSize: 256, maxzoom: 19, attribution: '© OpenStreetMap contributors' } },
-  layers: [{ id: 'osm', type: 'raster', source: 'osm', paint: { 'raster-saturation': -0.6, 'raster-opacity': 0.85 } }],
-};
+// 底圖抓不到時只畫底色（不改抓 OpenStreetMap 官方圖磚：OSM tile policy 不允許這種用量）
+const FALLBACK = { version: 8, sources: {}, layers: [{ id: 'bg', type: 'background', paint: { 'background-color': '#eef0ea' } }] };
 
 async function pickStyle() {
   try {

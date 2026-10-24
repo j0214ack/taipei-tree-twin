@@ -189,7 +189,7 @@ body{display:grid;place-items:center;overflow:hidden}
 .twin{position:absolute;left:50%;transform:translateX(-50%);bottom:calc(98px + env(safe-area-inset-bottom));z-index:26;display:none;font:800 13px/1 var(--round);color:var(--navy);background:#fff;border-radius:99px;padding:10px 14px;text-decoration:none;box-shadow:0 4px 0 var(--shadow);white-space:nowrap}
 .twin::after{content:"";display:inline-block;width:7px;height:7px;border-top:2px solid currentColor;border-right:2px solid currentColor;transform:rotate(45deg);margin-left:7px;vertical-align:1px}
 .twin.show{display:block}
-#vote{bottom:calc(146px + env(safe-area-inset-bottom));background:var(--sun);box-shadow:0 4px 0 var(--sun2)}.twin.show+#vote{display:block}
+#twin{left:16px;transform:none}#vote{left:auto;right:16px;transform:none;background:var(--sun);box-shadow:0 4px 0 var(--sun2)}.twin.show+#vote{display:block} /* 兩顆並排在按鈕列上方，不壓到點數說明 */
 #view{grid-auto-flow:row;align-content:center;gap:14px}
 #view .twin{position:static;transform:none;display:inline-block;justify-self:center}
 .btn{flex:1;appearance:none;cursor:pointer;border:0;font:900 18px var(--round);color:var(--navy);background:var(--sun);border-radius:99px;height:58px;padding:0 18px;box-shadow:0 6px 0 var(--sun2);white-space:nowrap}
@@ -611,6 +611,7 @@ async function onGeo(p){
   if(/[?&]fix(=|&|$)/.test(location.search)) return; // 錄影對準：固定在示範位置，不跟 GPS
   const {latitude:la,longitude:ln,accuracy:ac}=p.coords;
   if(ac>=25){ if(S.simPos) S.acc=ac; return; }        // 精度不夠：維持現狀（還沒定位就維持模擬位置）
+  S.gps={lat:la,lng:ln}; /* 最近一次夠準的 GPS，上傳時給伺服器寫回照片座標 */
   if(S.nearbyMode&&HAS_NEARBY()){ // 用 nearby.js：位置變動 >30 m 才重新 load
     const q=toXY(la,ln), moved=!lastLoadLL||Math.hypot(q.x-lastLoadLL.x,q.y-lastLoadLL.y)>30;
     if(moved){ if(S._loadingMain) return; S._loadingMain=true; let r=null; try{ r=await window.Nearby.load({lat:la,lng:ln,acc:ac}); }catch(e){} S._loadingMain=false;
@@ -752,7 +753,7 @@ function record(t,photo,demo){
   if(S.simPos) return; // 模擬位置不送伺服器，避免室內 demo 的照片掛到真樹上
   if(t.demo||!/^[A-Z]{2}\d{10}$/.test(t.id)) return; // 示範區或非市府樹號：不送
   setTimeout(()=>{ const full=fullPhoto();
-  fetch('/api/events',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({treeId:t.id,role:'citizen',kind:'photo',result:'正常',note:'',nickname:nick(),photo:full,pts,verify:{method:'gps',dist:d,ok:d<=REACH}})})
+  fetch('/api/events',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({treeId:t.id,role:'citizen',kind:'photo',result:'正常',note:'',nickname:nick(),photo:full,pts,verify:Object.assign({method:'gps',dist:d,ok:d<=REACH},(d<=REACH&&S.gps)?{lat:+S.gps.lat.toFixed(6),lng:+S.gps.lng.toFixed(6)}:{})})})
     .then(r=>{ if(!(r.ok&&(r.headers.get('content-type')||'').includes('json'))) throw 0; })
     .catch(()=>{ const q=store.get('collectQueue',[]); q.push({treeId:t.id,pts,dist:d,at:Date.now()}); store.set('collectQueue',q.slice(-20)); });
   },2800);

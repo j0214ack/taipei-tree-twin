@@ -234,6 +234,7 @@ function bindMiniMap(root, tree) {
     zoom: 19,
     minZoom: 16,
     maxZoom: 19,
+    maxBounds: [[DONGMEN_BLOCK.bounds[0] - 0.003, DONGMEN_BLOCK.bounds[1] - 0.003], [DONGMEN_BLOCK.bounds[2] + 0.003, DONGMEN_BLOCK.bounds[3] + 0.003]], // 不讓人拖到街區外大量抓國土測繪中心圖磚
     attributionControl: { compact: true },
     style: {
       version: 8,
