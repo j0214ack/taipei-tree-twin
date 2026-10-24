@@ -1,6 +1,7 @@
 // 內部預覽用的小伺服器：靜態檔（gzip）＋ demo 用的回報 API（存在 runtime/，不進 git）。
 // 用法：PORT=8096 HOSTS=100.114.169.66,127.0.0.1 node server.mjs
 import http from 'node:http';
+import { stripKeepGps } from './functions/_lib/exif-gps.js';
 import fs from 'node:fs';
 import path from 'node:path';
 import zlib from 'node:zlib';
@@ -107,9 +108,12 @@ async function api(req, res, url) {
       // 只存比對結果與距離級距，不存精確距離（精確距離加上暱稱可能被拿來推算使用者位置）
       verify: b.verify && typeof b.verify === 'object' ? { method: clip(b.verify.method, 10), band: distBand(Number.isFinite(+b.verify.dist) && b.verify.dist !== null ? +b.verify.dist : null), ok: !!b.verify.ok } : null,
     };
+    // 只有通過 15 公尺比對才保留座標（照片寫回只含 GPS 的 EXIF）
+    const gps = b.verify?.ok && Number.isFinite(+b.verify.lat) && Number.isFinite(+b.verify.lng) ? { lat: +(+b.verify.lat).toFixed(5), lng: +(+b.verify.lng).toFixed(5) } : null;
+    if (gps && ev.verify) Object.assign(ev.verify, gps);
     if (b.photo) {
       const m = /^data:image\/jpeg;base64,(.+)$/.exec(b.photo);
-      const clean = m && stripJpegMeta(Buffer.from(m[1], 'base64'));
+      const clean = m && stripKeepGps(Buffer.from(m[1], 'base64'), gps);
       if (!clean) return json(res, 400, { error: 'photo must be jpeg' });
       const name = `${ev.id}.jpg`;
       fs.writeFileSync(path.join(PHOTOS, name), clean);

@@ -8,6 +8,7 @@ const SPECIAL = /^(HOLE-\d+|DEMO-DONGMEN|JJ0263131034|JJ0253210002)$/;
 // 完整樹籍清單太大，Functions 只驗格式（兩個英文字母＋10 位數字）；本機 server.mjs 驗完整清單
 const validTree = (id) => /^[A-Z]{2}\d{10}$/.test(id) || SPECIAL.test(id);
 const distBand = (d) => (d == null ? null : d <= 15 ? '≤15m' : d <= 40 ? '≤40m' : '>40m');
+import { stripKeepGps } from './exif-gps.js';
 const MAX_PHOTO = 600 * 1024;
 const MAX_EVENTS = 20000;
 
@@ -65,18 +66,20 @@ export async function createEvent(request, env) {
   if (total.n >= MAX_EVENTS) return json({ error: 'demo 儲存空間已滿' }, 507);
 
   const id = crypto.randomUUID();
+  const v = b.verify && typeof b.verify === 'object' ? b.verify : null;
+  // 只有通過 15 公尺比對的照片才保留座標（寫回只含 GPS 的 EXIF，也存進 verify）
+  const gps = v?.ok && Number.isFinite(+v.lat) && Number.isFinite(+v.lng) ? { lat: +(+v.lat).toFixed(5), lng: +(+v.lng).toFixed(5) } : null;
   let photoId = null, photoBytes = null;
   if (b.photo) {
     const m = /^data:image\/jpeg;base64,(.+)$/.exec(b.photo);
     if (!m) return json({ error: 'photo must be jpeg' }, 400);
     const raw = Uint8Array.from(atob(m[1]), (c) => c.charCodeAt(0));
     if (raw.length > MAX_PHOTO) return json({ error: '照片太大' }, 413);
-    photoBytes = stripJpegMeta(raw);
+    photoBytes = stripKeepGps(raw, gps);
     if (!photoBytes) return json({ error: 'photo must be jpeg' }, 400);
     photoId = id;
   }
-  const v = b.verify && typeof b.verify === 'object' ? b.verify : null;
-  const verify = v ? { method: clip(v.method, 10), band: distBand(Number.isFinite(+v.dist) && v.dist !== null ? +v.dist : null), ok: !!v.ok } : null;
+  const verify = v ? { method: clip(v.method, 10), band: distBand(Number.isFinite(+v.dist) && v.dist !== null ? +v.dist : null), ok: !!v.ok, ...(gps || {}) } : null;
   let pts = 0;
   if (b.role === 'citizen') {
     const photoed = await env.DB.prepare('SELECT 1 FROM events WHERE tree_id = ? AND photo_id IS NOT NULL AND hidden = 0 LIMIT 1').bind(treeId).first();

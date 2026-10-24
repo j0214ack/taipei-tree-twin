@@ -1,6 +1,7 @@
 // 許願種樹：沿用 events／photos 表，不改表結構。role='wish'、tree_id='WISH'、kind=樹種 id、
 // note 存 {lat,lng,def}（座標只留小數 4 位，約 10 公尺）。不收任何個資。
-import { json, stripJpegMeta, ipHash } from '../_lib/common.js';
+import { json, ipHash } from '../_lib/common.js';
+import { stripKeepGps } from '../_lib/exif-gps.js';
 
 const SPECIES = ['luan', 'jiadong', 'zhang', 'guangla', 'shanlan', 'shuihuang'];
 const WISH_POINTS = 30;
@@ -40,7 +41,7 @@ export async function onRequestPost({ request, env }) {
       if (!m) return json({ error: 'photo must be jpeg' }, 400);
       const raw = Uint8Array.from(atob(m[1]), (c) => c.charCodeAt(0));
       if (raw.length > MAX_PHOTO) return json({ error: '照片太大' }, 413);
-      photoBytes = stripJpegMeta(raw);
+      photoBytes = stripKeepGps(raw, b.defaultLoc ? null : { lat, lng }); // 用預設位置的許願不寫座標
       if (!photoBytes) return json({ error: 'photo must be jpeg' }, 400);
     }
     const at = new Date().toISOString();

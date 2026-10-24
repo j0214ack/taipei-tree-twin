@@ -890,7 +890,7 @@ function renderReport(t, box) {
     $('#submit').disabled = true;
     const gain = (up?.photo && up.verify?.ok ? pPhoto : 0) + POINTS.report;
     try {
-      const saved = await postEvent({ treeId: t.id, role: 'citizen', kind: up?.photo ? 'photo' : 'report', result: fd.get('status'), note: fd.get('note'), nickname: nick, photo: up?.photo || null, pts: gain, verify: up?.verify ? { method: up.verify.method, dist: up.verify.dist == null ? null : Math.round(up.verify.dist), ok: !!up.verify.ok } : null });
+      const saved = await postEvent({ treeId: t.id, role: 'citizen', kind: up?.photo ? 'photo' : 'report', result: fd.get('status'), note: fd.get('note'), nickname: nick, photo: up?.photo || null, pts: gain, verify: up?.verify ? { method: up.verify.method, dist: up.verify.dist == null ? null : Math.round(up.verify.dist), ok: !!up.verify.ok, ...(up.verify.ok && up.verify.lat != null ? { lat: up.verify.lat, lng: up.verify.lng } : {}) } : null });
       const got = typeof saved.pts === 'number' && !saved.local ? saved.pts : gain;
       store.set('points', store.get('points', 0) + got);
       if (up?.photo) { S.photoed = S.photoed || new Set(); S.photoed.add(t.id); }
