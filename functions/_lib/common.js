@@ -52,6 +52,9 @@ export async function listEvents(env, tree) {
 }
 
 export async function createEvent(request, env) {
+  // 解析前先擋：只收 JSON、本體不超過 900 KB
+  if (!(request.headers.get('content-type') || '').includes('application/json')) return json({ error: 'json only' }, 415);
+  if (+(request.headers.get('content-length') || 0) > 900 * 1024) return json({ error: '照片太大' }, 413);
   let b;
   try { b = await request.json(); } catch { return json({ error: 'bad body' }, 400); }
   if (!b || typeof b !== 'object' || !b.treeId || !['citizen', 'vendor'].includes(b.role)) return json({ error: 'missing fields' }, 400);

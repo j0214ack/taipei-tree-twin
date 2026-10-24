@@ -143,7 +143,7 @@ function proposalHTML(ctx, r) {
         <div class="ap-mini"><span>平均胸徑</span><b>${n1(r.tree.avgDbh)} cm</b></div>
         <ol class="ap-species">${species}</ol>
       </section>
-      <section class="ap-card"><h4>缺蔭程度 ${badge('est', '推估')}</h4>
+      ${p.segments ? `<section class="ap-card"><h4>缺蔭程度 ${badge('est', '推估')}</h4>
         <div class="ap-big"><b>${pct(100 - p.averageShade)}</b><span>平均缺蔭</span></div>
         <div class="ap-pair"><span><b>${pct(p.averageShade)}</b>平均遮蔭</span><span><b>${p.hottestHour}:00–${p.hottestHour + 1}:00</b>最曬時段</span></div>
         <small>對應${e(r.station.station)}站・${n0(p.segments)} 段</small>
@@ -151,7 +151,7 @@ function proposalHTML(ctx, r) {
       <section class="ap-card"><h4>樹蔭受益人次 ${badge('sim', '模擬')} ${badge('est', '推估')}</h4>
         <div class="ap-big"><b>${n0(p.busiestDaily)}</b><span>最熱鬧路段人次／日</span></div>
         <div class="ap-pair"><span><b>${n0(p.medianDaily)}</b>一般路段人次／日</span><span><b>07–19</b>時段</span></div>
-      </section>
+      </section>` : `<section class="ap-card"><h4>缺蔭與人流 ${badge('est', '推估')}</h4><p><span class="badge kind">此區無人流資料</span></p></section>`}
       <section class="ap-card"><h4>碳儲存與年吸存 ${badge('est', '推估')}</h4>
         <div class="ap-pair ap-carbon"><span><b>${n1(r.carbon.storedTCo2e)}</b>已儲存（公噸 CO2e）</span><span><b>${n1(r.carbon.annualTCo2e)}</b>每年吸存（公噸 CO2e）</span></div>
         <p>估算值，不是減量額度，不能算公司減排。</p>

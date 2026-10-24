@@ -118,9 +118,16 @@ async function addRows(rows) {
     });
   }
 }
-const chunkJSON = async (c) => (await fetch(`/data/trees/${c.f}?v=${S.data.v}`)).json();
+// 抓 JSON：失敗重試 3 次（間隔 0.5、1、1.5 秒）；分塊仍失敗就跳過，不讓整站卡在「載入中」
+async function fetchRetry(url, tries = 3) {
+  for (let k = 0; ; k++) {
+    try { const r = await fetch(url); if (!r.ok) throw new Error(r.status); return await r.json(); }
+    catch (e) { if (k >= tries - 1) throw e; await new Promise((res) => setTimeout(res, 500 * (k + 1))); }
+  }
+}
+const chunkJSON = async (c) => { try { return await fetchRetry(`/data/trees/${c.f}?v=${S.data.v}`); } catch (e) { console.warn('分塊載入失敗，略過', c.f, e); S.chunkFailed = (S.chunkFailed || 0) + 1; return { rows: [] }; } };
 async function loadTreesFirst(bounds) {
-  const idx = await (await fetch('/data/trees/index.json')).json();
+  const idx = await fetchRetry('/data/trees/index.json');
   S.data = idx; S.feats = [];
   const [w, s, e, n] = bounds;
   const inView = (c) => !(c.bbox[2] < w || c.bbox[0] > e || c.bbox[3] < s || c.bbox[1] > n);
@@ -1918,7 +1925,7 @@ function route() {
   }
   if (h.startsWith('story/')) return renderStory(h.slice(6));
   if (h.startsWith('news/')) return renderNews(h.slice(5));
-  if (h.startsWith('tree/')) return renderTree((h.slice(5)));
+  if (h.startsWith('tree/')) return renderTree(h.slice(5).split('?')[0]);
   if (h.startsWith('plant/')) return renderPlant((h.slice(6)));
   if (h.startsWith('planter/')) return renderPlanter((h.slice(8)));
   if (h.startsWith('station/')) return renderStation((h.slice(8)));
