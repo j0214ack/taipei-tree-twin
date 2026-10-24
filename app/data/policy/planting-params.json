@@ -1,0 +1,1377 @@
+{
+ "meta": {
+  "generated": "2026-10-23",
+  "generator": "research task（Claude）",
+  "purpose": "樹冠負債計算器參數",
+  "status_legend": {
+   "sourced": "有原文來源",
+   "assumed": "我的假設，可調",
+   "sourced-derived": "由官方資料自行計算"
+  }
+ },
+ "nursery_stock": [
+  {
+   "spec_name": "臺中市 夏綠地公園異地補植 杜英（移除 24 株黑板樹後補植 24 株）",
+   "caliper_cm": [
+    5,
+    6
+   ],
+   "dbh_cm": null,
+   "height_m": [
+    2.4,
+    2.7
+   ],
+   "crown_width_m": [
+    0.8,
+    0.9
+   ],
+   "root_ball": null,
+   "source_url": "https://www.construction.taichung.gov.tw/media/1315555/%E8%A5%BF%E5%B1%AF%E5%8D%80-%E5%A4%8F%E7%B6%A0%E5%9C%B0%E5%85%AC%E5%9C%9225%E6%A0%AA%E6%A8%B9%E6%9C%A8%E7%A7%BB%E9%99%A4-%E7%B0%A1%E5%A0%B10814.pdf",
+   "source_title": "西屯區 夏綠地公園25株樹木移除 簡報（臺中市養護工程處）",
+   "published": "2025-08-14",
+   "evidence": "官方個案文件（外縣市）",
+   "quote": "杜英，240 ≦ 樹高 < 270㎝，80≦樹幅＜90cm，5 ≦ 米高直徑 < 6cm",
+   "applies_to": "臺中市公園補植個案；可當台灣公部門補植常見小苗規格的實例",
+   "limits": "外縣市、單一個案，不是臺北市規範；被移除的黑板樹米徑多在 30 cm 以上，等於大樹換小苗 1:1"
+  },
+  {
+   "spec_name": "臺中市 大雅區新天地公園換植 光臘樹",
+   "caliper_cm": [
+    5,
+    6
+   ],
+   "dbh_cm": null,
+   "height_m": [
+    2.4,
+    2.7
+   ],
+   "crown_width_m": [
+    0.8,
+    0.9
+   ],
+   "root_ball": null,
+   "source_url": "https://www.construction.taichung.gov.tw/media/1457337/%E5%A4%A7%E9%9B%85%E5%8D%80-%E6%96%B0%E5%A4%A9%E5%9C%B0%E5%85%AC%E5%9C%92%E5%85%A7%E6%A8%B9%E6%9C%A8%E7%A7%BB%E9%99%A4%E6%8F%9B%E6%A4%8D%E8%A8%88%E7%95%AB.pdf",
+   "source_title": "大雅區-新天地公園內樹木移除換植計畫（臺中市政府建設局）",
+   "published": "2026-07（封面 115 年 07 月）",
+   "evidence": "官方個案文件（外縣市）",
+   "quote": "光臘樹，240 ≦ 樹高 < 270㎝，80≦樹幅＜90cm，5 ≦ 米高直徑 < 6 ㎝（預算表單價 4,646 元／株）",
+   "applies_to": "同上",
+   "limits": "外縣市、單一個案；單價只供參考，網站不呈現金額"
+  },
+  {
+   "spec_name": "臺中市 北屯區 23 株黑板樹移除後補植 小花紫薇",
+   "caliper_cm": [
+    6,
+    8
+   ],
+   "dbh_cm": null,
+   "height_m": [
+    2.7,
+    3.0
+   ],
+   "crown_width_m": null,
+   "root_ball": null,
+   "source_url": "https://www.construction.taichung.gov.tw/media/1454877/1150807-%E5%8C%97%E5%B1%AF%E5%8D%80-%E8%BB%8D%E5%8A%9F%E8%B7%AF%E4%B8%80%E6%AE%B5-%E6%9D%B1%E5%B1%B1%E8%B7%AF-%E5%A4%AA%E5%8E%9F%E8%B7%AF-23%E6%A0%AA%E9%BB%91%E6%9D%BF%E6%A8%B9%E7%A7%BB%E9%99%A4%E8%A3%9C%E6%A4%8D%E8%A8%88%E7%95%AB%E6%9B%B8-87%E6%A0%AA%E6%8B%86%E5%88%86-%E8%AA%AA%E6%98%8E%E6%9B%B8.pdf",
+   "source_title": "北屯區 軍功路一段、東山路、太原路 23株黑板樹移除補植計畫書（臺中市政府建設局）",
+   "published": "2026-08-07（檔名 1150807）",
+   "evidence": "官方個案文件（外縣市）",
+   "quote": "植株規格選擇米高直徑 6~8 公分，株高 2.7~3 公尺的苗木。（被移除黑板樹米徑 35–68 cm、樹高 12–15 m、冠幅 3–11 m）",
+   "applies_to": "行道樹（中央分隔島）補植個案",
+   "limits": "外縣市、單一個案；冠幅未列；小花紫薇為小喬木"
+  },
+  {
+   "spec_name": "桃園市 樹木植栽設計施工手冊：進場苗木樹冠面積下限",
+   "caliper_cm": null,
+   "dbh_cm": null,
+   "height_m": null,
+   "crown_width_m": null,
+   "root_ball": null,
+   "derived_crown_width_min_m": {
+    "小喬木 9 m²": 1.2,
+    "小喬木 16 m²": 1.6,
+    "大喬木 25 m²": 2.0,
+    "大喬木 36 m²": 2.39
+   },
+   "source_url": "https://ws.tycg.gov.tw/001/Upload/115/relfile/13461/985280/20230323152102.pdf",
+   "source_title": "樹木植栽設計施工手冊（桃園市政府工務局）",
+   "published": "PDF 建立日 2016-08-01；上傳路徑 2023-03-23；版次頁未見",
+   "evidence": "官方手冊（外縣市）",
+   "quote": "小喬木計算綠覆面積為 9 m2 (3 米以上間距)或 16 m2 (4 米以上間距)；若為大喬木要求綠覆面積為 25 m2 (5 米以上間距)或 36 m2 (6 米以上間距)，進場苗木之樹冠面積應大於預定綠覆面積之 1/8。另：未明定容許差時，米徑不得小於標準之 10%、樹冠幅不得低於標準之 10%、樹高 ±0.5 m",
+   "applies_to": "桃園市綠化工程；derived_crown_width_min_m 是我把 1/8 面積換算成圓形冠幅（W=√(4A/π)）",
+   "limits": "外縣市手冊；沒有直接給米徑或樹高數字"
+  },
+  {
+   "spec_name": "臺北市新建建築物綠化實施規則 第7條：退縮帶行道樹初植樹冠",
+   "caliper_cm": null,
+   "dbh_cm": null,
+   "height_m": null,
+   "crown_width_m": null,
+   "root_ball": null,
+   "branch_height_min_m": 2.5,
+   "spacing_m": [
+    4,
+    6
+   ],
+   "soil_depth_m": 2.0,
+   "source_url": "https://laws.gov.taipei/Law/LawSearch/LawArticleContent/FL080927",
+   "source_title": "臺北市新建建築物綠化實施規則 第7條",
+   "published": "2025-07-31 修正發布；2026-01-01 施行",
+   "evidence": "官方法規（臺北市）",
+   "quote": "種植初期樹冠應達長成後面積三分之一以上；分枝高度距地面二點五公尺以上；株距應為四公尺至六公尺；覆土深度達二公尺",
+   "applies_to": "新建建築基地指定退縮帶狀開放空間／無遮簷人行道的行道樹",
+   "limits": "只管新建建築退縮帶，不是公園處一般行道樹補植規格；沒有米徑數字"
+  },
+  {
+   "spec_name": "高公局 植物種植工程施工技術規範 第02902章：規格定義與容許差",
+   "caliper_cm": null,
+   "dbh_cm": null,
+   "height_m": null,
+   "crown_width_m": null,
+   "root_ball": null,
+   "source_url": "https://www.freeway.gov.tw/Upload/DownloadFiles/%E6%A4%8D%E7%89%A9%E7%A8%AE%E6%A4%8D%E5%B7%A5%E7%A8%8B%E6%96%BD%E5%B7%A5%E6%8A%80%E8%A1%93%E8%A6%8F%E7%AF%84_531435.pdf",
+   "source_title": "植物種植工程施工技術規範（交通部高速公路局）第02902章",
+   "published": "頁腳 109/02（2020-02）",
+   "evidence": "官方工程規範（中央）",
+   "quote": "米高直徑(∮)…指樹幹距地表 1m 處之直徑…雙幹或多幹以各幹徑相加後乘以 70%；植株高度、枝葉幅度及米高直徑皆不得低於設計規格；不得經強剪修枝以適應規格；窄邊不得少於寬邊之 80％；幹高 150cm 以下不分枝",
+   "applies_to": "規格量測定義；數字由各案契約圖說訂",
+   "limits": "沒有預設米徑／樹高／冠幅數字"
+  },
+  {
+   "spec_name": "桃園市 樹木植栽設計施工手冊 表2-15（引日本國土交通省）：米徑→根球直徑",
+   "caliper_cm": null,
+   "dbh_cm": null,
+   "height_m": null,
+   "crown_width_m": null,
+   "root_ball": {
+    "米徑<3": {
+     "徑": 33,
+     "高": 25
+    },
+    "3-5": {
+     "徑": 38,
+     "高": 28
+    },
+    "5-6": {
+     "徑": 47,
+     "高": 33
+    },
+    "6-8": {
+     "徑": 57,
+     "高": 39
+    },
+    "8-10": {
+     "徑": 66,
+     "高": 45
+    },
+    "10-12": {
+     "徑": 71,
+     "高": 48
+    },
+    "12-14": {
+     "徑": 90,
+     "高": 59
+    },
+    "14-20": {
+     "徑": 113,
+     "高": 74
+    },
+    "20-24": {
+     "徑": 141,
+     "高": 91
+    },
+    "24-30": {
+     "徑": 170,
+     "高": 108
+    },
+    "單位": "cm"
+   },
+   "source_url": "https://ws.tycg.gov.tw/001/Upload/115/relfile/13461/985280/20230323152102.pdf",
+   "source_title": "樹木植栽設計施工手冊（桃園市政府工務局）表 2-15",
+   "published": "同上",
+   "evidence": "官方手冊轉引日本規範",
+   "quote": "美國 ANSI300 規定根球直徑約為米徑的 8-10 倍；植穴基盤直徑大小應為苗木米徑的 20-30 倍，單獨樹穴至少應有 1.5 平方公尺",
+   "applies_to": "土球（根球）尺寸",
+   "limits": "日本規範轉引；與冠幅計算無直接關係，網站可只用來說明「大苗要大樹穴」"
+  },
+  {
+   "spec_name": "臺北市公園處 行道樹新植／補植標準規格",
+   "caliper_cm": null,
+   "dbh_cm": null,
+   "height_m": null,
+   "crown_width_m": null,
+   "root_ball": null,
+   "source_url": "https://laws.gov.taipei/law/LawSearch/LawArticleContent/FL004003",
+   "source_title": "臺北市行道樹管理維護自治條例 第10條第2項",
+   "published": "2024-10-21",
+   "evidence": "官方法規（只證明有另定，未取得內容）",
+   "quote": "前項第一款行道樹之規格單價、種植工程費用、養護保活費用、清運費用、維護費用及安全評估費用，由公園處另定之。",
+   "applies_to": "臺北市行道樹",
+   "limits": "查不到：公園處另定的規格單價表、補植米徑／樹高／冠幅標準，本輪都沒找到公開版本；公園處樹種選擇原則頁（https://pkl.gov.taipei/cp.aspx?n=3B57F65C422316A5）也沒有苗木規格"
+  },
+  {
+   "spec_name": "工程會 施工綱要規範 第02931章 植樹",
+   "caliper_cm": null,
+   "dbh_cm": null,
+   "height_m": null,
+   "crown_width_m": null,
+   "root_ball": null,
+   "source_url": null,
+   "source_title": "公共工程施工綱要規範 第02931章",
+   "published": null,
+   "evidence": "查不到",
+   "quote": null,
+   "applies_to": null,
+   "limits": "查不到工程會原文；搜尋到的桃園版（桃工規 02931 V1.0, 2017-01-01）連結已 404；據搜尋摘要只說樹徑指離地 1 m、規格依契約圖說，沒有預設數字"
+  }
+ ],
+ "species_growth": [
+  {
+   "species_zh": "茄苳",
+   "species_sci": "Bischofia javanica",
+   "metric": "胸徑年生長量 ΔD (cm/yr)",
+   "model": "平均值；另有 RGR=a·D^b（RGR 為年相對生長率，小數），可換成 ΔD=a·D^(1+b)",
+   "params": {
+    "mean_cm_per_yr": 0.75,
+    "sd": 0.48,
+    "range": "<0.1–2.00",
+    "rgr_a": 1.4437,
+    "rgr_b": -1.266,
+    "rgr_rmse": 0.0241,
+    "by_dbh_class_cm_per_yr": [
+     [
+      "<=19",
+      0.77
+     ],
+     [
+      "19-27",
+      0.62
+     ],
+     [
+      "27-36",
+      0.58
+     ],
+     [
+      ">36",
+      0.53
+     ]
+    ]
+   },
+   "units": "D: cm（離地 1.3 m）；ΔD: cm/yr",
+   "sample_n": 105,
+   "location": "臺北市行道樹（2020 冬、2022 冬兩次量測）",
+   "source_url": "https://tdr.lib.ntu.edu.tw/handle/123456789/92929",
+   "source_title": "詹為巽（2024）臺北市都市樹木重要效益評估之研究，臺大森林環境暨資源學系博士論文，表4.16、4.17、4.20",
+   "published": "2024",
+   "evidence": "論文（台北在地實測）",
+   "limits": "只有兩年、兩次量測；樣木從普查依 5 cm 徑級分層抽樣，最小徑級下限未逐株列出；分徑級表 4.20 是把模型套到全市普查得到的推估值，不是逐株實測；RGR 式在 D<5 cm 會爆大，不可外推到小苗",
+   "taipei_inventory_dbh": {
+    "n": 10201,
+    "dbh_p10": 6.1,
+    "dbh_med": 27.0,
+    "dbh_p90": 43.2,
+    "h_med": 9.1
+   }
+  },
+  {
+   "species_zh": "樟樹",
+   "species_sci": "Cinnamomum camphora",
+   "metric": "胸徑年生長量 ΔD (cm/yr)",
+   "model": "平均值；另有 RGR=a·D^b（RGR 為年相對生長率，小數），可換成 ΔD=a·D^(1+b)",
+   "params": {
+    "mean_cm_per_yr": 0.58,
+    "sd": 0.44,
+    "range": "<0.1–1.65",
+    "rgr_a": 1.565,
+    "rgr_b": -1.379,
+    "rgr_rmse": 0.0213,
+    "by_dbh_class_cm_per_yr": [
+     [
+      "<=22",
+      0.59
+     ],
+     [
+      "22-31",
+      0.45
+     ],
+     [
+      "31-40",
+      0.4
+     ],
+     [
+      ">40",
+      0.36
+     ]
+    ]
+   },
+   "units": "D: cm（離地 1.3 m）；ΔD: cm/yr",
+   "sample_n": 110,
+   "location": "臺北市行道樹（2020 冬、2022 冬兩次量測）",
+   "source_url": "https://tdr.lib.ntu.edu.tw/handle/123456789/92929",
+   "source_title": "詹為巽（2024）臺北市都市樹木重要效益評估之研究，臺大森林環境暨資源學系博士論文，表4.16、4.17、4.20",
+   "published": "2024",
+   "evidence": "論文（台北在地實測）",
+   "limits": "只有兩年、兩次量測；樣木從普查依 5 cm 徑級分層抽樣，最小徑級下限未逐株列出；分徑級表 4.20 是把模型套到全市普查得到的推估值，不是逐株實測；RGR 式在 D<5 cm 會爆大，不可外推到小苗",
+   "taipei_inventory_dbh": {
+    "n": 8436,
+    "dbh_p10": 8.17,
+    "dbh_med": 29.0,
+    "dbh_p90": 50.0,
+    "h_med": 10.9
+   }
+  },
+  {
+   "species_zh": "楓香",
+   "species_sci": "Liquidambar formosana",
+   "metric": "胸徑年生長量 ΔD (cm/yr)",
+   "model": "平均值；另有 RGR=a·D^b（RGR 為年相對生長率，小數），可換成 ΔD=a·D^(1+b)",
+   "params": {
+    "mean_cm_per_yr": 0.74,
+    "sd": 0.44,
+    "range": "<0.1–1.85",
+    "rgr_a": 2.2842,
+    "rgr_b": -1.427,
+    "rgr_rmse": 0.029,
+    "by_dbh_class_cm_per_yr": [
+     [
+      "<=10",
+      1.01
+     ],
+     [
+      "10-20",
+      0.72
+     ],
+     [
+      "20-30",
+      0.58
+     ],
+     [
+      ">30",
+      0.48
+     ]
+    ]
+   },
+   "units": "D: cm（離地 1.3 m）；ΔD: cm/yr",
+   "sample_n": 113,
+   "location": "臺北市行道樹（2020 冬、2022 冬兩次量測）",
+   "source_url": "https://tdr.lib.ntu.edu.tw/handle/123456789/92929",
+   "source_title": "詹為巽（2024）臺北市都市樹木重要效益評估之研究，臺大森林環境暨資源學系博士論文，表4.16、4.17、4.20",
+   "published": "2024",
+   "evidence": "論文（台北在地實測）",
+   "limits": "只有兩年、兩次量測；樣木從普查依 5 cm 徑級分層抽樣，最小徑級下限未逐株列出；分徑級表 4.20 是把模型套到全市普查得到的推估值，不是逐株實測；RGR 式在 D<5 cm 會爆大，不可外推到小苗",
+   "taipei_inventory_dbh": {
+    "n": 7664,
+    "dbh_p10": 6.0,
+    "dbh_med": 19.0,
+    "dbh_p90": 39.0,
+    "h_med": 9.6
+   }
+  },
+  {
+   "species_zh": "茄苳",
+   "species_sci": "Bischofia javanica",
+   "metric": "冠幅 W (m) 對胸徑 D (cm)",
+   "model": "W=a*D^b（log-log 最小平方；W=√(4·樹冠投影面積/π)）",
+   "params": {
+    "clean": {
+     "n": 133,
+     "a": 1.3649,
+     "b": 0.4831,
+     "r2": 0.4,
+     "rmse_log": 0.355,
+     "dbh_p05": 5.6,
+     "dbh_med": 20.1,
+     "dbh_p95": 38.5,
+     "W_at": {
+      "5": 2.97,
+      "10": 4.15,
+      "20": 5.8,
+      "30": 7.06,
+      "50": 9.03
+     }
+    },
+    "all_rows": {
+     "n": 265,
+     "a": 1.1243,
+     "b": 0.552,
+     "r2": 0.637,
+     "rmse_log": 0.268,
+     "dbh_p05": 5.1,
+     "dbh_med": 17.5,
+     "dbh_p95": 36.9,
+     "W_at": {
+      "5": 2.73,
+      "10": 4.01,
+      "20": 5.88,
+      "30": 7.35,
+      "50": 9.74
+     }
+    },
+    "imputed_like_share": 0.498
+   },
+   "units": "D: cm；W: m",
+   "sample_n": 133,
+   "location": "臺中市主要道路行道樹（調查日 2018，資料集 2026-08-13 更新）",
+   "source_url": "https://data.gov.tw/dataset/108167",
+   "source_title": "臺中市主要道路喬木植栽（政府開放資料 108167），本研究自行擬合",
+   "published": "2026-08-13（資料集更新）；擬合 2026-10-23",
+   "evidence": "我的推算（台灣官方普查資料衍生）",
+   "limits": "可用但低信心；該資料約 50% 列的樹冠面積疑似以胸徑等比例推算（同路段同樹種『面積/胸徑』比值完全相同），clean 版已剔除這些列；臺中氣候較台北乾、日照多；行道樹受修剪；只在 clean 的 dbh_p05–dbh_p95 範圍內使用",
+   "taipei_inventory_dbh": {
+    "n": 10201,
+    "dbh_p10": 6.1,
+    "dbh_med": 27.0,
+    "dbh_p90": 43.2,
+    "h_med": 9.1
+   }
+  },
+  {
+   "species_zh": "樟樹",
+   "species_sci": "Cinnamomum camphora",
+   "metric": "冠幅 W (m) 對胸徑 D (cm)",
+   "model": "W=a*D^b（log-log 最小平方；W=√(4·樹冠投影面積/π)）",
+   "params": {
+    "clean": {
+     "n": 194,
+     "a": 2.2799,
+     "b": 0.3225,
+     "r2": 0.281,
+     "rmse_log": 0.326,
+     "dbh_p05": 6.2,
+     "dbh_med": 22.3,
+     "dbh_p95": 47.8,
+     "W_at": {
+      "5": 3.83,
+      "10": 4.79,
+      "20": 5.99,
+      "30": 6.83,
+      "50": 8.05
+     }
+    },
+    "all_rows": {
+     "n": 485,
+     "a": 1.3128,
+     "b": 0.5058,
+     "r2": 0.658,
+     "rmse_log": 0.248,
+     "dbh_p05": 5.3,
+     "dbh_med": 20.4,
+     "dbh_p95": 49.0,
+     "W_at": {
+      "5": 2.96,
+      "10": 4.21,
+      "20": 5.97,
+      "30": 7.33,
+      "50": 9.5
+     }
+    },
+    "imputed_like_share": 0.6
+   },
+   "units": "D: cm；W: m",
+   "sample_n": 194,
+   "location": "臺中市主要道路行道樹（調查日 2018，資料集 2026-08-13 更新）",
+   "source_url": "https://data.gov.tw/dataset/108167",
+   "source_title": "臺中市主要道路喬木植栽（政府開放資料 108167），本研究自行擬合",
+   "published": "2026-08-13（資料集更新）；擬合 2026-10-23",
+   "evidence": "我的推算（台灣官方普查資料衍生）",
+   "limits": "可用但低信心；該資料約 60% 列的樹冠面積疑似以胸徑等比例推算（同路段同樹種『面積/胸徑』比值完全相同），clean 版已剔除這些列；臺中氣候較台北乾、日照多；行道樹受修剪；只在 clean 的 dbh_p05–dbh_p95 範圍內使用",
+   "taipei_inventory_dbh": {
+    "n": 8436,
+    "dbh_p10": 8.17,
+    "dbh_med": 29.0,
+    "dbh_p90": 50.0,
+    "h_med": 10.9
+   }
+  },
+  {
+   "species_zh": "臺灣欒樹",
+   "species_sci": "Koelreuteria elegans subsp. formosana",
+   "metric": "冠幅 W (m) 對胸徑 D (cm)",
+   "model": "W=a*D^b（log-log 最小平方；W=√(4·樹冠投影面積/π)）",
+   "params": {
+    "clean": {
+     "n": 170,
+     "a": 0.8917,
+     "b": 0.6269,
+     "r2": 0.482,
+     "rmse_log": 0.248,
+     "dbh_p05": 9.1,
+     "dbh_med": 24.2,
+     "dbh_p95": 31.7,
+     "W_at": {
+      "5": 2.45,
+      "10": 3.78,
+      "20": 5.83,
+      "30": 7.52,
+      "50": 10.36
+     }
+    },
+    "all_rows": {
+     "n": 726,
+     "a": 0.9135,
+     "b": 0.6358,
+     "r2": 0.534,
+     "rmse_log": 0.221,
+     "dbh_p05": 10.8,
+     "dbh_med": 23.6,
+     "dbh_p95": 33.3,
+     "W_at": {
+      "5": 2.54,
+      "10": 3.95,
+      "20": 6.14,
+      "30": 7.94,
+      "50": 10.99
+     }
+    },
+    "imputed_like_share": 0.766
+   },
+   "units": "D: cm；W: m",
+   "sample_n": 170,
+   "location": "臺中市主要道路行道樹（調查日 2018，資料集 2026-08-13 更新）",
+   "source_url": "https://data.gov.tw/dataset/108167",
+   "source_title": "臺中市主要道路喬木植栽（政府開放資料 108167），本研究自行擬合",
+   "published": "2026-08-13（資料集更新）；擬合 2026-10-23",
+   "evidence": "我的推算（台灣官方普查資料衍生）",
+   "limits": "可用但低信心；該資料約 77% 列的樹冠面積疑似以胸徑等比例推算（同路段同樹種『面積/胸徑』比值完全相同），clean 版已剔除這些列；臺中氣候較台北乾、日照多；行道樹受修剪；只在 clean 的 dbh_p05–dbh_p95 範圍內使用",
+   "taipei_inventory_dbh": {
+    "n": 6377,
+    "dbh_p10": 7.0,
+    "dbh_med": 23.0,
+    "dbh_p90": 35.5,
+    "h_med": 8.2
+   }
+  },
+  {
+   "species_zh": "楓香",
+   "species_sci": "Liquidambar formosana",
+   "metric": "冠幅 W (m) 對胸徑 D (cm)",
+   "model": "W=a*D^b（log-log 最小平方；W=√(4·樹冠投影面積/π)）",
+   "params": {
+    "clean": {
+     "n": 32,
+     "a": 0.6816,
+     "b": 0.6908,
+     "r2": 0.714,
+     "rmse_log": 0.247,
+     "dbh_p05": 4.8,
+     "dbh_med": 14.8,
+     "dbh_p95": 25.8,
+     "W_at": {
+      "5": 2.07,
+      "10": 3.34,
+      "20": 5.4,
+      "30": 7.14,
+      "50": 10.17
+     }
+    },
+    "all_rows": {
+     "n": 101,
+     "a": 0.7269,
+     "b": 0.7145,
+     "r2": 0.877,
+     "rmse_log": 0.196,
+     "dbh_p05": 3.8,
+     "dbh_med": 8.8,
+     "dbh_p95": 30.4,
+     "W_at": {
+      "5": 2.3,
+      "10": 3.77,
+      "20": 6.18,
+      "30": 8.26,
+      "50": 11.89
+     }
+    },
+    "imputed_like_share": 0.683
+   },
+   "units": "D: cm；W: m",
+   "sample_n": 32,
+   "location": "臺中市主要道路行道樹（調查日 2018，資料集 2026-08-13 更新）",
+   "source_url": "https://data.gov.tw/dataset/108167",
+   "source_title": "臺中市主要道路喬木植栽（政府開放資料 108167），本研究自行擬合",
+   "published": "2026-08-13（資料集更新）；擬合 2026-10-23",
+   "evidence": "我的推算（台灣官方普查資料衍生）",
+   "limits": "可用但低信心；該資料約 68% 列的樹冠面積疑似以胸徑等比例推算（同路段同樹種『面積/胸徑』比值完全相同），clean 版已剔除這些列；臺中氣候較台北乾、日照多；行道樹受修剪；只在 clean 的 dbh_p05–dbh_p95 範圍內使用",
+   "taipei_inventory_dbh": {
+    "n": 7664,
+    "dbh_p10": 6.0,
+    "dbh_med": 19.0,
+    "dbh_p90": 39.0,
+    "h_med": 9.6
+   }
+  },
+  {
+   "species_zh": "大花紫薇",
+   "species_sci": "Lagerstroemia speciosa",
+   "metric": "冠幅 W (m) 對胸徑 D (cm)",
+   "model": "W=a*D^b（log-log 最小平方；W=√(4·樹冠投影面積/π)）",
+   "params": {
+    "clean": {
+     "n": 123,
+     "a": 0.1524,
+     "b": 1.2092,
+     "r2": 0.55,
+     "rmse_log": 0.468,
+     "dbh_p05": 5.6,
+     "dbh_med": 10.2,
+     "dbh_p95": 21.0,
+     "W_at": {
+      "5": 1.07,
+      "10": 2.47,
+      "20": 5.7,
+      "30": 9.31,
+      "50": 17.27
+     }
+    },
+    "all_rows": {
+     "n": 151,
+     "a": 0.1986,
+     "b": 1.1146,
+     "r2": 0.516,
+     "rmse_log": 0.476,
+     "dbh_p05": 5.7,
+     "dbh_med": 11.5,
+     "dbh_p95": 22.1,
+     "W_at": {
+      "5": 1.19,
+      "10": 2.59,
+      "20": 5.6,
+      "30": 8.8,
+      "50": 15.55
+     }
+    },
+    "imputed_like_share": 0.185
+   },
+   "units": "D: cm；W: m",
+   "sample_n": 123,
+   "location": "臺中市主要道路行道樹（調查日 2018，資料集 2026-08-13 更新）",
+   "source_url": "https://data.gov.tw/dataset/108167",
+   "source_title": "臺中市主要道路喬木植栽（政府開放資料 108167），本研究自行擬合",
+   "published": "2026-08-13（資料集更新）；擬合 2026-10-23",
+   "evidence": "我的推算（台灣官方普查資料衍生）",
+   "limits": "可用但低信心；該資料約 18% 列的樹冠面積疑似以胸徑等比例推算（同路段同樹種『面積/胸徑』比值完全相同），clean 版已剔除這些列；臺中氣候較台北乾、日照多；行道樹受修剪；只在 clean 的 dbh_p05–dbh_p95 範圍內使用",
+   "taipei_inventory_dbh": {
+    "n": 2243,
+    "dbh_p10": 4.53,
+    "dbh_med": 15.0,
+    "dbh_p90": 29.0,
+    "h_med": 7.5
+   }
+  },
+  {
+   "species_zh": "水黃皮",
+   "species_sci": "Millettia pinnata (Pongamia pinnata)",
+   "metric": "冠幅 W (m) 對胸徑 D (cm)",
+   "model": "W=a*D^b（log-log 最小平方；W=√(4·樹冠投影面積/π)）",
+   "params": {
+    "clean": {
+     "n": 121,
+     "a": 2.2664,
+     "b": 0.2422,
+     "r2": 0.056,
+     "rmse_log": 0.42,
+     "dbh_p05": 8.0,
+     "dbh_med": 16.1,
+     "dbh_p95": 30.9,
+     "W_at": {
+      "5": 3.35,
+      "10": 3.96,
+      "20": 4.68,
+      "30": 5.17,
+      "50": 5.85
+     }
+    },
+    "all_rows": {
+     "n": 183,
+     "a": 1.8166,
+     "b": 0.3472,
+     "r2": 0.123,
+     "rmse_log": 0.402,
+     "dbh_p05": 7.6,
+     "dbh_med": 18.8,
+     "dbh_p95": 31.2,
+     "W_at": {
+      "5": 3.18,
+      "10": 4.04,
+      "20": 5.14,
+      "30": 5.92,
+      "50": 7.07
+     }
+    },
+    "imputed_like_share": 0.339
+   },
+   "units": "D: cm；W: m",
+   "sample_n": 121,
+   "location": "臺中市主要道路行道樹（調查日 2018，資料集 2026-08-13 更新）",
+   "source_url": "https://data.gov.tw/dataset/108167",
+   "source_title": "臺中市主要道路喬木植栽（政府開放資料 108167），本研究自行擬合",
+   "published": "2026-08-13（資料集更新）；擬合 2026-10-23",
+   "evidence": "我的推算（台灣官方普查資料衍生）",
+   "limits": "不建議用（樣本或 R² 太低）；該資料約 34% 列的樹冠面積疑似以胸徑等比例推算（同路段同樹種『面積/胸徑』比值完全相同），clean 版已剔除這些列；臺中氣候較台北乾、日照多；行道樹受修剪；只在 clean 的 dbh_p05–dbh_p95 範圍內使用",
+   "taipei_inventory_dbh": {
+    "n": 2005,
+    "dbh_p10": 9.0,
+    "dbh_med": 20.0,
+    "dbh_p90": 29.0,
+    "h_med": 7.3
+   }
+  },
+  {
+   "species_zh": "榕樹",
+   "species_sci": "Ficus microcarpa",
+   "metric": "冠幅 W (m) 對胸徑 D (cm)",
+   "model": "W=a*D^b（log-log 最小平方；W=√(4·樹冠投影面積/π)）",
+   "params": {
+    "clean": {
+     "n": 151,
+     "a": 1.001,
+     "b": 0.5383,
+     "r2": 0.452,
+     "rmse_log": 0.469,
+     "dbh_p05": 8.9,
+     "dbh_med": 34.1,
+     "dbh_p95": 109.2,
+     "W_at": {
+      "5": 2.38,
+      "10": 3.46,
+      "20": 5.02,
+      "30": 6.24,
+      "50": 8.22
+     }
+    },
+    "all_rows": {
+     "n": 485,
+     "a": 1.0088,
+     "b": 0.5543,
+     "r2": 0.746,
+     "rmse_log": 0.286,
+     "dbh_p05": 5.4,
+     "dbh_med": 22.5,
+     "dbh_p95": 97.6,
+     "W_at": {
+      "5": 2.46,
+      "10": 3.62,
+      "20": 5.31,
+      "30": 6.65,
+      "50": 8.82
+     }
+    },
+    "imputed_like_share": 0.689
+   },
+   "units": "D: cm；W: m",
+   "sample_n": 151,
+   "location": "臺中市主要道路行道樹（調查日 2018，資料集 2026-08-13 更新）",
+   "source_url": "https://data.gov.tw/dataset/108167",
+   "source_title": "臺中市主要道路喬木植栽（政府開放資料 108167），本研究自行擬合",
+   "published": "2026-08-13（資料集更新）；擬合 2026-10-23",
+   "evidence": "我的推算（台灣官方普查資料衍生）",
+   "limits": "可用但低信心；該資料約 69% 列的樹冠面積疑似以胸徑等比例推算（同路段同樹種『面積/胸徑』比值完全相同），clean 版已剔除這些列；臺中氣候較台北乾、日照多；行道樹受修剪；只在 clean 的 dbh_p05–dbh_p95 範圍內使用",
+   "taipei_inventory_dbh": {
+    "n": 10597,
+    "dbh_p10": 16.0,
+    "dbh_med": 37.0,
+    "dbh_p90": 62.8,
+    "h_med": 10.2
+   }
+  },
+  {
+   "species_zh": "小葉欖仁",
+   "species_sci": "Terminalia mantaly",
+   "metric": "冠幅 W (m) 對胸徑 D (cm)",
+   "model": "W=a*D^b（log-log 最小平方；W=√(4·樹冠投影面積/π)）",
+   "params": {
+    "clean": {
+     "n": 315,
+     "a": 0.6535,
+     "b": 0.6841,
+     "r2": 0.571,
+     "rmse_log": 0.314,
+     "dbh_p05": 6.2,
+     "dbh_med": 28.5,
+     "dbh_p95": 40.1,
+     "W_at": {
+      "5": 1.97,
+      "10": 3.16,
+      "20": 5.07,
+      "30": 6.7,
+      "50": 9.5
+     }
+    },
+    "all_rows": {
+     "n": 1384,
+     "a": 0.9265,
+     "b": 0.608,
+     "r2": 0.625,
+     "rmse_log": 0.231,
+     "dbh_p05": 9.6,
+     "dbh_med": 33.4,
+     "dbh_p95": 50.6,
+     "W_at": {
+      "5": 2.47,
+      "10": 3.76,
+      "20": 5.73,
+      "30": 7.33,
+      "50": 10.0
+     }
+    },
+    "imputed_like_share": 0.772
+   },
+   "units": "D: cm；W: m",
+   "sample_n": 315,
+   "location": "臺中市主要道路行道樹（調查日 2018，資料集 2026-08-13 更新）",
+   "source_url": "https://data.gov.tw/dataset/108167",
+   "source_title": "臺中市主要道路喬木植栽（政府開放資料 108167），本研究自行擬合",
+   "published": "2026-08-13（資料集更新）；擬合 2026-10-23",
+   "evidence": "我的推算（台灣官方普查資料衍生）",
+   "limits": "可用但低信心；該資料約 77% 列的樹冠面積疑似以胸徑等比例推算（同路段同樹種『面積/胸徑』比值完全相同），clean 版已剔除這些列；臺中氣候較台北乾、日照多；行道樹受修剪；只在 clean 的 dbh_p05–dbh_p95 範圍內使用",
+   "taipei_inventory_dbh": {
+    "n": 2813,
+    "dbh_p10": 12.0,
+    "dbh_med": 27.0,
+    "dbh_p90": 42.9,
+    "h_med": 12.1
+   }
+  },
+  {
+   "species_zh": "白千層",
+   "species_sci": "Melaleuca leucadendra / M. quinquenervia（台灣名稱混用）",
+   "metric": "冠幅 W (m) 對胸徑 D (cm)",
+   "model": "W=a*D^b（log-log 最小平方；W=√(4·樹冠投影面積/π)）",
+   "params": {
+    "clean": {
+     "n": 1
+    },
+    "all_rows": {
+     "n": 48,
+     "a": 1.1347,
+     "b": 0.4886,
+     "r2": 0.862,
+     "rmse_log": 0.068,
+     "dbh_p05": 9.4,
+     "dbh_med": 21.0,
+     "dbh_p95": 27.7,
+     "W_at": {
+      "5": 2.49,
+      "10": 3.5,
+      "20": 4.9,
+      "30": 5.98,
+      "50": 7.67
+     }
+    },
+    "imputed_like_share": 0.979
+   },
+   "units": "D: cm；W: m",
+   "sample_n": 1,
+   "location": "臺中市主要道路行道樹（調查日 2018，資料集 2026-08-13 更新）",
+   "source_url": "https://data.gov.tw/dataset/108167",
+   "source_title": "臺中市主要道路喬木植栽（政府開放資料 108167），本研究自行擬合",
+   "published": "2026-08-13（資料集更新）；擬合 2026-10-23",
+   "evidence": "我的推算（台灣官方普查資料衍生）",
+   "limits": "不建議用（樣本或 R² 太低）；該資料約 98% 列的樹冠面積疑似以胸徑等比例推算（同路段同樹種『面積/胸徑』比值完全相同），clean 版已剔除這些列；臺中氣候較台北乾、日照多；行道樹受修剪；只在 clean 的 dbh_p05–dbh_p95 範圍內使用",
+   "taipei_inventory_dbh": {
+    "n": 4390,
+    "dbh_p10": 20.0,
+    "dbh_med": 37.0,
+    "dbh_p90": 60.0,
+    "h_med": 10.2
+   }
+  },
+  {
+   "species_zh": "（全樹種合併，非棕櫚）",
+   "species_sci": null,
+   "metric": "冠幅 W (m) 對胸徑 D (cm)",
+   "model": "W=a*D^b",
+   "params": {
+    "clean": {
+     "n": 5753,
+     "a": 1.3672,
+     "b": 0.4339,
+     "r2": 0.4,
+     "rmse_log": 0.386,
+     "dbh_p05": 5.1,
+     "dbh_med": 20.5,
+     "dbh_p95": 52.9,
+     "W_at": {
+      "5": 2.75,
+      "10": 3.71,
+      "20": 5.02,
+      "30": 5.98,
+      "50": 7.46
+     }
+    },
+    "all_rows": {
+     "n": 14678,
+     "a": 1.2817,
+     "b": 0.4819,
+     "r2": 0.594,
+     "rmse_log": 0.291,
+     "dbh_p05": 5.4,
+     "dbh_med": 27.4,
+     "dbh_p95": 58.0,
+     "W_at": {
+      "5": 2.78,
+      "10": 3.89,
+      "20": 5.43,
+      "30": 6.6,
+      "50": 8.44
+     }
+    }
+   },
+   "units": "D: cm；W: m",
+   "sample_n": 5753,
+   "location": "臺中市主要道路行道樹",
+   "source_url": "https://data.gov.tw/dataset/108167",
+   "source_title": "同上，本研究自行擬合",
+   "published": "同上",
+   "evidence": "我的推算",
+   "limits": "樹種沒有可用係數時的備援；R² 約 0.4，個別樹誤差大"
+  },
+  {
+   "species_zh": "樟樹",
+   "species_sci": "CICA",
+   "metric": "年齡→胸徑、胸徑→冠幅（UTD 每種 8 條式）",
+   "model": "UTD 依種與氣候區選最適式（線性／二次／三次／對數–對數等）",
+   "params": null,
+   "units": null,
+   "sample_n": 63,
+   "location": "Central Florida（Orlando, USDA zone 9–10）",
+   "source_url": "https://doi.org/10.2737/RDS-2016-0005",
+   "source_title": "McPherson, van Doorn & Peper (2016) Urban Tree Database and Allometric Equations, PSW-GTR-253, Appendix 1 Table 5",
+   "published": "2016-10（資料庫勘誤 2020-01）",
+   "evidence": "國外參考",
+   "limits": "查不到係數：係數只在 RDS-2016-0005 資料庫，本輪下載與網頁都回 403；PDF 只列樣本數。美國氣候與修剪習慣不同；GTR 自述 Lagerstroemia 常被截頂、模型難擬合",
+   "taipei_inventory_dbh": {
+    "n": 8436,
+    "dbh_p10": 8.17,
+    "dbh_med": 29.0,
+    "dbh_p90": 50.0,
+    "h_med": 10.9
+   }
+  },
+  {
+   "species_zh": "臺灣欒樹",
+   "species_sci": "KOELFO（Koelreuteria elegans）",
+   "metric": "年齡→胸徑、胸徑→冠幅（UTD 每種 8 條式）",
+   "model": "UTD 依種與氣候區選最適式（線性／二次／三次／對數–對數等）",
+   "params": null,
+   "units": null,
+   "sample_n": 43,
+   "location": "Central Florida",
+   "source_url": "https://doi.org/10.2737/RDS-2016-0005",
+   "source_title": "McPherson, van Doorn & Peper (2016) Urban Tree Database and Allometric Equations, PSW-GTR-253, Appendix 1 Table 5",
+   "published": "2016-10（資料庫勘誤 2020-01）",
+   "evidence": "國外參考",
+   "limits": "查不到係數：係數只在 RDS-2016-0005 資料庫，本輪下載與網頁都回 403；PDF 只列樣本數。美國氣候與修剪習慣不同；GTR 自述 Lagerstroemia 常被截頂、模型難擬合",
+   "taipei_inventory_dbh": {
+    "n": 6377,
+    "dbh_p10": 7.0,
+    "dbh_med": 23.0,
+    "dbh_p90": 35.5,
+    "h_med": 8.2
+   }
+  },
+  {
+   "species_zh": "楓香（近緣：北美楓香 Liquidambar styraciflua）",
+   "species_sci": "LIST",
+   "metric": "年齡→胸徑、胸徑→冠幅（UTD 每種 8 條式）",
+   "model": "UTD 依種與氣候區選最適式（線性／二次／三次／對數–對數等）",
+   "params": null,
+   "units": null,
+   "sample_n": 48,
+   "location": "Central Florida",
+   "source_url": "https://doi.org/10.2737/RDS-2016-0005",
+   "source_title": "McPherson, van Doorn & Peper (2016) Urban Tree Database and Allometric Equations, PSW-GTR-253, Appendix 1 Table 5",
+   "published": "2016-10（資料庫勘誤 2020-01）",
+   "evidence": "國外參考",
+   "limits": "查不到係數：係數只在 RDS-2016-0005 資料庫，本輪下載與網頁都回 403；PDF 只列樣本數。美國氣候與修剪習慣不同；GTR 自述 Lagerstroemia 常被截頂、模型難擬合"
+  },
+  {
+   "species_zh": "大花紫薇",
+   "species_sci": "LASP（Lagerstroemia speciosa）",
+   "metric": "年齡→胸徑、胸徑→冠幅（UTD 每種 8 條式）",
+   "model": "UTD 依種與氣候區選最適式（線性／二次／三次／對數–對數等）",
+   "params": null,
+   "units": null,
+   "sample_n": 37,
+   "location": "Tropical（Honolulu, zone 11）",
+   "source_url": "https://doi.org/10.2737/RDS-2016-0005",
+   "source_title": "McPherson, van Doorn & Peper (2016) Urban Tree Database and Allometric Equations, PSW-GTR-253, Appendix 1 Table 5",
+   "published": "2016-10（資料庫勘誤 2020-01）",
+   "evidence": "國外參考",
+   "limits": "查不到係數：係數只在 RDS-2016-0005 資料庫，本輪下載與網頁都回 403；PDF 只列樣本數。美國氣候與修剪習慣不同；GTR 自述 Lagerstroemia 常被截頂、模型難擬合",
+   "taipei_inventory_dbh": {
+    "n": 2243,
+    "dbh_p10": 4.53,
+    "dbh_med": 15.0,
+    "dbh_p90": 29.0,
+    "h_med": 7.5
+   }
+  },
+  {
+   "species_zh": "白千層",
+   "species_sci": "MEQU（Melaleuca quinquenervia）",
+   "metric": "年齡→胸徑、胸徑→冠幅（UTD 每種 8 條式）",
+   "model": "UTD 依種與氣候區選最適式（線性／二次／三次／對數–對數等）",
+   "params": null,
+   "units": null,
+   "sample_n": 59,
+   "location": "Tropical（Honolulu）",
+   "source_url": "https://doi.org/10.2737/RDS-2016-0005",
+   "source_title": "McPherson, van Doorn & Peper (2016) Urban Tree Database and Allometric Equations, PSW-GTR-253, Appendix 1 Table 5",
+   "published": "2016-10（資料庫勘誤 2020-01）",
+   "evidence": "國外參考",
+   "limits": "查不到係數：係數只在 RDS-2016-0005 資料庫，本輪下載與網頁都回 403；PDF 只列樣本數。美國氣候與修剪習慣不同；GTR 自述 Lagerstroemia 常被截頂、模型難擬合",
+   "taipei_inventory_dbh": {
+    "n": 4390,
+    "dbh_p10": 20.0,
+    "dbh_med": 37.0,
+    "dbh_p90": 60.0,
+    "h_med": 10.2
+   }
+  },
+  {
+   "species_zh": "榕樹（近緣：垂榕 Ficus benjamina）",
+   "species_sci": "FIBE",
+   "metric": "年齡→胸徑、胸徑→冠幅（UTD 每種 8 條式）",
+   "model": "UTD 依種與氣候區選最適式（線性／二次／三次／對數–對數等）",
+   "params": null,
+   "units": null,
+   "sample_n": 60,
+   "location": "Tropical（Honolulu）",
+   "source_url": "https://doi.org/10.2737/RDS-2016-0005",
+   "source_title": "McPherson, van Doorn & Peper (2016) Urban Tree Database and Allometric Equations, PSW-GTR-253, Appendix 1 Table 5",
+   "published": "2016-10（資料庫勘誤 2020-01）",
+   "evidence": "國外參考",
+   "limits": "查不到係數：係數只在 RDS-2016-0005 資料庫，本輪下載與網頁都回 403；PDF 只列樣本數。美國氣候與修剪習慣不同；GTR 自述 Lagerstroemia 常被截頂、模型難擬合"
+  },
+  {
+   "species_zh": "（i-Tree Eco 預設）",
+   "species_sci": null,
+   "metric": "胸徑年生長量",
+   "model": "依樹種生長速度分三級，再按無霜期日數比例調整",
+   "params": {
+    "slow": 0.58,
+    "moderate": 0.84,
+    "fast": 1.09
+   },
+   "units": "cm/yr",
+   "sample_n": null,
+   "location": "美國",
+   "source_url": "https://tdr.lib.ntu.edu.tw/handle/123456789/92929",
+   "source_title": "轉引自 詹為巽（2024）第11–12頁（Fleming 1988; Frelich 1992; Nowak 1994）",
+   "published": "2024（轉引）",
+   "evidence": "國外參考（二手轉引）",
+   "limits": "同篇論文指出 i-Tree Eco 在台北可能高估碳儲存與吸存；這裡只拿生長量當無在地資料樹種的備援"
+  },
+  {
+   "species_zh": "（臺中市資料集『推估樹齡』欄）",
+   "species_sci": null,
+   "metric": "隱含胸徑年生長量",
+   "model": "推估樹齡 = 胸徑 × 1.256（= 樹圍 ÷ 2.5）",
+   "params": {
+    "implied_cm_per_yr": 0.796
+   },
+   "units": "cm/yr",
+   "sample_n": 15041,
+   "location": "臺中市",
+   "source_url": "https://data.gov.tw/dataset/108167",
+   "source_title": "臺中市主要道路喬木植栽（108167）；比例由本研究從資料反推",
+   "published": "2026-08-13",
+   "evidence": "我的推算（從官方欄位反推的公式，不是實測）",
+   "limits": "這是官方用的固定換算，不是量出來的生長；不能當證據，只說明公部門常用『樹圍每年 2.5 cm』的假設"
+  }
+ ],
+ "defaults_for_site": {
+  "model_note": "樹冠負債＝被移除樹的推估樹冠面積 A0=π/4·W(D0)²；新苗樹冠 A(t)=π/4·W(t)²，W(t)=W_nursery+max(0, f(D(t))−f(d0))（f 為該樹種 W=a·D^b；用『差值』是因為苗圃苗的冠幅比同胸徑的行道樹窄，直接套式子會高估）；存活率逐年乘上 s^t；還清＝N·s^t·A(t) ≥ A0。這個組合方式是我的推測（模型設計），不是文獻公式。",
+  "params": {
+   "nursery_caliper_cm": {
+    "default": 6,
+    "range": [
+     5,
+     8
+    ],
+    "status": "sourced",
+    "source": "臺中市 2025–2026 三件補植個案（5–6、5–6、6–8 cm）",
+    "note": "台北公園處規格查不到；以外縣市個案代替"
+   },
+   "nursery_height_m": {
+    "default": 2.7,
+    "range": [
+     2.4,
+     3.0
+    ],
+    "status": "sourced",
+    "source": "同上"
+   },
+   "nursery_crown_width_m": {
+    "default": 0.85,
+    "range": [
+     0.8,
+     2.4
+    ],
+    "status": "sourced",
+    "source": "0.8–0.9：臺中個案（米徑 5–6 cm 苗）；上限 2.4：桃園手冊大喬木 36 m² 的 1/8 換算（我的換算）"
+   },
+   "caliper_to_dbh": {
+    "default": 1.0,
+    "range": [
+     0.9,
+     1.0
+    ],
+    "status": "assumed",
+    "note": "米徑量在 1.0 m、胸徑量在 1.3 m；小苗兩者接近，沒找到換算係數"
+   },
+   "establishment_lag_years": {
+    "default": 1,
+    "range": [
+     0.6,
+     2.4
+    ],
+    "status": "sourced",
+    "source": "UF/IFAS 種植規範：USDA zone 9–11 每英吋幹徑約 3 個月建立根系（6 cm≈2.4 in → 0.6 年）；Gilman 1992 保守上限每英吋 1 年（→2.4 年）。台北 USDA 分區未查證，預設 1 年是我的折衷",
+    "url": [
+     "https://hort.ifas.ufl.edu/woody/abbreviated-planting-specs.shtml",
+     "https://hort.ifas.ufl.edu/woody/abstracts/efg/EFG9202.shtm"
+    ]
+   },
+   "dbh_growth_cm_per_yr": {
+    "default_by_species": {
+     "茄苳": "RGR 式（a=1.4437,b=-1.266）",
+     "樟樹": "RGR 式（a=1.5650,b=-1.379）",
+     "楓香": "RGR 式（a=2.2842,b=-1.427）",
+     "其他": 0.8
+    },
+    "range": [
+     0.4,
+     1.1
+    ],
+    "status": "sourced（茄苳／樟樹／楓香）；其他 assumed",
+    "source": "台北實測：詹為巽 2024；其他樹種 0.8 取自 i-Tree 中速 0.84 與臺中樹齡換算 0.80 之間，屬假設"
+   },
+   "crown_allometry": {
+    "default_by_species": {
+     "茄苳": {
+      "a": 1.3649,
+      "b": 0.4831
+     },
+     "樟樹": {
+      "a": 2.2799,
+      "b": 0.3225
+     },
+     "臺灣欒樹": {
+      "a": 0.8917,
+      "b": 0.6269
+     },
+     "楓香": {
+      "a": 0.6816,
+      "b": 0.6908
+     },
+     "榕樹": {
+      "a": 1.001,
+      "b": 0.5383
+     },
+     "小葉欖仁": {
+      "a": 0.6535,
+      "b": 0.6841
+     }
+    },
+    "fallback": {
+     "a": 1.3672,
+     "b": 0.4339
+    },
+    "status": "sourced-derived（臺中開放資料自行擬合，低信心）",
+    "not_recommended": [
+     "大花紫薇（b=1.21 不合理、截頂修剪多）",
+     "水黃皮（R²≈0.06）",
+     "白千層（臺中資料幾乎全為推算值）"
+    ],
+    "note": "未列樹種與不建議樹種用 fallback；畫面需標『推估』"
+   },
+   "annual_survival": {
+    "default": 0.95,
+    "range": [
+     0.91,
+     0.97
+    ],
+    "status": "sourced（國外）",
+    "source": "Roman & Scatena 2011（UFUG 10:269–274）16 篇研究合併年存活率 94.9–96.5%；Hilbert et al. 2019 文獻回顧：種植世代年死亡率中位數 4.4–6.5%，前 5 年最高",
+    "url": [
+     "https://earth.sas.upenn.edu/content/street-tree-survival-rates-meta-analysis-previous-studies-and-application-field-survey",
+     "https://researchconnect.suny.edu/en/publications/urban-tree-mortality-a-literature-review/"
+    ],
+    "note": "台北新植存活率查不到"
+   },
+   "target_years": {
+    "default": 10,
+    "range": [
+     5,
+     30
+    ],
+    "status": "assumed",
+    "note": "政策選擇，做成滑桿"
+   },
+   "max_crown_area_per_new_tree_m2": {
+    "default": null,
+    "options": [
+     16,
+     25,
+     36
+    ],
+    "status": "sourced（設計基準，不是生長資料）",
+    "source": "內政部 建築基地綠化設計技術規範 表2：新種喬木樹冠投影面積基準 16／25／36 m²（間距 4／5／6 m）",
+    "url": "https://www.nlma.gov.tw/uploads/files/570f0fafb4e7fc5fd174a4f184618467.pdf",
+    "note": "可選擇性當作新苗長大後的上限（間距限制）"
+   }
+  },
+  "worked_examples": [
+   {
+    "species": "茄苳",
+    "removed_dbh_cm": 40,
+    "removed_crown_w_m": 8.11,
+    "removed_crown_area_m2": 51.7,
+    "sapling_after_years": 10,
+    "sapling_dbh_cm": 13.2,
+    "sapling_crown_w_m": 2.36,
+    "sapling_crown_area_m2": 4.37,
+    "survival_to_target": 0.599,
+    "saplings_needed_for_payback_in_target_years": 20,
+    "payback_years_1to1_with_survival": null,
+    "payback_years_1to1_if_it_survives": 111
+   },
+   {
+    "species": "樟樹",
+    "removed_dbh_cm": 50,
+    "removed_crown_w_m": 8.05,
+    "removed_crown_area_m2": 50.9,
+    "sapling_after_years": 10,
+    "sapling_dbh_cm": 12.2,
+    "sapling_crown_w_m": 1.9,
+    "sapling_crown_area_m2": 2.83,
+    "survival_to_target": 0.599,
+    "saplings_needed_for_payback_in_target_years": 31,
+    "payback_years_1to1_with_survival": null,
+    "payback_years_1to1_if_it_survives": null
+   },
+   {
+    "species": "楓香",
+    "removed_dbh_cm": 30,
+    "removed_crown_w_m": 7.14,
+    "removed_crown_area_m2": 40.1,
+    "sapling_after_years": 10,
+    "sapling_dbh_cm": 13.9,
+    "sapling_crown_w_m": 2.7,
+    "sapling_crown_area_m2": 5.73,
+    "survival_to_target": 0.599,
+    "saplings_needed_for_payback_in_target_years": 12,
+    "payback_years_1to1_with_survival": null,
+    "payback_years_1to1_if_it_survives": 55
+   },
+   {
+    "species": "臺灣欒樹",
+    "removed_dbh_cm": 25,
+    "removed_crown_w_m": 6.71,
+    "removed_crown_area_m2": 35.3,
+    "sapling_after_years": 10,
+    "sapling_dbh_cm": 13.2,
+    "sapling_crown_w_m": 2.6,
+    "sapling_crown_area_m2": 5.32,
+    "survival_to_target": 0.599,
+    "saplings_needed_for_payback_in_target_years": 12,
+    "payback_years_1to1_with_survival": null,
+    "payback_years_1to1_if_it_survives": 40
+   },
+   {
+    "species": "榕樹",
+    "removed_dbh_cm": 60,
+    "removed_crown_w_m": 9.07,
+    "removed_crown_area_m2": 64.6,
+    "sapling_after_years": 10,
+    "sapling_dbh_cm": 13.2,
+    "sapling_crown_w_m": 2.24,
+    "sapling_crown_area_m2": 3.94,
+    "survival_to_target": 0.599,
+    "saplings_needed_for_payback_in_target_years": 28,
+    "payback_years_1to1_with_survival": null,
+    "payback_years_1to1_if_it_survives": 99
+   },
+   {
+    "species": "茄苳",
+    "removed_dbh_cm": 40,
+    "removed_crown_w_m": 8.11,
+    "removed_crown_area_m2": 51.7,
+    "sapling_after_years": 20,
+    "sapling_dbh_cm": 20.1,
+    "sapling_crown_w_m": 3.42,
+    "sapling_crown_area_m2": 9.21,
+    "survival_to_target": 0.358,
+    "saplings_needed_for_payback_in_target_years": 16,
+    "payback_years_1to1_with_survival": null,
+    "payback_years_1to1_if_it_survives": 111
+   }
+  ],
+  "error_note": "冠幅高估 20%，面積高估 44%；臺中擬合的 log 殘差約 0.25–0.35，等於個別樹冠幅常在預測值的 ±30–40% 內；畫面應顯示區間而非單一數字",
+  "sensitivity": {
+   "note": "同一個例子換模型假設時『要種幾棵才能在目標年還清』的變化；差距大，網站應顯示區間",
+   "cases": [
+    {
+     "species": "茄苳",
+     "removed_dbh_cm": 40,
+     "target_years": 10,
+     "need_offset_s095": 20,
+     "need_direct_allometry_s095": 5,
+     "need_offset_pooled_allometry_s095": 26,
+     "need_offset_s097": 17,
+     "need_no_mortality_offset": 12
+    },
+    {
+     "species": "樟樹",
+     "removed_dbh_cm": 50,
+     "target_years": 10,
+     "need_offset_s095": 31,
+     "need_direct_allometry_s095": 5,
+     "need_offset_pooled_allometry_s095": 30,
+     "need_offset_s097": 25,
+     "need_no_mortality_offset": 18
+    },
+    {
+     "species": "楓香",
+     "removed_dbh_cm": 30,
+     "target_years": 10,
+     "need_offset_s095": 12,
+     "need_direct_allometry_s095": 5,
+     "need_offset_pooled_allometry_s095": 19,
+     "need_offset_s097": 10,
+     "need_no_mortality_offset": 8
+    },
+    {
+     "species": "臺灣欒樹",
+     "removed_dbh_cm": 25,
+     "target_years": 10,
+     "need_offset_s095": 12,
+     "need_direct_allometry_s095": 4,
+     "need_offset_pooled_allometry_s095": 18,
+     "need_offset_s097": 10,
+     "need_no_mortality_offset": 7
+    },
+    {
+     "species": "榕樹",
+     "removed_dbh_cm": 60,
+     "target_years": 10,
+     "need_offset_s095": 28,
+     "need_direct_allometry_s095": 9,
+     "need_offset_pooled_allometry_s095": 33,
+     "need_offset_s097": 23,
+     "need_no_mortality_offset": 17
+    },
+    {
+     "species": "茄苳",
+     "removed_dbh_cm": 40,
+     "target_years": 20,
+     "need_offset_s095": 16,
+     "need_direct_allometry_s095": 6,
+     "need_offset_pooled_allometry_s095": 22,
+     "need_offset_s097": 11,
+     "need_no_mortality_offset": 6
+    }
+   ]
+  }
+ }
+}

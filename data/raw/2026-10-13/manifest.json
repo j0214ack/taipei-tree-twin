@@ -1,0 +1,117 @@
+{
+  "manifest_created_at": "2026-10-13T17:40:33+08:00",
+  "scope": "Normal downloads from issue #1 linked public resources; no bulk website crawl. HTML snapshots are not machine-readable dataset records.",
+  "license_note": "See research/08-datasets.md. Dataset licenses do not automatically extend to website HTML or history records.",
+  "files": [
+    {
+      "file": "hackathon.html",
+      "description": "主辦方題目頁快照",
+      "download_url": "https://puma.taipei/hackathon",
+      "dataset_page": "https://puma.taipei/hackathon#issue-1",
+      "retrieved_date": "2026-10-13",
+      "date_note": "未標示",
+      "bytes": 51016,
+      "sha256": "c1bc8d55ec112499e0bbec355005e46ee04106e7654d4522982e34eee2eefe6d",
+      "simulated": false
+    },
+    {
+      "file": "tree-dataset-page.html",
+      "description": "樹木分布圖 metadata 頁",
+      "download_url": "https://data.gov.tw/dataset/128274",
+      "dataset_page": "https://data.gov.tw/dataset/128274",
+      "retrieved_date": "2026-10-13",
+      "date_note": "2026-07-28 10:59（詮釋資料更新）",
+      "bytes": 549148,
+      "sha256": "a6edd25f85124d47075a3764ffb970055191081db1233736f9c2ffcd51ea79a2",
+      "simulated": false
+    },
+    {
+      "file": "tree-hole-dataset-page.html",
+      "description": "新工處樹穴 metadata 頁",
+      "download_url": "https://data.gov.tw/dataset/134908",
+      "dataset_page": "https://data.gov.tw/dataset/134908",
+      "retrieved_date": "2026-10-13",
+      "date_note": "2026-09-22 19:17（詮釋資料更新）",
+      "bytes": 525586,
+      "sha256": "e66779c602715837252e8faba1fb73920ebfe99b495d1da6d9dfc51ae1077013",
+      "simulated": false
+    },
+    {
+      "file": "TaipeiTree.csv",
+      "description": "行道樹",
+      "download_url": "https://tppkl.blob.core.windows.net/blobfs/TaipeiTree.csv",
+      "dataset_page": "https://data.gov.tw/dataset/128274",
+      "retrieved_date": "2026-10-13",
+      "date_note": "UpdDate 全為 2026-10-13 16:03:58；非逐筆調查日",
+      "bytes": 10949470,
+      "sha256": "3d59d96ebf13d7a1c25407bd5871697defa221d30d90b193132e54d31089b6ac",
+      "simulated": false
+    },
+    {
+      "file": "TaipeiParkTree.csv",
+      "description": "公園樹木",
+      "download_url": "https://tppkl.blob.core.windows.net/blobfs/TaipeiParkTree.csv",
+      "dataset_page": "https://data.gov.tw/dataset/128274",
+      "retrieved_date": "2026-10-13",
+      "date_note": "UpdDate 全為 2026-07-14 17:10:04；非逐筆調查日",
+      "bytes": 7857816,
+      "sha256": "330db23ad090c22c1a46302420fbbd7ca38036a6ad39807126c5505793560df3",
+      "simulated": false
+    },
+    {
+      "file": "TaipeiTreeHole.csv",
+      "description": "公園處樹穴",
+      "download_url": "https://tppkl.blob.core.windows.net/blobfs/TaipeiTreeHole.csv",
+      "dataset_page": "https://data.gov.tw/dataset/128274",
+      "retrieved_date": "2026-10-13",
+      "date_note": "UpdDate 全為 2026-09-08 09:15:57",
+      "bytes": 181561,
+      "sha256": "ca2be16325c88ce7162aa523f52d45d8b09ee59ed2bde8eb054c18c7a1b540c2",
+      "simulated": false
+    },
+    {
+      "file": "sidewalk-tree-holes.json",
+      "description": "新工處樹穴及花圃",
+      "download_url": "https://data.taipei/api/dataset/693705fa-4604-4207-bd50-8a9ce9fcfbc6/resource/3e2b359b-8dae-46e4-a747-5912d8743d0e/download",
+      "dataset_page": "https://data.gov.tw/dataset/134908",
+      "retrieved_date": "2026-10-13",
+      "date_note": "檔案本體調查日期未確認；詮釋更新 2026-09-22 19:17",
+      "bytes": 27304373,
+      "sha256": "9ed8de03c1ba61720bc3bc27903128831023f7590a9c38961a8382c7c9d80f03",
+      "simulated": false
+    },
+    {
+      "file": "sidewalks.json",
+      "description": "人行道範圍圖",
+      "download_url": "https://data.taipei/api/frontstage/tpeod/dataset/resource.download?rid=b11d6142-1d71-41d5-a843-7b7cfcea61ef",
+      "dataset_page": "https://data.taipei/dataset/detail?id=715d3a83-8445-4496-b6bf-b0900538b7e7",
+      "retrieved_date": "2026-10-13",
+      "date_note": "資源更新 2026-01-14 16:02:36；詮釋更新 2026-09-22 19:06:50",
+      "bytes": 24404580,
+      "sha256": "edd23396fc53bf39e2e08a752b2886dce3039edbf813fdada27ac57ae2d11b6c",
+      "simulated": false
+    },
+    {
+      "file": "parks.json",
+      "description": "公園基本資料",
+      "download_url": "https://parks.gov.taipei/parks/api/",
+      "dataset_page": "https://data.taipei/dataset/detail?id=ea732fb5-4bec-4be7-93f2-8ab91e74a6c6",
+      "retrieved_date": "2026-10-13",
+      "date_note": "詮釋更新 2026-08-26 10:48:29；資源標系統介接，未提供逐筆更新日",
+      "bytes": 7222647,
+      "sha256": "bd10759012b7d0f5f38eb4c073eaebfc4add30b1a7eec2dc969dd86e58f1c799",
+      "simulated": false
+    },
+    {
+      "file": "geopkl.html",
+      "description": "資訊網首頁快照；不是履歷資料",
+      "download_url": "https://geopkl.gov.taipei/",
+      "dataset_page": "https://geopkl.gov.taipei/",
+      "retrieved_date": "2026-10-13",
+      "date_note": "未標示",
+      "bytes": 65380,
+      "sha256": "50e4ec8c6bc3d17197863fed52e389656c4e7c305039bc8f557c9f56c7d8b66c",
+      "simulated": false
+    }
+  ]
+}

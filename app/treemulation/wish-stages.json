@@ -1,0 +1,38 @@
+[
+  {
+    "stage": 1,
+    "name": "小苗",
+    "file": "wish-stage-1.png",
+    "heightM": 1.0,
+    "rootX": 0.55,
+    "source": "https://commons.wikimedia.org/wiki/File:Starr-090416-5969-Koelreuteria_elegans_subsp_formosana-sapling_in_sidewalk-Makawao-Maui_(24325079443).jpg",
+    "author": "Forest and Kim Starr",
+    "license": "CC BY 3.0 us",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0/us/deed.en",
+    "note": "去背：macOS Vision 主體去背＋色鍵，256 色調色盤＋半透明 alpha；臺灣欒樹（Koelreuteria elegans subsp. formosana）人行道旁小苗，夏威夷 Maui。背景是灰色水泥牆，已用 Vision 去背加灰色色鍵；右側葉叢間仍有少量牆面陰影殘留。"
+  },
+  {
+    "stage": 2,
+    "name": "幼樹",
+    "file": "wish-stage-2.png",
+    "heightM": 2.8,
+    "rootX": 0.39,
+    "source": "https://commons.wikimedia.org/wiki/File:Young_tree_in_Witchford_-_geograph.org.uk_-_3985126.jpg",
+    "author": "Richard Humphrey",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "note": "去背：macOS Vision 主體去背＋色鍵，256 色調色盤＋半透明 alpha；英國 Witchford 草地上的年輕闊葉樹，有支撐木樁；原照左側有房子，先裁掉左半再去背。樹種未標明（看起來是落葉闊葉樹，作通用示意）。"
+  },
+  {
+    "stage": 3,
+    "name": "中樹",
+    "file": "wish-stage-3.png",
+    "heightM": 4.8,
+    "rootX": 0.45,
+    "source": "https://commons.wikimedia.org/wiki/File:%E3%82%A6%E3%82%A9%E3%83%BC%E3%82%BF%E3%83%BC%E3%83%95%E3%83%AD%E3%83%B3%E3%83%88%E3%83%91%E3%83%BC%E3%82%AF_%E3%82%B7%E3%83%9E%E3%83%88%E3%83%8D%E3%83%AA%E3%82%B3_01.jpg",
+    "author": "あじさか",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "note": "去背：macOS Vision 主體去背＋色鍵，256 色調色盤＋半透明 alpha；光蠟樹（Fraxinus griffithii，シマトネリコ）中型樹，日本 Waterfront Park；正開花所以樹冠偏米白。原照右後方另有一棵小樹，已擦掉其樹幹，樹冠右側仍混有一部分它的枝葉。"
+  }
+]

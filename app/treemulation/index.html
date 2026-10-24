@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<!-- ga-on-ship:start G-N8NSF80QXP -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-N8NSF80QXP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  (function () {
+    // Own-traffic mark (ga-on-ship): ?internal=1 remembers this device, ?internal=0 forgets it; automated browsers count too.
+    // Marked hits carry traffic_type=internal, which GA's "Internal Traffic" data filter excludes.
+    var q = null, mark = !!navigator.webdriver;
+    try {
+      var u = new URL(location.href);
+      q = u.searchParams.get('internal');
+      if (q !== null) { u.searchParams.delete('internal'); history.replaceState(history.state, '', u.pathname + u.search + u.hash); }
+    } catch (e) {}
+    try {
+      if (q === '1') localStorage.setItem('ga_internal', '1');
+      if (q === '0') localStorage.removeItem('ga_internal');
+      mark = mark || localStorage.getItem('ga_internal') === '1';
+    } catch (e) {}
+    if (q === '1') mark = true;
+    gtag('config', 'G-N8NSF80QXP', mark ? { traffic_type: 'internal' } : {});
+  })();
+</script>
+<!-- ga-on-ship:end -->
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>模樹 Treemulation</title>
+<meta name="description" content="拍行道樹、集點數、換獎品。">
+<meta name="theme-color" content="#6cc8ff">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="模樹">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="./icon.svg">
+<link rel="apple-touch-icon" href="./apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Huninn&family=M+PLUS+Rounded+1c:wght@500;700;800;900&family=Noto+Sans+TC:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --sky:#6cc8ff; --sky2:#c9ecff; --grass:#9bdc6e; --grass2:#7cc653; --leaf:#2e9e5b; --navy:#17405e; --sun:#ffcd2e; --sun2:#e8a300;
+  --card:#fff; --mute:#5d7f97; --line:#e3eef5;
+  --round:"Huninn","M PLUS Rounded 1c","Noto Sans TC",system-ui,sans-serif; --num:"Fredoka","Huninn",sans-serif;
+  --vh:1vh;
+}
+@supports (height:1dvh){:root{--vh:1dvh}}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;overflow:hidden;background:#dff3ff;color:var(--navy);font-family:var(--round);-webkit-tap-highlight-color:transparent}
+body{display:flex;align-items:flex-start;justify-content:center}
+a{color:inherit;text-decoration:none}
+a:focus-visible{outline:3px solid var(--navy);outline-offset:3px}
+.phone{position:relative;width:100%;max-width:430px;height:100vh;height:calc(100 * var(--vh));overflow:hidden;
+  background:linear-gradient(180deg,var(--sky) 0%,var(--sky2) 34%,#eef9ff 64%,#f4fbf0 100%);
+  padding:calc(clamp(8px, 1.6 * var(--vh), 14px) + env(safe-area-inset-top)) calc(14px + env(safe-area-inset-right)) calc(4px + env(safe-area-inset-bottom)) calc(14px + env(safe-area-inset-left));
+  display:flex;flex-direction:column;gap:clamp(8px, 1.6 * var(--vh), 14px)}
+@media (min-width:520px) and (min-height:700px){
+  body{align-items:center}
+  .phone{width:390px;height:min(844px, calc(100 * var(--vh) - 24px));border-radius:40px;box-shadow:0 30px 80px #17405e40,0 0 0 8px #fff}
+}
+.pill{display:inline-flex;align-items:center;font:700 11px/1 var(--round);padding:4px 8px;border-radius:99px;white-space:nowrap}
+.pill.sim{background:#fff3c4;color:#8a6a00}
+
+/* 頂部膠囊 */
+.stats{flex:none;display:flex;gap:8px;align-items:center}
+.chip{display:inline-flex;align-items:center;gap:6px;height:clamp(36px, 5.6 * var(--vh), 44px);padding:0 13px 0 5px;background:#fff;border-radius:99px;box-shadow:0 4px 0 #17405e1c}
+.chip svg{height:78%;aspect-ratio:1;flex:none}
+.chip b{font:700 clamp(18px, 2.8 * var(--vh), 22px)/1 var(--num);font-variant-numeric:tabular-nums}
+.chip span{font:800 13px var(--round);color:var(--mute)}
+.stats .pill{margin-left:auto}
+
+/* 品牌 */
+.brand{flex:none;display:flex;align-items:center;gap:12px;height:clamp(60px, 11 * var(--vh), 92px);padding:0 2px}
+.mark{height:100%;aspect-ratio:1;flex:none;filter:drop-shadow(0 5px 0 #17405e22)}
+.mark .spark{transform-origin:352px 164px;animation:twinkle 1.2s cubic-bezier(.3,1.8,.5,1) .25s both}
+@keyframes twinkle{0%{transform:scale(0) rotate(-90deg)}100%{transform:none}}
+.word h1{font:400 clamp(38px, 7.2 * var(--vh), 58px)/1 "Huninn",var(--round);letter-spacing:.04em;color:var(--navy);text-shadow:0 3px 0 #fff}
+.word p{font:600 clamp(14px, 2.3 * var(--vh), 19px)/1 var(--num);letter-spacing:.06em;color:#fff;margin-top:clamp(3px, .8 * var(--vh), 7px);text-shadow:0 2px 0 #3b9fd8}
+
+/* 入口 */
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px;min-height:0}
+.row.big{flex:1.75 1 0}
+.row.small{flex:1 1 0;max-height:150px;padding-bottom:7px}
+.big{padding-bottom:7px}
+.door{position:relative;min-height:0;display:flex;flex-direction:column;border-radius:clamp(22px, 3.4 * var(--vh), 30px);padding:clamp(10px, 1.8 * var(--vh), 16px) clamp(12px, 3.4vw, 16px);overflow:hidden;transition:transform .08s}
+.door:active{transform:translateY(4px)}
+.door h2{white-space:nowrap;font:400 min(clamp(26px, 4.6 * var(--vh), 38px), 8.4vw)/1.1 "Huninn",var(--round);letter-spacing:.04em}
+.door p{font:800 clamp(12px, 1.9 * var(--vh), 15px)/1.3 var(--round);margin-top:3px}
+.door .art{flex:1 1 0;min-height:0;width:100%;display:block;margin-bottom:clamp(4px, 1 * var(--vh), 10px)}
+
+.d-collect{background:linear-gradient(165deg,#b2e889 0%,var(--grass2) 75%);box-shadow:0 7px 0 #5aa637,0 14px 26px #5aa63740}
+.d-wish{background:linear-gradient(165deg,#a6ddff 0%,#58b8f0 80%);box-shadow:0 7px 0 #3496d0,0 14px 26px #3496d040}
+
+.small .door{justify-content:flex-end}
+.small .door .art{position:absolute;right:clamp(8px, 2.4vw, 12px);top:clamp(8px, 1.4 * var(--vh), 12px);width:auto;height:min(60px, 48%);aspect-ratio:1;margin:0}
+.small .door h2{font-size:clamp(20px, 3.3 * var(--vh), 26px)}
+.small .door p{font-size:clamp(11px, 1.8 * var(--vh), 14px)}
+.d-redeem{background:var(--sun);box-shadow:0 7px 0 var(--sun2),0 12px 22px #e8a30033}
+.d-dex{background:#fff;box-shadow:0 7px 0 #c6dce9,0 12px 22px #17405e14}
+.d-dex p b{font:700 1.1em var(--num)}
+
+.foot{flex:none;text-align:center;font:800 13px var(--round);color:var(--mute)}
+.foot a{display:inline-flex;align-items:center;gap:5px;padding:6px 12px;border-radius:99px}
+.foot a:hover{background:#ffffffaa}
+.foot{display:flex;justify-content:center;gap:8px;align-items:center}.foot .vote{background:var(--sun,#ffcd2e);color:var(--navy,#17405e);box-shadow:0 3px 0 #e8a300}
+.foot svg{width:16px;height:16px}
+
+@media (prefers-reduced-motion:reduce){.mark .spark{animation:none}.door{transition:none}}
+</style>
+<script>try{if(localStorage.getItem("tt.points")==null){localStorage.setItem("tt.points","60");localStorage.setItem("tt.gift","1");}}catch(e){} /* 新使用者見面禮 60 點（模擬） */</script>
+</head>
+<body>
+<main class="phone">
+  <div class="stats">
+    <div class="chip" aria-label="我的點數">
+      <svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="21" r="16" fill="#e8a300"/><circle cx="20" cy="19" r="16" fill="#ffcd2e"/><circle cx="20" cy="19" r="10.5" fill="none" stroke="#e8a300" stroke-width="3"/><path d="M20 13v12M15 19h10" stroke="#e8a300" stroke-width="3" stroke-linecap="round"/></svg>
+      <b id="pts">0</b><span>點</span>
+    </div>
+    <div class="chip" aria-label="已收集">
+      <svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="17" fill="#e8f7dd"/><rect x="18" y="20" width="4" height="11" rx="2" fill="#9a6433"/><circle cx="15" cy="20" r="6" fill="#2e9e5b"/><circle cx="25" cy="20" r="6" fill="#2e9e5b"/><circle cx="20" cy="15" r="7.5" fill="#2e9e5b"/></svg>
+      <b id="cnt">0</b><span>棵</span>
+    </div>
+    <span class="pill sim">模擬</span>
+  </div>
+
+  <header class="brand">
+    <svg class="mark" viewBox="0 0 512 512" aria-hidden="true">
+      <defs><linearGradient id="mbg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#eaf7ff"/></linearGradient><clipPath id="mclip"><rect width="512" height="512" rx="116"/></clipPath></defs>
+      <g clip-path="url(#mclip)">
+        <rect width="512" height="512" fill="url(#mbg)"/>
+        <path d="M0 372 Q128 322 256 352 T512 340 V512 H0 Z" fill="#9bdc6e"/>
+        <path d="M0 420 Q150 382 300 412 T512 404 V512 H0 Z" fill="#7cc653"/>
+      </g>
+      <g fill="none" stroke="#17405e" stroke-width="26" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M108 168 V128 Q108 108 128 108 H168"/><path d="M344 108 H384 Q404 108 404 128 V168"/>
+        <path d="M108 344 V384 Q108 404 128 404 H168"/><path d="M404 344 V384 Q404 404 384 404 H344"/>
+      </g>
+      <rect x="236" y="268" width="40" height="92" rx="16" fill="#9a6433"/>
+      <circle cx="206" cy="246" r="56" fill="#2e9e5b"/><circle cx="306" cy="246" r="56" fill="#2e9e5b"/>
+      <circle cx="256" cy="192" r="70" fill="#2e9e5b"/><circle cx="230" cy="172" r="26" fill="#9bdc6e"/>
+      <path class="spark" d="M352 124 Q358 158 384 164 Q358 170 352 204 Q346 170 320 164 Q346 158 352 124 Z" fill="#ffcd2e" stroke="#e8a300" stroke-width="6" stroke-linejoin="round"/>
+    </svg>
+    <div class="word">
+      <h1>模樹</h1>
+      <p>Treemulation</p>
+    </div>
+  </header>
+
+  <nav class="row big" aria-label="主要入口">
+    <a class="door d-collect" href="./collect.html">
+      <svg class="art" viewBox="14 2 112 112" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+        <circle cx="70" cy="58" r="52" fill="#ffffff33"/>
+        <g fill="none" stroke="#17405e" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" opacity=".88">
+          <path d="M28 34 V22 Q28 14 36 14 H48"/><path d="M92 14 H104 Q112 14 112 22 V34"/>
+          <path d="M28 82 V94 Q28 102 36 102 H48"/><path d="M112 82 V94 Q112 102 104 102 H92"/>
+        </g>
+        <rect x="65" y="62" width="10" height="28" rx="4" fill="#9a6433"/>
+        <circle cx="56" cy="60" r="16" fill="#2e9e5b"/><circle cx="84" cy="60" r="16" fill="#2e9e5b"/><circle cx="70" cy="44" r="20" fill="#2e9e5b"/>
+        <circle cx="63" cy="38" r="7" fill="#c9f0a8"/>
+        <path d="M100 24 Q102 34 110 36 Q102 38 100 48 Q98 38 90 36 Q98 34 100 24 Z" fill="#ffcd2e" stroke="#e8a300" stroke-width="2"/>
+      </svg>
+      <h2>收集</h2>
+      <p>開相機找附近的樹</p>
+    </a>
+    <a class="door d-wish" href="./wish/">
+      <svg class="art" viewBox="14 2 112 112" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+        <circle cx="70" cy="58" r="52" fill="#ffffff33"/>
+        <g fill="none" stroke="#17405e" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" opacity=".88">
+          <path d="M28 34 V22 Q28 14 36 14 H48"/><path d="M92 14 H104 Q112 14 112 22 V34"/>
+          <path d="M28 82 V94 Q28 102 36 102 H48"/><path d="M112 82 V94 Q112 102 104 102 H92"/>
+        </g>
+        <ellipse cx="70" cy="86" rx="30" ry="9" fill="#b07a45"/>
+        <ellipse cx="70" cy="84" rx="22" ry="5.5" fill="#8a5a2e"/>
+        <path d="M70 84 V60" stroke="#2e9e5b" stroke-width="6" stroke-linecap="round"/>
+        <path d="M70 66 C70 52 58 46 46 48 C46 60 56 67 70 66 Z" fill="#9bdc6e"/>
+        <path d="M70 62 C70 48 82 40 95 42 C95 55 84 62 70 62 Z" fill="#2e9e5b"/>
+        <circle cx="96" cy="30" r="10" fill="#fff"/>
+        <path d="M96 25 V35 M91 30 H101" stroke="#3496d0" stroke-width="3.4" stroke-linecap="round"/>
+      </svg>
+      <h2>許願種樹</h2>
+      <p>開相機許願一棵樹</p>
+    </a>
+  </nav>
+
+  <nav class="row small" aria-label="更多">
+    <a class="door d-redeem" href="./redeem.html">
+      <svg class="art" viewBox="0 0 80 80" aria-hidden="true">
+        <rect x="12" y="34" width="56" height="38" rx="10" fill="#fff"/>
+        <rect x="8" y="24" width="64" height="16" rx="8" fill="#fff"/>
+        <rect x="34" y="24" width="12" height="48" fill="#ff8a5c"/>
+        <path d="M40 24 C30 8 14 14 22 24 M40 24 C50 8 66 14 58 24" fill="none" stroke="#ff8a5c" stroke-width="6" stroke-linecap="round"/>
+      </svg>
+      <div><h2>兌換</h2><p>用點數換獎品</p></div>
+    </a>
+    <a class="door d-dex" href="./collect.html#dex">
+      <svg class="art" viewBox="0 0 80 80" aria-hidden="true">
+        <rect x="14" y="10" width="52" height="62" rx="10" fill="#6cc8ff"/>
+        <rect x="14" y="10" width="12" height="62" rx="6" fill="#3b9fd8"/>
+        <rect x="32" y="22" width="26" height="26" rx="8" fill="#fff"/>
+        <rect x="43" y="36" width="4" height="8" rx="2" fill="#9a6433"/>
+        <circle cx="45" cy="32" r="7" fill="#2e9e5b"/>
+        <rect x="32" y="54" width="22" height="5" rx="2.5" fill="#c9ecff"/>
+      </svg>
+      <div><h2>我的圖鑑</h2><p>已收集 <b id="cnt2">0</b> 棵</p></div>
+    </a>
+  </nav>
+
+  <footer class="foot">
+    <a href="../">‹ 樹位孿生</a>
+    <a class="vote" href="https://puma.taipei/hackathon/vote" target="_blank" rel="noopener">🗳 幫我們投票</a>
+  </footer>
+</main>
+<script>
+(function(){
+  function get(k,d){try{var v=localStorage.getItem(k);return v==null?d:JSON.parse(v);}catch(e){return d;}}
+  var p=Number(get('tt.points',0));if(!isFinite(p)||p<0)p=0;p=Math.round(p);
+  var c=get('tt.collect',[]);var n=Array.isArray(c)?c.length:0;
+  document.getElementById('cnt').textContent=n;
+  document.getElementById('cnt2').textContent=n;
+  var el=document.getElementById('pts');
+  var still=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(still||p===0){el.textContent=p.toLocaleString('zh-TW');}
+  else{var t0=null;requestAnimationFrame(function step(t){if(!t0)t0=t;var k=Math.min(1,(t-t0)/700);el.textContent=Math.round(p*(1-Math.pow(1-k,3))).toLocaleString('zh-TW');if(k<1)requestAnimationFrame(step);});}
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,230 @@
+{
+ "generated_at": "2026-10-23T15:48:23+08:00",
+ "script": "scripts/planting_candidates.py",
+ "inputs": {
+  "sidewalk-tree-holes.json": {
+   "bytes": 27304373,
+   "sha256": "9ed8de03c1ba61720bc3bc27903128831023f7590a9c38961a8382c7c9d80f03"
+  },
+  "TaipeiTree.csv": {
+   "bytes": 10949470,
+   "sha256": "3d59d96ebf13d7a1c25407bd5871697defa221d30d90b193132e54d31089b6ac"
+  },
+  "TaipeiParkTree.csv": {
+   "bytes": 7857816,
+   "sha256": "330db23ad090c22c1a46302420fbbd7ca38036a6ad39807126c5505793560df3"
+  },
+  "sidewalks.json": {
+   "bytes": 24404580,
+   "sha256": "edd23396fc53bf39e2e08a752b2886dce3039edbf813fdada27ac57ae2d11b6c"
+  }
+ },
+ "thresholds": {
+  "near_tree_m": 1.5,
+  "empty_m": 3.0,
+  "sidewalk_search_m": 10.0,
+  "density_radius_m": 50.0,
+  "min_sidewalk_width_m": 1.5,
+  "row_gap_m": 15.0
+ },
+ "counts": {
+  "tree_holes": 50904,
+  "has_tree_inside": 26642,
+  "has_tree_within_1_5m": 7961,
+  "uncertain_1_5_to_3m": 1832,
+  "likely_empty_gt_3m": 14469,
+  "candidates_output": 16301,
+  "candidates_no_sidewalk_within_10m": 20,
+  "candidates_sidewalk_overlapping": 16083,
+  "candidates_sidewalk_nearest_within_10m": 198,
+  "candidates_sidewalk_lt_1_5m_not_recommended": 963,
+  "likely_empty_ctx": {
+   "row_gap": 5741,
+   "mixed": 3414,
+   "all_empty": 5245,
+   "isolated": 69
+  },
+  "uncertain_ctx": {
+   "row_gap": 1565,
+   "mixed": 222,
+   "all_empty": 44,
+   "isolated": 1
+  },
+  "likely_empty_gt_15m": 7327,
+  "likely_empty_gt_30m": 5124
+ },
+ "nearest_tree_m_percentiles_all_holes": {
+  "p25": 0.0,
+  "p50": 0.0,
+  "p75": 4.63,
+  "p90": 30.29,
+  "p95": 75.88
+ },
+ "by_district": {
+  "中正區": {
+   "holes": 5763,
+   "likely_empty": 2451,
+   "uncertain": 323,
+   "likely_empty_pct": 42.5
+  },
+  "中山區": {
+   "holes": 5347,
+   "likely_empty": 1505,
+   "uncertain": 158,
+   "likely_empty_pct": 28.1
+  },
+  "內湖區": {
+   "holes": 4572,
+   "likely_empty": 1438,
+   "uncertain": 66,
+   "likely_empty_pct": 31.5
+  },
+  "南港區": {
+   "holes": 3660,
+   "likely_empty": 1400,
+   "uncertain": 116,
+   "likely_empty_pct": 38.3
+  },
+  "士林區": {
+   "holes": 5401,
+   "likely_empty": 1303,
+   "uncertain": 541,
+   "likely_empty_pct": 24.1
+  },
+  "大安區": {
+   "holes": 6251,
+   "likely_empty": 1246,
+   "uncertain": 111,
+   "likely_empty_pct": 19.9
+  },
+  "松山區": {
+   "holes": 5459,
+   "likely_empty": 1199,
+   "uncertain": 140,
+   "likely_empty_pct": 22.0
+  },
+  "信義區": {
+   "holes": 4118,
+   "likely_empty": 976,
+   "uncertain": 71,
+   "likely_empty_pct": 23.7
+  },
+  "北投區": {
+   "holes": 2306,
+   "likely_empty": 863,
+   "uncertain": 97,
+   "likely_empty_pct": 37.4
+  },
+  "文山區": {
+   "holes": 3431,
+   "likely_empty": 844,
+   "uncertain": 31,
+   "likely_empty_pct": 24.6
+  },
+  "萬華區": {
+   "holes": 2668,
+   "likely_empty": 840,
+   "uncertain": 136,
+   "likely_empty_pct": 31.5
+  },
+  "大同區": {
+   "holes": 1928,
+   "likely_empty": 404,
+   "uncertain": 42,
+   "likely_empty_pct": 21.0
+  }
+ },
+ "score_hist": {
+  "likely_empty": {
+   "0-9": 409,
+   "10-19": 405,
+   "20-29": 526,
+   "30-39": 707,
+   "40-49": 1707,
+   "50-59": 3213,
+   "60-69": 3148,
+   "70-79": 2394,
+   "80-89": 1670,
+   "90-100": 290
+  },
+  "uncertain": {
+   "0-9": 8,
+   "10-19": 35,
+   "20-29": 123,
+   "30-39": 167,
+   "40-49": 274,
+   "50-59": 416,
+   "60-69": 531,
+   "70-79": 238,
+   "80-89": 40,
+   "90-100": 0
+  }
+ },
+ "score_summary": {
+  "likely_empty_median": 60.0,
+  "likely_empty_ge_70": 4354,
+  "likely_empty_ge_80": 1960,
+  "likely_empty_not_recommended": 924
+ },
+ "top_roads_likely_empty": {
+  "萬大路": 169,
+  "中山南路": 162,
+  "忠孝東路七段": 162,
+  "南海路": 155,
+  "中正路": 147,
+  "樂群二路": 139,
+  "通北街": 139,
+  "基河路": 133,
+  "學園路": 132,
+  "無名道路": 131,
+  "北安路": 125,
+  "貴陽街一段": 122,
+  "濟南路一段": 120,
+  "敦化北路": 118,
+  "徐州路": 116
+ },
+ "anomalies": {
+  "holes": {
+   "name_counts": {
+    "花圃": 5816,
+    "樹穴": 50904
+   },
+   "invalid_geometries_fixed": 0,
+   "duplicate_objectid": 0,
+   "area_lt_0_5m2": 196,
+   "area_gt_10m2": 758,
+   "area_max_m2": 129.6
+  },
+  "street_trees": {
+   "rows": 90441,
+   "bad_coords_dropped": 0,
+   "duplicate_coords": 30
+  },
+  "park_trees": {
+   "rows": 72011,
+   "bad_coords_dropped": 0,
+   "duplicate_coords": 26
+  },
+  "matching": {
+   "holes_with_multiple_trees_inside": 794,
+   "max_trees_inside_one_hole": 13,
+   "trees_counted_for_multiple_near_holes": 82,
+   "street_trees_within_1_5m_of_a_hole": 33888,
+   "street_trees_total": 90441,
+   "park_trees_within_1_5m_of_a_hole": 2157
+  },
+  "sidewalks": {
+   "features": 15053,
+   "invalid_geometries_fixed": 2,
+   "SWW_WTH_gt_SW_WTH": 47,
+   "SWW_WTH_eq_SW_WTH": 1604,
+   "SWW_WTH_lt_SW_WTH": 13393,
+   "SW_WTH_lt_1_5": 4305,
+   "SWW_WTH_lt_0_5": 796,
+   "SW_WTH_median": 2.17,
+   "SWW_WTH_median": 1.26,
+   "Town_N_note": "人行道 Town_N 是數字代碼（如 63000050），非中文區名；本分析行政區一律用樹穴的 Town_N"
+  }
+ },
+ "runtime_s": 5.2
+}

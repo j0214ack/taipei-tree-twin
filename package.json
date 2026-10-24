@@ -1,0 +1,9 @@
+{
+  "name": "tree-twin",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:esg": "node scripts/build-esg-pack.mjs",
+    "verify:esg": "node scripts/verify-esg-pack.mjs"
+  }
+}

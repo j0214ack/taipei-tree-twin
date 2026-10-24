@@ -1,0 +1,296 @@
+{
+  "outputs": [
+    "official-kpis.json",
+    "board-factcheck.json"
+  ],
+  "report": "research/18c-kpi-factcheck.md",
+  "title": "臺北市樹木／綠覆／降溫官方承諾 KPI 清單＋Heptabase 白板關鍵數字原件核對",
+  "data_status": "real（官方原文摘錄；少數條目為媒體轉述，已在 evidence_level 標明）",
+  "method": "只用一般瀏覽頁面與下載公開 PDF（curl／WebFetch／WebSearch），未爬取、未壓測；被 Incapsula 防護擋下的審計部網站未嘗試繞過。PDF 以 pdftotext -layout 轉文字後比對原文。",
+  "retrieved_at": "2026-10-23 17:02–17:25 Asia/Taipei",
+  "verified_on": "2026-10-23",
+  "fields_official_kpis": [
+    "id",
+    "topic",
+    "statement_zh",
+    "target_value",
+    "unit",
+    "deadline",
+    "baseline",
+    "publisher",
+    "published",
+    "url",
+    "quote",
+    "evidence_level",
+    "verified_on",
+    "notes"
+  ],
+  "fields_board_factcheck": [
+    "id",
+    "board_claim",
+    "status",
+    "source_value",
+    "sources[title,publisher,published,url,quote,evidence_level]",
+    "tried",
+    "consistency_check",
+    "notes"
+  ],
+  "evidence_levels": [
+    "官方數據",
+    "媒體報導",
+    "當事人主張",
+    "論文",
+    "我的推測"
+  ],
+  "raw_dir": "data/raw/2026-10-23-kpi-factcheck",
+  "raw_files": {
+    "data/raw/2026-10-23-kpi-factcheck/airiti-chen2018.html": {
+      "bytes": 156889,
+      "sha256": "17675e95194be5f0d2fe7beab20b41954bd7da912f7bab82919093b8ea7d7ed8",
+      "source": "https://www.airitilibrary.com/Article/Detail/02556014-201812-201903250005-201903250005-259-272",
+      "gitignored": true
+    },
+    "data/raw/2026-10-23-kpi-factcheck/cna-20260927.html": {
+      "bytes": 123919,
+      "sha256": "1678bcbf7b01c71e9409aa26360a9e2b7fd2c33be86f39b9d7029dda2cb3176e",
+      "source": "https://www.cna.com.tw/news/aloc/202609270166.aspx",
+      "gitignored": true
+    },
+    "data/raw/2026-10-23-kpi-factcheck/council-2275.html": {
+      "bytes": 206379,
+      "sha256": "2e5533d997c8e0cab6d8747baa2a28def8d5d763f377f34380550cc5df230e29",
+      "source": "https://www.gov.taipei/News_Content.aspx?n=D6946078AE437FF0&s=492A32D416258AF7&sms=14AEF9A8536E3B5E",
+      "gitignored": true
+    },
+    "data/raw/2026-10-23-kpi-factcheck/dpw-stat-2024-heat-island-carbon.pdf": {
+      "bytes": 1137627,
+      "sha256": "3caa8e3380c196e01f2d460e987d3b5ddfa80b15d05435fbd96a5e7dc46a6e9e",
+      "source": "https://www-ws.gov.taipei/Download.ashx?icon=.pdf&n=6ZmE5Lu2Ml%2FmuJvnt6noh7rljJfluILnhrHls7bmlYjmh4nigJTmqLnmnKjlhLLnorPmvZvlipvnn6XlpJrlsJEucGRm&u=LzAwMS9VcGxvYWQvMzQ0L3JlbGZpbGUvNDQzMzMvOTI1NTQzMi81MDk5MWYxZC0wOWMzLTRiZDgtODQ4MS0yMTU0MjAxMWY0OTcucGRm",
+      "gitignored": false
+    },
+    "data/raw/2026-10-23-kpi-factcheck/gov-20260712-rumor.html": {
+      "bytes": 203153,
+      "sha256": "6dc0051133c04ec1102c79dc1044a6ce821b463d3cb084733ada4d58d93a0ea6",
+      "source": "https://www.gov.taipei/News_Content.aspx?n=74806083EBDF5A03&s=B9708CAABE7AAC15&sms=72544237BBE4C5F6",
+      "gitignored": true
+    },
+    "data/raw/2026-10-23-kpi-factcheck/gov-20260926-canopy.html": {
+      "bytes": 203272,
+      "sha256": "7a232a25e6534b74ed5d32a4de6fe8995d5e8be53691e27ddc2dd11d5b93182f",
+      "source": "https://www.gov.taipei/News_Content.aspx?n=74806083EBDF5A03&sms=72544237BBE4C5F6&s=8DCD753F29154262",
+      "gitignored": true
+    },
+    "data/raw/2026-10-23-kpi-factcheck/gov-20261003-planting.html": {
+      "bytes": 207536,
+      "sha256": "01a141a3fc834da4897fac880e454c1da018c84a14028922dc369567c6dcc5f3",
+      "source": "https://www.gov.taipei/News_Content.aspx?n=F0DDAF49B89E9413&s=B1649759E218DB6B",
+      "gitignored": true
+    },
+    "data/raw/2026-10-23-kpi-factcheck/gov-crossagency-green.html": {
+      "bytes": 199707,
+      "sha256": "afd59acb531d6cd49e9ac4041c73a7865ca6ca04630199ff4f1b91bbdcb6ab3a",
+      "source": "https://www.gov.taipei/News_Content.aspx?n=74806083EBDF5A03&sms=72544237BBE4C5F6&s=C82FA065C156E772",
+      "gitignored": true
+    },
+    "data/raw/2026-10-23-kpi-factcheck/gov-platform-upgrade.html": {
+      "bytes": 203921,
+      "sha256": "aff249ae52bdfccf8f41fc7d8c752cd6a5dc180cb2a9c62c6405e22d2b35fc01",
+      "source": "https://www.gov.taipei/News_Content.aspx?n=74806083EBDF5A03&sms=72544237BBE4C5F6&s=7A981D7DA6F441A1",
+      "gitignored": true
+    },
+    "data/raw/2026-10-23-kpi-factcheck/idx-mayor.html": {
+      "bytes": 223983,
+      "sha256": "af54998e19ebaf794cb2e4be1e9b37204fd59561d29c988bcad242b784c6fc4f",
+      "source": "索引頁（市府全球資訊網導覽／列表頁）",
+      "gitignored": true
+    },
+    "data/raw/2026-10-23-kpi-factcheck/idx-plan-list.html": {
+      "bytes": 207310,
+      "sha256": "f09b9e13f9fb74aee149df474bb165257b5da75095ef598432bee50643c6bd35",
+      "source": "索引頁（市府全球資訊網導覽／列表頁）",
+      "gitignored": true
+    },
+    "data/raw/2026-10-23-kpi-factcheck/idx-plan.html": {
+      "bytes": 205221,
+      "sha256": "632ea36eaadf92aa556664a6fb41357b10fb397f30fefe650ed03145fb1a305d",
+      "source": "索引頁（市府全球資訊網導覽／列表頁）",
+      "gitignored": true
+    },
+    "data/raw/2026-10-23-kpi-factcheck/idx-white.html": {
+      "bytes": 197790,
+      "sha256": "cbef3a910ba1fba93b1ea6a49322cc4c87206418c8a171cbb40d14381b9d0ee4",
+      "source": "索引頁（市府全球資訊網導覽／列表頁）",
+      "gitignored": true
+    },
+    "data/raw/2026-10-23-kpi-factcheck/idx-work.html": {
+      "bytes": 197319,
+      "sha256": "61e80f69d4ea1edcc91f9806a9d75ebc387a10c9551ab3e88bad0ec17da40eb8",
+      "source": "索引頁（市府全球資訊網導覽／列表頁）",
+      "gitignored": true
+    },
+    "data/raw/2026-10-23-kpi-factcheck/law-netzero.html": {
+      "bytes": 77478,
+      "sha256": "b50ddb2cfe97977ee071270d27cd8842ca285d40f70d11eb0d88c20506784626",
+      "source": "https://laws.gov.taipei/law/LawSearch/LawArticleContent/FL103785",
+      "gitignored": true
+    },
+    "data/raw/2026-10-23-kpi-factcheck/mayor-policy-report-s8-written.pdf": {
+      "bytes": 15553490,
+      "sha256": "4a87230d97a6f52e84b40c6a1ee175d752b9c012ee5aef404048117937a72076",
+      "source": "mayor-s8-written.html 附件「市議會第14屆第8次大會施政報告(書面)」",
+      "gitignored": false
+    },
+    "data/raw/2026-10-23-kpi-factcheck/mayor-resilience.html": {
+      "bytes": 199812,
+      "sha256": "3eeda91b996b4c70d979069450c58eeb40abdf72fe1ab3ad50861b52a8607123",
+      "source": "https://www.gov.taipei/News_Content.aspx?n=D07E52F0FF169E83&sms=4F76BD4E1FD15647&s=09FB428A30CB2AEA",
+      "gitignored": true
+    },
+    "data/raw/2026-10-23-kpi-factcheck/mayor-s8-slides.html": {
+      "bytes": 197911,
+      "sha256": "b3eb4bd308a2567fb98bbeb10d14d50d3cd46b8e5cfd22445d3596d184a61a56",
+      "source": "https://www.gov.taipei/News_Content.aspx?n=D07E52F0FF169E83&sms=4F76BD4E1FD15647&s=E43E583EE14DB887",
+      "gitignored": true
+    },
+    "data/raw/2026-10-23-kpi-factcheck/mayor-s8-written.html": {
+      "bytes": 197924,
+      "sha256": "9db88212683852de8ca48aa4f8e4b3156d0e9670910514b48025b5b222748e73",
+      "source": "https://www.gov.taipei/News_Content.aspx?n=D07E52F0FF169E83&sms=4F76BD4E1FD15647&s=2801FEBFC089D317",
+      "gitignored": true
+    },
+    "data/raw/2026-10-23-kpi-factcheck/mayor-special-20260828-written.pdf": {
+      "bytes": 2354743,
+      "sha256": "093187eaff2b94ce2dd60b2c8e8bab65db777ba0557fcc2f0698fca428bba399",
+      "source": "mayor-resilience.html 附件「14-8_0828市長專案報告_書面」",
+      "gitignored": false
+    },
+    "data/raw/2026-10-23-kpi-factcheck/pkl-canopy-rebut.html": {
+      "bytes": 145389,
+      "sha256": "6d4a939e617427e9af78e45ccf6ba2acf112b7ad8407b957fe40c4a5e455e44c",
+      "source": "https://pkl.gov.taipei/News_Content.aspx?n=43E05059FCC72525&sms=72544237BBE4C5F6&s=79BFC79FAB857BD2",
+      "gitignored": true
+    },
+    "data/raw/2026-10-23-kpi-factcheck/pkl-clarify-list.html": {
+      "bytes": 153858,
+      "sha256": "5773cdbdeba0289780428da3e87f5df1f8e14b90c54e870c7050a5851f7b83ec",
+      "source": "https://pkl.gov.taipei/News.aspx?n=14493FEEBE1A35B3&sms=72544237BBE4C5F6",
+      "gitignored": true
+    },
+    "data/raw/2026-10-23-kpi-factcheck/pkl-news-list.html": {
+      "bytes": 194262,
+      "sha256": "c3c1855b306447ecf1e1e57e6d8f5204b010297bffea6d9603e3a672eb0c2dc8",
+      "source": "https://pkl.gov.taipei/News.aspx?n=43E05059FCC72525&sms=72544237BBE4C5F6",
+      "gitignored": true
+    },
+    "data/raw/2026-10-23-kpi-factcheck/pkl-no-longer-plant.html": {
+      "bytes": 140813,
+      "sha256": "99ff5a5d5b9704eada425b3f801820e5fe8fc393fac423c547858d4ef69e89b7",
+      "source": "https://pkl.gov.taipei/cp.aspx?n=7400D752A0FBE09F",
+      "gitignored": true
+    },
+    "data/raw/2026-10-23-kpi-factcheck/pkl-songshan-rebut.html": {
+      "bytes": 143521,
+      "sha256": "26ddde35c8e0ae71cba202e946d6b49ced4776581c703b5d005abc12d113058f",
+      "source": "https://pkl.gov.taipei/News_Content.aspx?n=43E05059FCC72525&sms=72544237BBE4C5F6&s=C12C522367A0A0D5",
+      "gitignored": true
+    },
+    "data/raw/2026-10-23-kpi-factcheck/pkl-species-selection.html": {
+      "bytes": 142318,
+      "sha256": "6fc4bff49e7e747bc24c14a1dbb1ef47aa5964bb7685365b04989d93f328c4a3",
+      "source": "https://pkl.gov.taipei/cp.aspx?n=3B57F65C422316A5",
+      "gitignored": true
+    },
+    "data/raw/2026-10-23-kpi-factcheck/plan-115.html": {
+      "bytes": 230839,
+      "sha256": "16c9394f01b4fc77f846dbdd6a0d8e8a75c0d347ad015dbf7621c5bfcb9d9583",
+      "source": "https://www.gov.taipei/News_Content.aspx?n=0E791EFBDDAAAF80&sms=B53935F84114DE92&s=851FCA1F8B30EC97",
+      "gitignored": true
+    },
+    "data/raw/2026-10-23-kpi-factcheck/plan115-01.pdf": {
+      "bytes": 308871,
+      "sha256": "a1cf6312c336b95ee7254f12b081c183e243e4ecfefa61ab8d4a437a7f1867cc",
+      "source": "plan-115.html 附件「01-施政綱要」",
+      "gitignored": false
+    },
+    "data/raw/2026-10-23-kpi-factcheck/plan115-07.pdf": {
+      "bytes": 396540,
+      "sha256": "906b58abb84915a12539fe55930527f7bb600628f6a66f8e9247e2919fd3d593",
+      "source": "plan-115.html 附件「07-工務局」",
+      "gitignored": false
+    },
+    "data/raw/2026-10-23-kpi-factcheck/plan115-13.pdf": {
+      "bytes": 402002,
+      "sha256": "8309b08de054fd7960c413973a405587857418cb036c4f3a40d66d172b0172fa",
+      "source": "plan-115.html 附件「13-環保局」",
+      "gitignored": false
+    },
+    "data/raw/2026-10-23-kpi-factcheck/plan115-14.pdf": {
+      "bytes": 438091,
+      "sha256": "0ca4947a91dba551f8bfd065be6d5c1c1a2f2dd8602069979f11abb50cda3ead",
+      "source": "plan-115.html 附件「14-都市發展局」",
+      "gitignored": false
+    },
+    "data/raw/2026-10-23-kpi-factcheck/pwd-council-report-14-8.pdf": {
+      "bytes": 641455,
+      "sha256": "72f420d62adfe2466a6d1b1c12569337b3e365fb51e7fd02dae3619c51d22e56",
+      "source": "pwd-reports.html 附件「115年下半年施政報告」（工務局14-8工作報告）",
+      "gitignored": false
+    },
+    "data/raw/2026-10-23-kpi-factcheck/pwd-perf-114.pdf": {
+      "bytes": 348045,
+      "sha256": "71492ed18882e09796a4d621935110f0486dca000e85c6518f67879ed382abf1",
+      "source": "pwd-perf.html 附件「工務局114年度施政計畫績效報告」",
+      "gitignored": false
+    },
+    "data/raw/2026-10-23-kpi-factcheck/pwd-perf.html": {
+      "bytes": 123612,
+      "sha256": "3a4aae7ced5ea5681ea26ef48499d139405f633de939a88d3fea39256443147c",
+      "source": "https://pwd.gov.taipei/News.aspx?n=B942C23864F9E1DF&sms=7A6FBAC19CD5B8A9",
+      "gitignored": true
+    },
+    "data/raw/2026-10-23-kpi-factcheck/pwd-reports.html": {
+      "bytes": 138191,
+      "sha256": "80d0b4b1f674b5fdc46b21271e017434a12b0873134c293d9015e1067ae0e374",
+      "source": "https://pwd.gov.taipei/News.aspx?n=602CF2D48E9E337E&sms=346B14D66187A9C9",
+      "gitignored": true
+    },
+    "data/raw/2026-10-23-kpi-factcheck/udd-cooling-city.html": {
+      "bytes": 58500,
+      "sha256": "8c748b60eddb57bd5773d6ee7882f61e4f261fafd7aa33443dfd78e8b81e8731",
+      "source": "https://udd.gov.taipei/major-task/djdawka-20284",
+      "gitignored": true
+    },
+    "data/raw/2026-10-23-kpi-factcheck/white.html": {
+      "bytes": 199139,
+      "sha256": "a7a9f111e0525b8c336b8e87884b15388076e12955031482bf1d09ca7c7a2ae3",
+      "source": "https://www.gov.taipei/News_Content.aspx?n=3F4A24FFD3BB6C27&sms=90B74587203F9061&s=1CD663620F101BB0",
+      "gitignored": true
+    },
+    "data/raw/2026-10-23-kpi-factcheck/whitepaper-progress-11506.pdf": {
+      "bytes": 713098,
+      "sha256": "4b3b99cdfcd7fd11a378133e8c0469cc6fc5e773b824d3864f8669ae01b4ef88",
+      "source": "white.html 附件「市政白皮書辦理情形及成果一覽表(截至115年6月底)」",
+      "gitignored": false
+    },
+    "data/raw/2026-10-23-kpi-factcheck/work-report.html": {
+      "bytes": 213406,
+      "sha256": "ddd0081d3ed7d018ede7bf39efa213e47f05e82eca2148e1b4127003f0143c3b",
+      "source": "https://www.gov.taipei/News_Content.aspx?n=960289BB93A0C136&sms=2372642FC6EE4E18&s=760557EC52969119",
+      "gitignored": true
+    }
+  },
+  "not_saved": {
+    "https://auditreport.audit.gov.tw/ServerFile/Get/6382580987869470420112ba0e25754612b4baaa355bb62166": "Incapsula 驗證頁，未取得",
+    "https://www.audit.gov.tw/": "Incapsula 驗證頁，未取得",
+    "https://cybsbox.cy.gov.tw/CYBSBoxSSL/edoc/download/69645": "HTTP 404",
+    "https://ncsd.ndc.gov.tw/_ofu/VLR/94714176-4263-4e5a-bbb1-7a6c70bec9f8/VLR.pdf": "HTTP 403",
+    "https://www.ftvnews.com.tw/news/detail/2026708w0351": "WebFetch HTTP 403",
+    "https://www.mirrormedia.mg/external/dailycolumn_74602": "只用 WebFetch 讀取，未存檔",
+    "https://news.ltn.com.tw/news/Taipei/breakingnews/5503570": "只用 WebFetch 讀取，未存檔",
+    "https://news.ltn.com.tw/news/Taipei/breakingnews/5505002": "只用 WebFetch 讀取，未存檔"
+  },
+  "caveats": [
+    "原始 PDF（含 15.5 MB 市長施政報告）不在 .gitignore 規則內，commit 前請決定要不要排除。",
+    "市府頁面「資料更新」日期可能晚於發布日期（例：2026-07-12 稿頁面更新 115-10-21），本輪未比對歷次版本差異。"
+  ]
+}

@@ -1,0 +1,80 @@
+[
+  {
+    "id": "luan",
+    "name": "臺灣欒樹",
+    "file": "wish-tree-luan.png",
+    "w": 943,
+    "h": 900,
+    "rootX": 0.675,
+    "source": "https://commons.wikimedia.org/wiki/File:Starr-060814-8557-Koelreuteria_elegans_subsp_formosana-adult_tree-Baldwin_Ave_Makawao-Maui_(24237379903).jpg",
+    "author": "Forest and Kim Starr",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "note": "去背：macOS Vision 主體去背＋天空色鍵；原照右側另有一棵松樹，已裁切移除，樹冠右緣因此有一段被切直；照片為夏威夷 Maui 路樹。（2026-10-24 改為 256 色調色盤＋半透明 alpha，邊緣柔和）"
+  },
+  {
+    "id": "jiadong",
+    "name": "茄苳",
+    "file": "wish-tree-jiadong.png",
+    "w": 996,
+    "h": 900,
+    "rootX": 0.62,
+    "source": "https://commons.wikimedia.org/wiki/File:Bischofia_javanica_Villa_Taranto.png",
+    "author": "Pampuco",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "note": "去背：macOS Vision 主體去背＋天空色鍵；樹幹被前景灌木遮住，成品底部是灌木叢而非樹幹；樹冠孔隙有少量灰色殘邊。照片攝於義大利 Villa Taranto 植物園。（2026-10-24 改為 256 色調色盤＋半透明 alpha，邊緣柔和）"
+  },
+  {
+    "id": "zhang",
+    "name": "樟樹",
+    "file": "wish-tree-zhang.png",
+    "w": 1288,
+    "h": 850,
+    "rootX": 0.475,
+    "source": "https://commons.wikimedia.org/wiki/File:Cinnamomum_camphora_in_Golden_Valley_Tree_Park,_May_2022_02.jpg",
+    "author": "Calistemon",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "note": "去背：macOS Vision 主體去背＋天空色鍵；樹冠很寬且低垂，樹幹只露出基部一小段；原照右緣樹冠略被畫框切到。為壓到 600 KB 以下，高度降為 850 px。澳洲坎培拉 Golden Valley Tree Park。（2026-10-24 改為 256 色調色盤＋半透明 alpha，邊緣柔和）"
+  },
+  {
+    "id": "guangla",
+    "name": "光蠟樹",
+    "file": "wish-tree-guangla.png",
+    "w": 409,
+    "h": 900,
+    "rootX": 0.51,
+    "source": "https://commons.wikimedia.org/wiki/File:Fraxinus_griffithii_20161226-01.jpg",
+    "author": "円周率３パーセント (Enshuritsu 3 percent)",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "note": "去背：macOS Vision 主體去背＋天空色鍵；行道樹單棵（作者為日本 Commons 使用者），完整、樹幹清楚；樹冠頂端有細枝。（2026-10-24 改為 256 色調色盤＋半透明 alpha，邊緣柔和）"
+  },
+  {
+    "id": "shanlan",
+    "name": "大葉山欖",
+    "file": "wish-tree-shanlan.png",
+    "w": 750,
+    "h": 900,
+    "rootX": 0.41,
+    "source": "https://commons.wikimedia.org/wiki/File:Palaquium_formosanum_in_Tropical_and_Subtropical_Arboretum,_Ocean_Expo_Park,_Motobu,_Okinawa.jpg",
+    "author": "M108t",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "note": "去背：macOS Vision 主體去背＋天空色鍵；日本沖繩海洋博公園熱帶亞熱帶樹木園；樹幹與樹冠完整。（2026-10-24 改為 256 色調色盤＋半透明 alpha，邊緣柔和）"
+  },
+  {
+    "id": "shuihuang",
+    "name": "水黃皮",
+    "file": "wish-tree-shuihuang.png",
+    "w": 769,
+    "h": 900,
+    "rootX": 0.41,
+    "source": "https://commons.wikimedia.org/wiki/File:Millettia_pinnata_7th_Brigade_Park_Chermside_P1070622.jpg",
+    "author": "John Robert McPherson",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "note": "去背：macOS Vision 主體去背＋天空色鍵；樹幹被草叢遮住，成品底部是葉叢；顏色偏亮黃綠（逆光）。澳洲布里斯本 7th Brigade Park。（2026-10-24 改為 256 色調色盤＋半透明 alpha，邊緣柔和）"
+  }
+]

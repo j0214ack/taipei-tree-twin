@@ -1,0 +1,9 @@
+# Cloudflare Pages 設定（靜態檔在 dist/，由 scripts/build-dist.mjs 產生；後端在 functions/）
+name = "taipei-tree-twin"
+pages_build_output_dir = "dist"
+compatibility_date = "2026-09-01"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "tree-twin-db"
+database_id = "09fdfd7d-9782-4919-8493-11515f92b32a"

@@ -1,0 +1,375 @@
+{
+ "name": "taipei-road-works-sample",
+ "title_zh": "臺北市道路施工（今日施工＋明日預約）樣本，WGS84 GeoJSON",
+ "created_at": "2026-10-23T17:10:00+08:00",
+ "output": {
+  "file": "data/derived/policy/road-works-sample.geojson",
+  "sha256": "2f85bc0efd3ea7c8bdcbe39c5284ae013e9fc0775ee3978c6f97493b53de3487",
+  "bytes": 324525,
+  "crs": "EPSG:4326 (lon, lat)",
+  "features": 172,
+  "today_cases": 124,
+  "tomorrow_reservations": 48,
+  "geometry_types": {
+   "today_geom_MultiLineString": 43,
+   "today_geom_MultiPolygon": 81,
+   "reserve_geom_MultiPolygon": 29,
+   "reserve_geom_MultiLineString": 13,
+   "reserve_geom_MultiPoint": 6
+  },
+  "bbox_wgs84": [
+   121.4635999,
+   24.9799598,
+   121.6201354,
+   25.1597366
+  ]
+ },
+ "sources": [
+  {
+   "dataset": "臺北市 今日施工資訊",
+   "data_gov_tw": "https://data.gov.tw/dataset/145614",
+   "download_url": "https://tpnco.blob.core.windows.net/blobfs/Todaywork.json",
+   "provider": "臺北市政府工務局（平台聯絡窗口屬工務局新建工程處道管系統；dataProvider cz40425）",
+   "update_frequency": "每 10 分鐘",
+   "license": "政府資料開放授權條款－第1版 (https://data.gov.tw/license)",
+   "metadata_modified": "2026-10-13 20:17:39",
+   "downloaded_at": "2026-10-23T17:05:05+0800",
+   "http_last_modified": "Fri, 23 Oct 2026 09:00:44 GMT",
+   "raw_file": "data/raw/2026-10-23-policy/todaywork-2026-10-23.json",
+   "sha256": "406d2cfb3e12a176cb1ce55b41a0b1b1d890259bc133447f4cb2f6231c46249e",
+   "bytes": 2692755,
+   "records_raw": 1114,
+   "crs_raw": "TWD97 TM2 121°（EPSG:3826）"
+  },
+  {
+   "dataset": "臺北市明日道路施工預約資訊",
+   "data_gov_tw": "https://data.gov.tw/dataset/145612",
+   "download_url": "https://tpnco.blob.core.windows.net/blobfs/Reserve.json",
+   "provider": "臺北市政府工務局",
+   "update_frequency": "每 1 日",
+   "license": "政府資料開放授權條款－第1版",
+   "metadata_modified": "2026-10-13 20:18:07",
+   "downloaded_at": "2026-10-23T17:05:08+0800",
+   "http_last_modified": "Fri, 23 Oct 2026 09:00:11 GMT",
+   "raw_file": "data/raw/2026-10-23-policy/reserve-2026-10-23.json",
+   "sha256": "7255cb8b7a360f95122ccc57e9184ef7c0c61d0efeab31c3cf0aba8bce63c85c",
+   "bytes": 78565,
+   "records_raw": 48,
+   "crs_raw": "TWD97 TM2 121°（EPSG:3826）"
+  },
+  {
+   "dataset": "臺北市今日即時施工影像案件資訊（只用來標 has_live_video）",
+   "data_gov_tw": "https://data.gov.tw/dataset/145619",
+   "download_url": "https://tpnco.blob.core.windows.net/blobfs/Appwork.json",
+   "provider": "臺北市政府工務局",
+   "update_frequency": "每 10 分鐘",
+   "license": "政府資料開放授權條款－第1版",
+   "downloaded_at": "2026-10-23T17:03:14+0800",
+   "raw_file": "data/raw/2026-10-23-policy/appwork-2026-10-23.json",
+   "sha256": "554c7fe8ab89859180afcbaa14b038e900d8ca6327eaea94c0f440c54500f80f",
+   "records_raw": 24
+  },
+  {
+   "dataset": "臺北市政府新工處施作路寬8公尺以上道路銑鋪期程維護管制區（下載看過，未併入 GeoJSON：無座標、只有已完工的 111–114 年度案）",
+   "data_gov_tw": "https://data.gov.tw/dataset/135538",
+   "download_url": "https://data.taipei/api/dataset/eb46bd14-5657-42ce-806a-0d761164a30b/resource/17b6e6d3-911b-4874-afb3-605e8a104462/download",
+   "provider": "臺北市政府工務局新建工程處",
+   "update_frequency": "不定期",
+   "license": "政府資料開放授權條款－第1版",
+   "downloaded_at": "2026-10-23T17:08:17+0800",
+   "raw_file": "data/raw/2026-10-23-policy/milling-schedule-135538.csv",
+   "sha256": "61114ea821635fe636c86ed57d34307c6a99af188b928611bcec705f0940aabf",
+   "records_raw": 515
+  }
+ ],
+ "catalog_used_for_search": {
+  "file": "data/raw/2026-10-23-policy/datagovtw-catalog-20261023.csv",
+  "url": "https://data.gov.tw/datasets/export/csv",
+  "sha256": "d07466423ee31164cfc90130d00128594f8a63a69bafe8ffeb22d78020daa76b",
+  "note": "政府資料開放平臺全目錄匯出（一次下載），用關鍵字篩臺北市道路施工相關資料集"
+ },
+ "fields": [
+  {
+   "field": "source_dataset",
+   "source_field": "—",
+   "description_zh": "today_works＝今日施工資訊(145614)；tomorrow_reservations＝明日道路施工預約(145612)"
+  },
+  {
+   "field": "case_no",
+   "source_field": "Ac_no / ac_no",
+   "description_zh": "核備文號（案號）；today 一案一筆"
+  },
+  {
+   "field": "report_type_code",
+   "source_field": "AppMode / rmode",
+   "description_zh": "通報類別代碼：0 施工/挖掘、3 銑鋪、4 搶修、5 道路維護、6 人手孔、B 建案公設復舊"
+  },
+  {
+   "field": "report_type",
+   "source_field": "（由代碼對照）",
+   "description_zh": "通報類別中文"
+  },
+  {
+   "field": "applicant",
+   "source_field": "App_Name / ap_name",
+   "description_zh": "施工（申請）單位，如新工處、水利處、台電、自來水"
+  },
+  {
+   "field": "contractor",
+   "source_field": "Tc_Na / tc_na",
+   "description_zh": "施工廠商（公司名）"
+  },
+  {
+   "field": "district",
+   "source_field": "C_Name / c_name",
+   "description_zh": "行政區"
+  },
+  {
+   "field": "location",
+   "source_field": "Addr / addr",
+   "description_zh": "施工位置文字描述"
+  },
+  {
+   "field": "start_date",
+   "source_field": "Cb_Da",
+   "description_zh": "核准施工起日（民國→西元 ISO）；僅 today"
+  },
+  {
+   "field": "end_date",
+   "source_field": "Ce_Da",
+   "description_zh": "核准施工迄日（民國→西元 ISO）；僅 today"
+  },
+  {
+   "field": "work_hours",
+   "source_field": "Co_Ti / co_ti",
+   "description_zh": "施工時段文字"
+  },
+  {
+   "field": "purpose",
+   "source_field": "NPurp",
+   "description_zh": "挖掘目的；僅 today"
+  },
+  {
+   "field": "work_items",
+   "source_field": "WItem",
+   "description_zh": "施工工項（明挖、潛盾、人行道維護…）；僅 today"
+  },
+  {
+   "field": "dig_length_m",
+   "source_field": "DLen",
+   "description_zh": "挖掘長度（公尺）；僅 today"
+  },
+  {
+   "field": "long_term_site",
+   "source_field": "IsStay",
+   "description_zh": "是否長設工區"
+  },
+  {
+   "field": "blocks_traffic",
+   "source_field": "IsBlock",
+   "description_zh": "是否影響通行"
+  },
+  {
+   "field": "detour_plan",
+   "source_field": "PlanB",
+   "description_zh": "替代方案"
+  },
+  {
+   "field": "overdue_reason",
+   "source_field": "DType",
+   "description_zh": "逾時原因"
+  },
+  {
+   "field": "work_date",
+   "source_field": "wdate",
+   "description_zh": "預約施工日期；僅 tomorrow"
+  },
+  {
+   "field": "location_type_code",
+   "source_field": "rtype",
+   "description_zh": "施工位置代碼（三碼 0/1，平台未說明各位意義；推測為車道/人行道/其他之旗標，未驗證）；僅 tomorrow"
+  },
+  {
+   "field": "has_live_video",
+   "source_field": "（比對 145619 Appwork.json）",
+   "description_zh": "該案是否列在今日即時施工影像清單"
+  },
+  {
+   "field": "center_lon / center_lat",
+   "source_field": "X / Y",
+   "description_zh": "平台給的代表點，TWD97→WGS84；僅 today"
+  },
+  {
+   "field": "geometry_source",
+   "source_field": "—",
+   "description_zh": "幾何取自 Positions（today）或 geometry（tomorrow）"
+  },
+  {
+   "field": "notification_count",
+   "source_field": "（計數 sno）",
+   "description_zh": "該案在檔內的每日施工通報筆數；僅 today"
+  },
+  {
+   "field": "first_reported_at / last_reported_at",
+   "source_field": "AppTime / rtime",
+   "description_zh": "最早／最近一次通報（或預約）時間，+08:00"
+  },
+  {
+   "field": "active_on_snapshot_date",
+   "source_field": "（計算）",
+   "description_zh": "2026-10-23 是否落在核准起迄日內；僅 today"
+  }
+ ],
+ "dropped_fields": {
+  "fields": [
+   "Tc_Ma",
+   "Tc_Tl",
+   "Tc_Ma3",
+   "Tc_Tl3",
+   "tc_ma",
+   "tc_tl",
+   "tc_ma3",
+   "tc_tl3",
+   "X",
+   "Y (改成 center_lon/lat)",
+   "Positions_type",
+   "sno (改成 notification_count)"
+  ],
+  "reason": "監工與現場人員姓名、手機屬個資；黑客松規則不得用真實個資。原始檔含這些欄位，僅留本機且被 .gitignore 排除，不得上傳或公開。"
+ },
+ "processing_steps": [
+  "1. 從 data.gov.tw 目錄匯出與 v2 API 讀詮釋資料，確認資料集、授權、更新頻率、欄位。",
+  "2. 對 Todaywork.json、Reserve.json、Appwork.json、135538 CSV 各做一次一般 HTTP GET（無翻頁、無重試迴圈）。",
+  "3. python3 -I scripts/build_road_works.py：讀原始 JSON（utf-8-sig）；Positions（today）／geometry（tomorrow）由 EPSG:3826 轉 EPSG:4326（pyproj 3.6.1，PROJ 9.3.0，always_xy，小數 7 位）。",
+  "4. today：同一案號的多筆每日施工通報（sno）幾何相同（124 案↔124 種幾何），合併為一案一 feature，變動欄位取最近一次通報值，另記通報筆數與首末通報時間。",
+  "5. 排除測試資料：案號 99015156（新工處「全市APP測試」，25 筆，座標落在臺中、挖掘目的代碼 16、期限到 2110 年）。",
+  "6. 民國日期轉西元 ISO；丟棄個資欄位；欄位改英文（對照見 fields）。",
+  "7. 範圍檢查：輸出 bbox 落在臺北市內；抽查長安東路二段、基隆路一段、昆明街三案座標與地址相符。",
+  "8. 附帶示範：scripts/road_works_tree_conflicts.py 以 TWD97 計算每個工程幾何 3 公尺內（面＝面內或邊界 3 m 內）的行道樹（data/raw/2026-10-13/TaipeiTree.csv），輸出 road-works-tree-conflicts-demo.json。"
+ ],
+ "tree_conflict_demo_summary": {
+  "buffer_m": 3.0,
+  "trees_loaded": 90441,
+  "features": 172,
+  "features_with_any_tree": 74,
+  "total_tree_hits": 1231,
+  "by_source": {
+   "today_works": {
+    "features": 124,
+    "with_tree": 55
+   },
+   "tomorrow_reservations": {
+    "features": 48,
+    "with_tree": 19
+   }
+  },
+  "top10": [
+   {
+    "source_dataset": "today_works",
+    "case_no": "11502832-1",
+    "report_type": "道路維護",
+    "location": "115年度內湖區金龍路(成功路4段至圓環)路面及側溝蓋更新工程",
+    "geometry_type": "MultiPolygon",
+    "street_trees_hit": 162
+   },
+   {
+    "source_dataset": "today_works",
+    "case_no": "11405325-3",
+    "report_type": "道路維護",
+    "location": "北投區往台北方向台2乙10K+888至10K+799M東南側人行道側道路施工。",
+    "geometry_type": "MultiPolygon",
+    "street_trees_hit": 77
+   },
+   {
+    "source_dataset": "today_works",
+    "case_no": "11502256",
+    "report_type": "道路維護",
+    "location": "基隆路1段（基隆路1段102巷至基隆路1段172巷）西側人行道及基隆路1段102巷島頭",
+    "geometry_type": "MultiPolygon",
+    "street_trees_hit": 65
+   },
+   {
+    "source_dataset": "tomorrow_reservations",
+    "case_no": "11502256",
+    "report_type": "道路維護",
+    "location": "基隆路1段（基隆路1段102巷至基隆路1段172巷）西側人行道及基隆路1段102巷島頭",
+    "geometry_type": "MultiPolygon",
+    "street_trees_hit": 65
+   },
+   {
+    "source_dataset": "today_works",
+    "case_no": "11501474",
+    "report_type": "道路維護",
+    "location": "松仁路/松廉路口~松仁路/松仁路315巷",
+    "geometry_type": "MultiPolygon",
+    "street_trees_hit": 61
+   },
+   {
+    "source_dataset": "today_works",
+    "case_no": "11200189-20",
+    "report_type": "道路維護",
+    "location": "南海路/羅斯福路至南海路/和平西路口西藏路/汀洲路口至萬大路/長泰街口",
+    "geometry_type": "MultiPolygon",
+    "street_trees_hit": 50
+   },
+   {
+    "source_dataset": "today_works",
+    "case_no": "104003395",
+    "report_type": "施工通報/挖掘施工",
+    "location": "南海路南海路牯嶺街口至和平西路(含路口)穿越平房至西藏路惠安街",
+    "geometry_type": "MultiLineString",
+    "street_trees_hit": 46
+   },
+   {
+    "source_dataset": "today_works",
+    "case_no": "11501845-1",
+    "report_type": "道路維護",
+    "location": "重慶北路4段（北往南）方向公車專用道(百齡橋出口匝道至重慶北路4段49巷口)",
+    "geometry_type": "MultiPolygon",
+    "street_trees_hit": 45
+   },
+   {
+    "source_dataset": "today_works",
+    "case_no": "113000851",
+    "report_type": "施工通報/挖掘施工",
+    "location": "新光路2段8號至32號、秀明路二段與萬壽路交叉路口",
+    "geometry_type": "MultiLineString",
+    "street_trees_hit": 40
+   },
+   {
+    "source_dataset": "today_works",
+    "case_no": "11501809-1",
+    "report_type": "道路維護",
+    "location": "三興國小人行天橋及三興國小周邊人行道等",
+    "geometry_type": "MultiPolygon",
+    "street_trees_hit": 38
+   }
+  ],
+  "caveat": "篩選結果（推測），不是確認衝突：挖掘線無寬度、許可範圍≠實際開挖、樹籍座標誤差未知、只比對行道樹（未含公園樹木）。"
+ },
+ "limitations": [
+  "這是 2026-10-23 17:05 的單一快照，不是歷史資料；平台每 10 分鐘覆寫，不提供過去日期查詢。",
+  "今日施工資訊＝已核准且在施工期間內、有每日施工通報的案件（推測：檔內含 5 月起的通報紀錄，最近一筆 10/22 14:27，未見 10/23 當日新通報；確切收錄邏輯平台未說明）。不含尚在設計／發包階段的工程，也不是全部挖掘許可。",
+  "明日預約只有隔天一天（本檔 wdate 全為 2026-10-24），48 筆；其中 19 案也在今日施工檔。",
+  "挖掘施工（MultiLineString）是管溝中心線、沒有寬度；道路維護（MultiPolygon）是施工範圍面。畫範圍找樹時線要自行加緩衝（示範用 3 m，未有官方依據）。",
+  "許可範圍≠實際開挖位置；長期工區（捷運、潛盾）許可範圍很大，實際施工點只在其中一段。",
+  "6 案核准迄日已過（2026-05-31～2026-10-22）但仍在檔內；12 案迄日在 2030 年後（多為捷運長期工區）。",
+  "rtype（施工位置）三碼意義平台未說明；NPurp 有代碼值 16 出現在測試案。",
+  "樹木衝突示範只比對行道樹，未含公園樹木；樹籍座標誤差未知；結果是篩選名單，不是確認衝突。"
+ ],
+ "not_used_but_checked": [
+  {
+   "name": "dig.taipei 道管中心「預定施工路段」",
+   "url": "https://dig.taipei/Tpdig/PWorkData.aspx",
+   "result": "網頁清單（約 115/06–116/05 新工處道路／人行道更新，分頁 >11 頁），無下載或 API；未爬取。"
+  }
+ ],
+ "app_copy": {
+  "file": "app/data/policy/road-works.json",
+  "derived_from": "data/derived/policy/road-works-sample.geojson",
+  "changes": "刪除 contractor（施工廠商）欄位；壓縮 JSON 空白。其餘欄位與幾何不變。",
+  "sha256": "7e00404ef9b63a53ef837e1a670ea708312b263130ff5a12a878408f2ad3768c",
+  "bytes": 317153,
+  "created_at": "2026-10-23 Asia/Taipei"
+ }
+}

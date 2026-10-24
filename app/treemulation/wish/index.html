@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<!-- ga-on-ship:start G-N8NSF80QXP -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-N8NSF80QXP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  (function () {
+    // Own-traffic mark (ga-on-ship): ?internal=1 remembers this device, ?internal=0 forgets it; automated browsers count too.
+    // Marked hits carry traffic_type=internal, which GA's "Internal Traffic" data filter excludes.
+    var q = null, mark = !!navigator.webdriver;
+    try {
+      var u = new URL(location.href);
+      q = u.searchParams.get('internal');
+      if (q !== null) { u.searchParams.delete('internal'); history.replaceState(history.state, '', u.pathname + u.search + u.hash); }
+    } catch (e) {}
+    try {
+      if (q === '1') localStorage.setItem('ga_internal', '1');
+      if (q === '0') localStorage.removeItem('ga_internal');
+      mark = mark || localStorage.getItem('ga_internal') === '1';
+    } catch (e) {}
+    if (q === '1') mark = true;
+    gtag('config', 'G-N8NSF80QXP', mark ? { traffic_type: 'internal' } : {});
+  })();
+</script>
+<!-- ga-on-ship:end -->
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+<meta name="theme-color" content="#6cc8ff">
+<title>許願這裡有一棵樹</title>
+<link rel="icon" href="../icon.svg">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Huninn&family=M+PLUS+Rounded+1c:wght@500;700;800;900&family=Noto+Sans+TC:wght@500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="wish.css?v=20261024h">
+</head>
+<body>
+<div id="app" class="intro">
+  <video id="video" playsinline muted autoplay></video>
+  <canvas id="bg"></canvas>
+  <canvas id="tv"></canvas>
+
+  <div id="top">
+    <div id="badges"></div>
+    <div id="year" aria-live="polite"></div>
+  </div>
+
+  <a id="home" class="ib" href="../">‹ 模樹</a>
+
+  <section id="intro">
+    <div class="hero">
+      <svg class="sprout" viewBox="0 0 120 120" aria-hidden="true">
+        <ellipse cx="60" cy="104" rx="34" ry="8" fill="#17405e22"/>
+        <path d="M57 104 L58 62 L62 62 L63 104 Z" fill="#8a5a3b"/>
+        <circle cx="40" cy="60" r="22" fill="#4c9a44"/><circle cx="80" cy="60" r="22" fill="#4c9a44"/>
+        <circle cx="60" cy="40" r="28" fill="#5fb04e"/><circle cx="52" cy="32" r="10" fill="#8fd16a"/>
+        <circle cx="46" cy="54" r="4" fill="#f2a531"/><circle cx="72" cy="38" r="4" fill="#e46f2a"/><circle cx="78" cy="62" r="4" fill="#f2a531"/>
+      </svg>
+      <h1>許願這裡<br>有一棵樹</h1>
+    </div>
+    <button id="go" class="btn big" type="button">開相機許願</button>
+  </section>
+
+  <div id="hint" class="chip"></div>
+
+  <section id="pick">
+    <div id="cards" role="listbox" aria-label="樹種"></div>
+    <button id="shut" type="button" aria-label="種下並拍照"><span class="core"></span></button>
+  </section>
+
+
+  <div id="flash"></div>
+
+  <section id="done" aria-live="polite">
+    <div class="sheet">
+      <div class="photo"><img id="photo" alt="許願照片"><div id="gain"><b>+30</b> 點</div></div>
+      <div class="row"><h2>許好了</h2><div id="dbadges"></div></div>
+      <div id="total" class="total"></div>
+      <div class="prog">
+        <div class="pl"><span>這一格的許願</span><b id="pn"></b></div>
+        <div class="bar"><i id="pb"></i></div>
+      </div>
+      <div class="acts">
+        <button id="again" class="btn" type="button">再許一棵</button>
+        <div class="two">
+          <a class="btn w" href="../../#/f/wish-map">看許願地圖</a>
+          <a class="btn w" href="../redeem.html">去兌換</a>
+        </div>
+        <a id="vote" href="https://puma.taipei/hackathon/vote" target="_blank" rel="noopener">🗳 喜歡就投一票</a>
+      </div>
+    </div>
+  </section>
+</div>
+<a id="credit" href="../credits.html" target="_blank" rel="noopener">樹照片：Wikimedia Commons</a>
+<script type="module" src="wish.js?v=20261024g"></script>
+</body>
+</html>

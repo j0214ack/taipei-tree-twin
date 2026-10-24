@@ -1,0 +1,16 @@
+{
+  "files": {
+    "villages-equity.geojson": "臺北市 456 里界（簡化）＋各里人口與登錄樹木數，欄位：c 里代碼 VILLCODE、d 區、v 里、p 戶籍總人口、k 0–12 歲、e 65 歲以上、a 面積 km²、st 行道樹、pt 公園樹木、st30 行道樹直徑欄位≥30",
+    "districts-outline.geojson": "臺北市 12 區界（由里界合併、簡化），欄位：d 區名",
+    "districts-equity.json": "12 區人口與登錄樹木數（欄位同上）"
+  },
+  "derived_from": "主目錄 data/derived/policy/taipei-villages.geojson、taipei-districts.geojson（見同目錄 boundaries.manifest.json、village-age.manifest.json、village-tree-counts.manifest.json、research/18-policy-data.md）",
+  "processing": "座標四捨五入到小數 4 位（約 11 公尺）並去除連續重複點、只留必要欄位並改短欄位名；腳本在 task agent scratchpad（build_policy.py），邏輯即上述兩步。2026-10-23 產出。",
+  "data_status": "real（人口、界線、樹籍點位）；簡化後邊界誤差數十公尺級，只適合面量圖",
+  "sources": [
+    { "label": "臺北市各里人口數按年齡分（臺北市政府民政局），2026 年 9 月", "url": "https://data.taipei/dataset/detail?id=a6394e3f-3514-4542-87bd-de4310a40db3" },
+    { "label": "村里界圖 TWD97 經緯度（內政部國土測繪中心），VILLAGE_NLSC_1150817", "url": "https://data.gov.tw/dataset/7438" },
+    { "label": "臺北市行道樹及公園樹木分布圖（臺北市政府工務局公園路燈工程管理處），2026-10-13 下載", "url": "https://data.gov.tw/dataset/128274" }
+  ],
+  "license": "政府資料開放授權條款第 1 版（https://data.gov.tw/license），使用時標示出處：臺北市政府民政局、內政部國土測繪中心、臺北市政府工務局公園路燈工程管理處"
+}

@@ -1,0 +1,520 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<!-- ga-on-ship:start G-N8NSF80QXP -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-N8NSF80QXP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  (function () {
+    // Own-traffic mark (ga-on-ship): ?internal=1 remembers this device, ?internal=0 forgets it; automated browsers count too.
+    // Marked hits carry traffic_type=internal, which GA's "Internal Traffic" data filter excludes.
+    var q = null, mark = !!navigator.webdriver;
+    try {
+      var u = new URL(location.href);
+      q = u.searchParams.get('internal');
+      if (q !== null) { u.searchParams.delete('internal'); history.replaceState(history.state, '', u.pathname + u.search + u.hash); }
+    } catch (e) {}
+    try {
+      if (q === '1') localStorage.setItem('ga_internal', '1');
+      if (q === '0') localStorage.removeItem('ga_internal');
+      mark = mark || localStorage.getItem('ga_internal') === '1';
+    } catch (e) {}
+    if (q === '1') mark = true;
+    gtag('config', 'G-N8NSF80QXP', mark ? { traffic_type: 'internal' } : {});
+  })();
+</script>
+<!-- ga-on-ship:end -->
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>模樹 Treemulation・兌換</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Huninn&family=M+PLUS+Rounded+1c:wght@500;700;800;900&family=Noto+Sans+TC:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --sky:#6cc8ff; --sky2:#c9ecff; --grass:#9bdc6e; --grass2:#7cc653; --leaf:#2e9e5b; --navy:#17405e; --sun:#ffcd2e; --sun2:#e8a300;
+  --card:#ffffff; --mute:#5d7f97; --line:#e3eef5;
+  --s1:#d9822b; --s2:#3d7ea6; --s3:#8a5a9e;
+  --round:"Huninn","M PLUS Rounded 1c","Noto Sans TC",system-ui,sans-serif; --num:"Fredoka","Huninn",sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:#dff3ff;color:var(--navy);font-family:var(--round);-webkit-tap-highlight-color:transparent}
+body{display:flex;align-items:center;justify-content:center;overflow:hidden}
+a{color:inherit;text-decoration:none}
+.phone{position:relative;width:100%;height:100%;max-width:430px;overflow:hidden;background:linear-gradient(180deg,var(--sky) 0%,var(--sky2) 26%,#eef9ff 60%,#f4fbf0 100%)}
+@media (min-width:520px){.phone{width:390px;height:844px;max-height:100vh;border-radius:40px;box-shadow:0 30px 80px #17405e40,0 0 0 8px #fff}}
+.num{font-family:var(--num)}
+.pill{display:inline-flex;align-items:center;gap:4px;font:700 11px/1 var(--round);padding:4px 8px;border-radius:99px;background:#eaf3f8;color:var(--mute);vertical-align:middle;white-space:nowrap}
+.pill.sim{background:#fff3c4;color:#8a6a00}
+.pill.fake{background:#f1e8f6;color:#7a4f8c}
+button{font-family:var(--round)}
+button:focus-visible,a:focus-visible{outline:3px solid var(--navy);outline-offset:3px}
+.btn{border:0;cursor:pointer;font:900 18px var(--round);color:var(--navy);background:var(--sun);border-radius:99px;height:48px;padding:0 20px;box-shadow:0 5px 0 var(--sun2),0 10px 20px #e8a30033;transition:transform .08s,box-shadow .08s;white-space:nowrap}
+.btn:active{transform:translateY(4px);box-shadow:0 1px 0 var(--sun2)}
+.btn.w{background:#fff;box-shadow:0 5px 0 #c6dce9}
+.btn.w:active{box-shadow:0 1px 0 #c6dce9}
+.btn.big{height:58px;font-size:20px;width:100%}
+
+/* chrome */
+.top{position:absolute;left:0;right:0;top:0;z-index:5;display:flex;justify-content:space-between;align-items:center;padding:14px 16px 0}
+.back{display:inline-flex;align-items:center;gap:6px;height:42px;padding:0 16px 0 10px;background:#fff;border-radius:99px;font:800 15px var(--round);box-shadow:0 4px 0 #17405e1c}
+.back svg{width:22px;height:22px}
+.snd{width:42px;height:42px;border-radius:50%;border:0;background:#fff;color:var(--navy);display:grid;place-items:center;box-shadow:0 4px 0 #17405e1c;cursor:pointer}
+.snd svg{width:20px;height:20px}
+.snd[aria-pressed=false]{color:#9ab3c4}
+.view{position:absolute;inset:0;padding:70px 14px 104px;overflow-y:auto;display:none;scrollbar-width:none}
+.view::-webkit-scrollbar{display:none}
+.view.on{display:block}
+.tabs{position:absolute;left:12px;right:12px;bottom:12px;z-index:6;display:flex;gap:6px;background:#fff;border-radius:28px;padding:7px;box-shadow:0 8px 0 #17405e14,0 14px 30px #17405e22}
+.tabs a{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;padding:7px 0 6px;border-radius:22px;font:800 13px var(--round);color:var(--mute)}
+.tabs a svg{width:26px;height:26px}
+.tabs a[aria-current=page]{background:#e8f7dd;color:var(--leaf)}
+
+/* hero */
+.hero{position:relative;background:#fff;border-radius:30px;padding:14px 16px 16px;box-shadow:0 7px 0 #17405e14}
+.hero .lab{display:flex;align-items:center;gap:6px;font:800 14px var(--round);color:var(--mute)}
+.hero .pts{display:flex;align-items:baseline;gap:6px;margin-top:2px}
+.hero .pts big{font:700 64px/1 var(--num);color:var(--navy);letter-spacing:-.01em;font-variant-numeric:tabular-nums}
+.hero .pts span{font:900 20px var(--round)}
+.coinart{position:absolute;right:14px;top:14px;width:86px;height:86px}
+.coinart.spin{animation:wob .6s cubic-bezier(.3,1.8,.5,1)}
+@keyframes wob{0%{transform:scale(1)}40%{transform:scale(1.18) rotate(-10deg)}100%{transform:none}}
+.next{margin-top:12px;background:#f3f9fd;border-radius:20px;padding:10px 12px}
+.next .row{display:flex;justify-content:space-between;align-items:center;font:800 14px var(--round);gap:8px}
+.next .row b{font:600 15px var(--num);color:var(--mute);white-space:nowrap}
+.bar{position:relative;height:14px;border-radius:99px;background:#e1ecf3;overflow:hidden;margin-top:7px}
+.bar i{position:absolute;left:0;top:0;bottom:0;border-radius:99px;background:linear-gradient(90deg,var(--grass2),var(--grass));transition:width .8s cubic-bezier(.3,1,.4,1)}
+.bar i::after{content:"";position:absolute;left:6px;right:6px;top:3px;height:3px;border-radius:9px;background:#ffffff88}
+.bar.gold i{background:linear-gradient(90deg,var(--sun2),var(--sun))}
+
+.cats{display:flex;gap:6px;margin:16px 0 10px;overflow-x:auto;scrollbar-width:none}
+.cats button{flex:none;border:0;cursor:pointer;height:38px;padding:0 16px;border-radius:99px;background:#ffffffb8;color:var(--mute);font:800 15px var(--round)}
+.cats button[aria-pressed=true]{background:var(--navy);color:#fff;box-shadow:0 4px 0 #0c2a40}
+
+.items{display:flex;flex-direction:column;gap:10px}
+.item{display:grid;grid-template-columns:48px 1fr auto;gap:4px 12px;align-items:center;background:#fff;border-radius:26px;padding:12px 12px 12px 12px;box-shadow:0 5px 0 #17405e12}
+.item .lg{grid-row:1/3;align-self:start;width:48px;height:48px}
+.lg svg{width:100%;height:100%;display:block}
+.spn{display:flex;align-items:center;gap:6px;font:800 12px var(--round)}
+.item h3{font:900 18px/1.25 var(--round);margin-top:2px}
+.item h3 small{display:inline-block;margin-left:6px;font:800 12px/1 var(--round);color:var(--leaf);background:#e8f7dd;border-radius:99px;padding:4px 8px;vertical-align:3px}
+.top5{margin-top:12px}
+.top5 .ct{font:800 14px var(--round);margin:0 2px 6px}
+.tr{display:flex;align-items:center;gap:10px;padding:9px 4px;border-top:2px dashed var(--line)}
+.tr span{flex:1;font:800 15px var(--round)}
+.tr b{font:600 18px var(--num);color:var(--c)}
+.tr b small{font:800 11px var(--round);color:var(--mute);margin-left:2px}
+.item .meta{grid-column:2/3;display:flex;align-items:center;gap:8px}
+.item .meta .bar{flex:1;margin:0;height:10px}
+.item .meta b{font:600 15px var(--num);white-space:nowrap}
+.item .meta b small{font:800 11px var(--round);margin-left:1px}
+.item .act{grid-column:3;grid-row:1/3}
+.item .btn{height:46px;padding:0 18px;font-size:17px}
+.short{display:grid;place-items:center;height:46px;min-width:82px;padding:0 10px;border-radius:99px;background:#eef3f6;color:var(--mute);font:800 13px var(--round);border:2px dashed #cfdde6}
+.short b{font:600 16px var(--num);color:var(--navy)}
+
+/* section head */
+.sh{display:flex;align-items:center;gap:8px;margin:2px 4px 12px}
+.sh h2{font:900 26px var(--round)}
+
+/* quests */
+.quest{position:relative;display:grid;grid-template-columns:86px 1fr;gap:12px;background:#fff;border-radius:28px;padding:14px;margin-bottom:12px;box-shadow:0 6px 0 #17405e12}
+.quest .bd{width:86px;height:96px}
+.quest .bd svg{width:100%;height:100%;display:block;overflow:visible}
+.quest.locked .bd svg .art{filter:grayscale(1) opacity(.45)}
+.quest .lock{position:absolute;left:62px;top:70px;width:32px;height:32px;border-radius:50%;background:var(--navy);display:grid;place-items:center;box-shadow:0 3px 0 #0c2a40}
+.quest .lock svg{width:16px;height:16px}
+.quest h3{font:900 18px/1.25 var(--round)}
+.quest .rw{display:flex;flex-wrap:wrap;align-items:center;gap:4px 6px;margin-top:5px;font:800 13px var(--round);color:var(--mute)}
+.quest .rw .gift{color:var(--navy)}
+.quest .prog{display:flex;align-items:center;gap:8px;margin-top:9px}
+.quest .prog .bar{flex:1;margin:0}
+.quest .prog b{font:600 16px var(--num);white-space:nowrap}
+.quest .qa{margin-top:10px;display:flex;align-items:center;gap:8px}
+.quest .qa .btn{height:44px;font-size:17px}
+.quest.done{background:linear-gradient(135deg,#fffbe6,#fff 60%)}
+.quest.claimed .bd{animation:hop .7s cubic-bezier(.3,1.8,.5,1)}
+@keyframes hop{0%{transform:scale(1)}35%{transform:scale(1.25) rotate(8deg)}100%{transform:none}}
+.got{display:inline-flex;align-items:center;gap:6px;height:44px;padding:0 16px;border-radius:99px;background:#e8f7dd;color:var(--leaf);font:900 16px var(--round)}
+
+/* biz */
+.cos{display:flex;gap:8px;margin-bottom:12px}
+.cos button{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;border:3px solid transparent;cursor:pointer;background:#ffffffc8;border-radius:22px;padding:8px 4px 7px;font:800 13px var(--round);color:var(--navy)}
+.cos button svg{width:34px;height:34px}
+.cos button[aria-pressed=true]{background:#fff;border-color:var(--c);box-shadow:0 5px 0 color-mix(in srgb,var(--c) 35%,transparent)}
+.bizc{background:#fff;border-radius:30px;padding:16px;box-shadow:0 7px 0 #17405e14}
+.bizh{display:flex;gap:12px;align-items:center}
+.bizh .lg{width:58px;height:58px;flex:none}
+.bizh h3{font:900 22px/1.2 var(--round);display:flex;align-items:center;gap:6px}
+.bizh p{display:flex;align-items:center;gap:5px;font:800 14px var(--round);color:var(--mute);margin-top:3px}
+.bizh p svg{width:18px;height:18px}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:14px}
+.stat{background:var(--tint);border-radius:20px;padding:10px 12px 11px}
+.stat span{display:block;font:800 13px var(--round);color:var(--mute)}
+.stat b{display:block;font:700 30px/1.1 var(--num);color:var(--c);margin-top:2px;font-variant-numeric:tabular-nums}
+.chart{margin-top:12px;background:#f6fafc;border-radius:22px;padding:12px 12px 8px}
+.chart .ct{display:flex;justify-content:space-between;align-items:center;font:800 14px var(--round)}
+.chart svg{width:100%;height:130px;display:block;margin-top:4px}
+
+/* confirm + ticket */
+.scrim{position:absolute;inset:0;z-index:20;background:#17405e66;display:none;align-items:flex-end;justify-content:center;padding:12px}
+.scrim.on{display:flex;animation:fade .2s}
+@keyframes fade{from{opacity:0}}
+.sheet{width:100%;background:#fff;border-radius:32px;padding:20px 18px 18px;box-shadow:0 20px 40px #17405e40;animation:up .35s cubic-bezier(.3,1.4,.5,1)}
+@keyframes up{from{transform:translateY(60px);opacity:0}}
+.sheet .q{display:flex;align-items:center;gap:12px}
+.sheet .q .lg{width:52px;height:52px;flex:none}
+.sheet h3{font:900 21px/1.35 var(--round)}
+.sheet h3 b{font-family:var(--num);font-weight:700;font-size:24px}
+.sheet .bs{display:flex;gap:10px;margin-top:18px}
+.sheet .bs .btn{flex:1;height:54px;font-size:19px}
+
+.coin{position:absolute;z-index:30;width:30px;height:30px;margin:-15px 0 0 -15px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff6c4 0 18%,var(--sun) 19% 62%,var(--sun2) 63%);box-shadow:0 3px 0 #b97f00;pointer-events:none;display:grid;place-items:center;font:700 13px var(--num);color:#8a5a00}
+.minus{position:absolute;z-index:31;font:700 34px var(--num);color:#e0582a;text-shadow:0 3px 0 #fff;pointer-events:none}
+
+.tkwrap{position:absolute;inset:0;z-index:25;display:none;flex-direction:column;align-items:center;justify-content:center;padding:62px 22px 22px;background:#17405e88;overflow:hidden}
+.tkwrap.on{display:flex;animation:fade .25s}
+.rays{position:absolute;left:50%;top:44%;width:900px;height:900px;margin:-450px 0 0 -450px;border-radius:50%;background:repeating-conic-gradient(from 0deg,#ffcd2e30 0 10deg,transparent 10deg 24deg);animation:rot 24s linear infinite;pointer-events:none}
+@keyframes rot{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){.rays{animation:none}}
+.ticket{position:relative;width:100%;max-width:340px;filter:drop-shadow(0 18px 30px #0c2a4055);animation:tk .6s cubic-bezier(.3,1.5,.5,1)}
+@keyframes tk{0%{transform:translateY(80px) scale(.6) rotate(-6deg);opacity:0}100%{transform:none;opacity:1}}
+.tk-top{background:var(--c);color:#fff;border-radius:30px 30px 0 0;padding:16px 18px 20px;position:relative;overflow:hidden}
+.tk-top::after{content:"";position:absolute;right:-40px;top:-40px;width:150px;height:150px;border-radius:50%;background:#ffffff1f}
+.tk-top .sp{display:flex;align-items:center;gap:8px;font:800 14px var(--round)}
+.tk-top .sp .lg{width:34px;height:34px}
+.tk-top .sp .pill.fake{background:#ffffff33;color:#fff}
+.tk-top h3{font:900 30px/1.2 var(--round);margin-top:10px}
+.tk-top .cost{display:inline-flex;margin-top:6px;font:700 16px var(--num);background:#ffffff2e;border-radius:99px;padding:3px 10px}
+.perf{height:24px;background:radial-gradient(circle at 0 50%,transparent 12px,#fff 12.5px) left/51% 100% no-repeat,radial-gradient(circle at 100% 50%,transparent 12px,#fff 12.5px) right/51% 100% no-repeat;position:relative}
+.perf::before{content:"";position:absolute;left:20px;right:20px;top:11px;border-top:3px dashed #d6e3ec}
+.tk-bot{background:#fff;border-radius:0 0 30px 30px;padding:2px 18px 18px;text-align:center}
+.qr{position:relative;width:178px;height:178px;margin:0 auto}
+.qr canvas{width:178px;height:178px;display:block;border-radius:14px}
+.stamp{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) rotate(-12deg);background:#fff;border:5px solid #e0582a;color:#e0582a;border-radius:20px;padding:4px 16px 6px;font:900 38px/1 var(--round);letter-spacing:.08em;box-shadow:0 0 0 6px #fff}
+.code{font:700 26px var(--num);letter-spacing:.08em;margin-top:12px}
+.exp{display:flex;justify-content:center;align-items:center;gap:6px;margin-top:4px;font:800 14px var(--round);color:var(--mute)}
+.exp b{font:600 15px var(--num);color:var(--navy)}
+.tkbtn{position:relative;width:100%;max-width:340px;margin-top:18px}
+.tkvote{position:relative;display:inline-block;margin-top:12px;padding:10px 16px;border-radius:99px;background:#fff;color:#17405e;font-weight:800;text-decoration:none;box-shadow:0 4px 0 #c6dce9}
+.toast{position:absolute;left:50%;top:70px;z-index:40;transform:translateX(-50%);background:var(--navy);color:#fff;border-radius:99px;padding:10px 18px;font:800 15px var(--round);display:none;white-space:nowrap}
+.toast.on{display:block;animation:up .3s}
+</style>
+<script>try{if(localStorage.getItem("tt.points")==null){localStorage.setItem("tt.points","60");localStorage.setItem("tt.gift","1");}}catch(e){} /* 新使用者見面禮 60 點（模擬） */</script>
+</head>
+<body>
+<div class="phone" id="phone">
+  <div class="top">
+    <a class="back" href="./"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 5.5 8 12l6.5 6.5"/></svg>模樹</a>
+    <button class="snd" id="snd" aria-pressed="true" aria-label="音效開關"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z" fill="currentColor"/><path class="w1" d="M15.5 9a4 4 0 0 1 0 6"/><path class="w2" d="M18 6.5a7.5 7.5 0 0 1 0 11"/></svg></button>
+  </div>
+
+  <!-- 兌換所 -->
+  <section class="view" id="v-shop" aria-label="兌換所">
+    <div class="hero">
+      <div class="lab">我的點數 <span class="pill sim">模擬</span></div>
+      <div class="pts"><big class="num" id="ptsNum">0</big><span>點</span></div>
+      <svg class="coinart" id="coinart" viewBox="0 0 86 86" aria-hidden="true">
+        <circle cx="43" cy="47" r="34" fill="#e8a300"/><circle cx="43" cy="42" r="34" fill="#ffcd2e"/><circle cx="43" cy="42" r="25" fill="none" stroke="#fff3b0" stroke-width="4"/>
+        <path d="M43 26c9 4 11 15 0 30-11-15-9-26 0-30z" fill="#2e9e5b"/><path d="M43 31v22" stroke="#bff0a8" stroke-width="2.5" stroke-linecap="round"/>
+        <circle cx="30" cy="27" r="4" fill="#fff" opacity=".8"/>
+      </svg>
+      <div class="next" id="next"></div>
+    </div>
+    <div class="cats" id="cats" role="group" aria-label="分類">
+      <button aria-pressed="true" data-c="all">全部</button><button aria-pressed="false" data-c="thing">實物</button><button aria-pressed="false" data-c="off">折扣</button><button aria-pressed="false" data-c="svc">服務</button>
+    </div>
+    <div class="items" id="items"></div>
+  </section>
+
+  <!-- 解鎖 -->
+  <section class="view" id="v-quests" aria-label="解鎖">
+    <div class="sh"><h2>解鎖</h2><span class="pill sim">模擬</span></div>
+    <div id="quests"></div>
+  </section>
+
+  <!-- 企業看板 -->
+  <section class="view" id="v-biz" aria-label="贊助企業看板">
+    <div class="sh"><h2>贊助企業看板</h2><span class="pill sim">模擬</span></div>
+    <div class="cos" id="cos" role="group" aria-label="選企業"></div>
+    <div class="bizc" id="bizc"></div>
+  </section>
+
+  <nav class="tabs" aria-label="分頁">
+    <a href="#shop" data-v="shop"><svg viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"><rect x="4" y="10" width="18" height="12" rx="3"/><path d="M3 10h20v-3a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1zM13 6v16"/><path d="M13 6c-2-4-7-4-6-1s6 1 6 1c2-4 7-4 6-1s-6 1-6 1" stroke-linecap="round"/></svg>兌換所</a>
+    <a href="#quests" data-v="quests"><svg viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"><circle cx="13" cy="11" r="7"/><path d="m9 17-2 6 6-2 6 2-2-6" stroke-linecap="round"/><path d="m13 7.5 1.2 2.3 2.5.4-1.8 1.7.4 2.5-2.3-1.2-2.3 1.2.4-2.5-1.8-1.7 2.5-.4z" fill="currentColor" stroke-width="1"/></svg>解鎖</a>
+    <a href="#biz" data-v="biz"><svg viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M4 22h18"/><rect x="5.5" y="13" width="4" height="9" rx="1.5"/><rect x="11" y="8" width="4" height="14" rx="1.5"/><rect x="16.5" y="4" width="4" height="18" rx="1.5"/></svg>企業看板</a>
+  </nav>
+
+  <div class="scrim" id="confirm" role="dialog" aria-modal="true" aria-label="確認兌換"><div class="sheet" id="sheet"></div></div>
+
+  <div class="tkwrap" id="tk" role="dialog" aria-modal="true" aria-label="兌換券">
+    <div class="rays"></div>
+    <div class="ticket" id="ticket"></div>
+    <button class="btn big tkbtn" id="tkClose">回兌換所</button><a class="tkvote" href="https://puma.taipei/hackathon/vote" target="_blank" rel="noopener">🗳 喜歡就投一票</a>
+  </div>
+  <div class="toast" id="toast"></div>
+</div>
+
+<script>
+(function(){
+'use strict';
+const $=s=>document.querySelector(s);
+const st={get(k,d){try{const v=localStorage.getItem(k);return v==null?d:JSON.parse(v);}catch(e){return d;}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v));}catch(e){}}};
+
+/* ---------- 企業（虛構） ---------- */
+const CO={
+  ys:{name:'葉隙光電',c:'#d9822b',tint:'#fdf1e4',area:'信義路二段',glyph:'<circle cx="24" cy="20.5" r="7.5" fill="none" stroke="#fff" stroke-width="4"/><path d="M14 34h20" stroke="#fff" stroke-width="4" stroke-linecap="round"/>'},
+  gl:{name:'綠廊人壽',c:'#3d7ea6',tint:'#e7f1f7',area:'永康公園',glyph:'<path d="M15 34C12 22 20 13 34 12c1 14-7 22-19 22z" fill="#fff"/><path d="M15 34 27 20" stroke="#3d7ea6" stroke-width="2.6" stroke-linecap="round"/>'},
+  sx:{name:'蔭下書屋',c:'#8a5a9e',tint:'#f3ecf6',area:'金杭公園',glyph:'<rect x="13" y="12" width="9" height="24" rx="2.5" fill="#fff"/><rect x="26" y="12" width="9" height="24" rx="2.5" fill="#fff"/><path d="M15.5 17h4M28.5 17h4" stroke="#8a5a9e" stroke-width="2" stroke-linecap="round"/>'}
+};
+const logo=k=>`<svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="25.5" r="22" fill="${CO[k].c}" opacity=".35"/><circle cx="24" cy="24" r="22" fill="${CO[k].c}"/>${CO[k].glyph}</svg>`;
+const spn=(k,white)=>`<span class="spn" style="color:${white?'#fff':CO[k].c}">${CO[k].name} 贊助 <span class="pill fake">虛構</span></span>`;
+
+/* ---------- 獎品 ---------- */
+const ITEMS=[
+  {id:'coffee',co:'sx',name:'咖啡兌換券',cost:60,cat:'off'},
+  {id:'book50',co:'sx',name:'書店折價 50 元',cost:80,cat:'off'},
+  {id:'sapling',co:'gl',name:'樹苗認領券（台灣原生種）',cost:100,cat:'thing'},
+  {id:'cup',co:'ys',name:'環保隨行杯',cost:150,cat:'thing'},
+  {id:'checkup',co:'ys',name:'樹木健檢導覽',cost:250,cat:'svc'},
+  {id:'arborist',co:'gl',name:'和樹醫巡樹半日導覽',cost:300,cat:'svc'}
+];
+
+/* ---------- 狀態 ---------- */
+let pts=Number(st.get('tt.points',null));
+if(st.get('tt.points',null)==null||!isFinite(pts)) pts=0;
+let cat='all';
+
+/* ---------- 音效（點過才出聲） ---------- */
+let AC=null,unlocked=false,sndOn=true;
+try{sndOn=st.get('tt.sound',true)!==false;}catch(e){}
+function ac(){if(!AC){try{AC=new (window.AudioContext||window.webkitAudioContext)();}catch(e){}}return AC;}
+addEventListener('pointerdown',()=>{unlocked=true;const a=ac();if(a&&a.state==='suspended')a.resume();},{capture:true});
+function tone(f,t,d,type,v){
+  if(!sndOn||!unlocked)return;const a=ac();if(!a)return;
+  const o=a.createOscillator(),g=a.createGain(),t0=a.currentTime+t;
+  o.type=type||'sine';o.frequency.setValueAtTime(f,t0);
+  g.gain.setValueAtTime(0,t0);g.gain.linearRampToValueAtTime(v||.16,t0+.012);g.gain.exponentialRampToValueAtTime(.0008,t0+d);
+  o.connect(g).connect(a.destination);o.start(t0);o.stop(t0+d+.05);
+  if(type!=='square'){const o2=a.createOscillator(),g2=a.createGain();o2.type='sine';o2.frequency.setValueAtTime(f*2.01,t0);g2.gain.setValueAtTime(0,t0);g2.gain.linearRampToValueAtTime((v||.16)*.25,t0+.01);g2.gain.exponentialRampToValueAtTime(.0008,t0+d*.6);o2.connect(g2).connect(a.destination);o2.start(t0);o2.stop(t0+d);}
+}
+const SFX={
+  tap(){tone(880,0,.12,'triangle',.1);},
+  dingdong(){tone(1319,0,.5,'sine',.18);tone(1047,.16,.7,'sine',.18);},
+  coin(i){tone(1568+i*90,0,.09,'triangle',.07);},
+  ticket(){[784,988,1175,1568].forEach((f,i)=>tone(f,i*.09,.45,'triangle',.13));tone(2093,.38,.9,'sine',.1);},
+  badge(){[659,831,988,1319].forEach((f,i)=>tone(f,i*.07,.5,'sine',.14));}
+};
+const sndBtn=$('#snd');
+function paintSnd(){sndBtn.setAttribute('aria-pressed',String(sndOn));sndBtn.querySelectorAll('.w1,.w2').forEach(p=>p.style.opacity=sndOn?1:0);}
+sndBtn.onclick=()=>{sndOn=!sndOn;st.set('tt.sound',sndOn);paintSnd();if(sndOn){unlocked=true;SFX.dingdong();}};
+paintSnd();
+const buzz=p=>{try{navigator.vibrate&&navigator.vibrate(p);}catch(e){}};
+
+/* ---------- 兌換所 ---------- */
+function renderNext(){
+  const nx=ITEMS.filter(i=>i.cost>pts).sort((a,b)=>a.cost-b.cost)[0];
+  const el=$('#next');
+  if(!nx){el.innerHTML=`<div class="row"><span>全部都換得起</span><b>${pts} 點</b></div><div class="bar gold"><i style="width:100%"></i></div>`;return;}
+  el.innerHTML=`<div class="row"><span>下一個：${nx.name.replace(/（.*）/,'')}</span><b>${pts} / ${nx.cost}</b></div><div class="bar"><i style="width:${Math.round(pts/nx.cost*100)}%"></i></div>`;
+}
+const nm=s=>s.replace(/（(.*)）/,'<small>$1</small>');
+function renderItems(){
+  const list=ITEMS.filter(i=>cat==='all'||i.cat===cat);
+  $('#items').innerHTML=list.map(i=>{
+    const ok=pts>=i.cost,w=Math.min(100,Math.round(pts/i.cost*100));
+    return `<article class="item" data-id="${i.id}">
+      <div class="lg">${logo(i.co)}</div>
+      <div>${spn(i.co)}<h3>${nm(i.name)}</h3></div>
+      <div class="act">${ok?`<button class="btn" data-buy="${i.id}">兌換</button>`:`<span class="short"><span>差 <b>${i.cost-pts}</b> 點</span></span>`}</div>
+      <div class="meta"><div class="bar ${ok?'gold':''}"><i style="width:${w}%"></i></div><b>${i.cost}<small>點</small></b></div>
+    </article>`;}).join('');
+}
+$('#cats').onclick=e=>{const b=e.target.closest('button');if(!b)return;cat=b.dataset.c;SFX.tap();
+  $('#cats').querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));renderItems();};
+$('#items').onclick=e=>{const b=e.target.closest('[data-buy]');if(!b)return;SFX.tap();askBuy(ITEMS.find(i=>i.id===b.dataset.buy),b);};
+
+let pending=null;
+function askBuy(it,btn){
+  pending={it,btn};
+  $('#sheet').innerHTML=`<div class="q"><div class="lg">${logo(it.co)}</div><h3>花 <b>${it.cost}</b> 點換<br>${it.name}？</h3></div>
+    <div class="bs"><button class="btn w" id="no">取消</button><button class="btn" id="yes">確定兌換</button></div>`;
+  $('#confirm').classList.add('on');
+  $('#yes').onclick=()=>{$('#confirm').classList.remove('on');doBuy();};
+  $('#no').onclick=()=>{$('#confirm').classList.remove('on');pending=null;};
+}
+$('#confirm').onclick=e=>{if(e.target.id==='confirm'){$('#confirm').classList.remove('on');pending=null;}};
+
+function rollPts(from,to,ms){
+  const el=$('#ptsNum'),t0=performance.now();let last=from;
+  return new Promise(res=>{(function f(t){const k=Math.min(1,(t-t0)/ms),e=1-Math.pow(1-k,3),v=Math.round(from+(to-from)*e);
+    if(v!==last){el.textContent=v;last=v;}if(k<1)requestAnimationFrame(f);else res();})(t0);});
+}
+function flyCoins(n,target){
+  const ph=$('#phone').getBoundingClientRect(),src=$('#ptsNum').getBoundingClientRect();
+  const tr=target?target.getBoundingClientRect():{left:ph.left+ph.width/2,top:ph.top+ph.height*.6,width:0,height:0};
+  const sx=src.left-ph.left+src.width/2,sy=src.top-ph.top+src.height/2,tx=tr.left-ph.left+tr.width/2,ty=tr.top-ph.top+tr.height/2;
+  for(let i=0;i<n;i++){
+    const c=document.createElement('div');c.className='coin';c.textContent='點';c.style.left=sx+'px';c.style.top=sy+'px';$('#phone').appendChild(c);
+    const dx=tx-sx,dy=ty-sy,ox=(Math.random()-.5)*160,oy=-60-Math.random()*90;
+    const an=c.animate([{transform:'translate(0,0) scale(.4)',opacity:0},{transform:`translate(${ox*.5}px,${oy}px) scale(1.15)`,opacity:1,offset:.35},{transform:`translate(${dx+ox*.1}px,${dy}px) scale(.5)`,opacity:.9}],{duration:720+i*55,delay:i*70,easing:'cubic-bezier(.4,0,.6,1)',fill:'forwards'});
+    setTimeout(()=>SFX.coin(i%6),i*70+300);
+    an.onfinish=()=>c.remove();
+  }
+  const m=document.createElement('div');m.className='minus';m.textContent='−'+(pending?pending.it.cost:'');m.style.left=(sx+70)+'px';m.style.top=(sy-30)+'px';$('#phone').appendChild(m);
+  m.animate([{transform:'translateY(10px)',opacity:0},{transform:'translateY(-6px)',opacity:1,offset:.25},{transform:'translateY(-40px)',opacity:0}],{duration:1300,easing:'ease-out',fill:'forwards'}).onfinish=()=>m.remove();
+}
+function code(){const A='23456789ABCDEFGHJKLMNPQRSTUVWXYZ';let s='';for(let i=0;i<4;i++)s+=A[Math.random()*A.length|0];return `SIM-${s}-${String(Math.random()*90+10|0)}`;}
+function fmt(d){return `${d.getFullYear()}/${String(d.getMonth()+1).padStart(2,'0')}/${String(d.getDate()).padStart(2,'0')}`;}
+async function doBuy(){
+  if(!pending)return;const {it,btn}=pending;
+  if(pts<it.cost){toast('點數不夠');return;}
+  const from=pts;pts-=it.cost;st.set('tt.points',pts);
+  const rec={type:'item',id:it.id,co:it.co,name:it.name,cost:it.cost,code:code(),at:Date.now(),exp:Date.now()+30*864e5,sim:true};
+  const R=st.get('tt.redeemed',[]);(Array.isArray(R)?R:[]).push(rec);st.set('tt.redeemed',Array.isArray(R)?R.slice(-50):[rec]);
+  SFX.dingdong();buzz([20,40,20]);flyCoins(9,btn);
+  await rollPts(from,pts,1000);
+  $('#coinart').classList.remove('spin');void $('#coinart').offsetWidth;$('#coinart').classList.add('spin');
+  renderNext();renderItems();
+  setTimeout(()=>{showTicket(rec);},150);
+  pending=null;
+}
+
+/* ---------- 兌換券 ---------- */
+function seeded(s){let h=2166136261;for(const ch of s){h^=ch.charCodeAt(0);h=Math.imul(h,16777619);}return()=>{h^=h<<13;h^=h>>>17;h^=h<<5;return((h>>>0)%1000)/1000;};}
+function drawQR(cv,seed,color){
+  const N=25,px=8,q=2,S=(N+q*2)*px,dpr=2;cv.width=S*dpr;cv.height=S*dpr;const g=cv.getContext('2d');g.scale(dpr,dpr);
+  g.fillStyle='#fff';g.fillRect(0,0,S,S);const r=seeded(seed),M=[];
+  for(let y=0;y<N;y++){M[y]=[];for(let x=0;x<N;x++)M[y][x]=r()<.48;}
+  const finder=(fx,fy)=>{for(let y=-1;y<8;y++)for(let x=-1;x<8;x++){const X=fx+x,Y=fy+y;if(X<0||Y<0||X>=N||Y>=N)continue;M[Y][X]=null;}};
+  finder(0,0);finder(N-7,0);finder(0,N-7);
+  for(let i=8;i<N-8;i++){M[6][i]=i%2===0;M[i][6]=i%2===0;}
+  g.fillStyle='#17405e';
+  for(let y=0;y<N;y++)for(let x=0;x<N;x++)if(M[y][x]){const X=(x+q)*px,Y=(y+q)*px;g.beginPath();g.roundRect?g.roundRect(X+.5,Y+.5,px-1,px-1,2):g.rect(X,Y,px,px);g.fill();}
+  const fd=(fx,fy)=>{const X=(fx+q)*px,Y=(fy+q)*px;g.fillStyle='#17405e';rr(g,X,Y,7*px,7*px,12);g.fill();g.fillStyle='#fff';rr(g,X+px,Y+px,5*px,5*px,8);g.fill();g.fillStyle=color;rr(g,X+2*px,Y+2*px,3*px,3*px,6);g.fill();};
+  fd(0,0);fd(N-7,0);fd(0,N-7);
+}
+function rr(g,x,y,w,h,r){g.beginPath();g.moveTo(x+r,y);g.arcTo(x+w,y,x+w,y+h,r);g.arcTo(x+w,y+h,x,y+h,r);g.arcTo(x,y+h,x,y,r);g.arcTo(x,y,x+w,y,r);g.closePath();}
+function showTicket(rec){
+  const C=CO[rec.co];
+  const t=$('#ticket');t.style.setProperty('--c',C.c);
+  t.innerHTML=`<div class="tk-top"><div class="sp"><span class="lg">${logo(rec.co).replace('opacity=".35"','opacity="0"').replace(`fill="${C.c}"/>`,`fill="${C.c}" stroke="#fff" stroke-width="2.5"/>`)}</span>${C.name} 贊助 <span class="pill fake">虛構</span></div>
+    <h3>${rec.name}</h3><span class="cost">−${rec.cost} 點</span></div>
+    <div class="perf"></div>
+    <div class="tk-bot"><div class="qr"><canvas id="qr" aria-label="模擬兌換碼"></canvas><span class="stamp">模擬</span></div>
+    <div class="code">${rec.code}</div><div class="exp">有效期限 <b>${fmt(new Date(rec.exp))}</b></div></div>`;
+  drawQR($('#qr'),rec.code,C.c);
+  $('#tk').classList.remove('on');void $('#tk').offsetWidth;$('#tk').classList.add('on');
+  SFX.ticket();buzz([30,60,30]);
+}
+$('#tkClose').onclick=()=>{SFX.tap();$('#tk').classList.remove('on');if(location.hash==='#ticket')location.hash='#shop';};
+
+/* ---------- 解鎖 ---------- */
+const QDEF=[
+  {id:'q-first',need:5,unit:'棵',task:'首拍 5 棵',badge:'開路者徽章',gift:null,co:null,art:'path'},
+  {id:'q-qd',need:10,unit:'棵',task:'收集 10 棵茄苳',badge:'茄苳守護者徽章',gift:'限定小盆栽',co:'ys',art:'qd'},
+  {id:'q-street',need:4,unit:'週',task:'守護信義路二段連續 4 週',badge:'街區守護者徽章',gift:'限定帆布袋',co:'sx',art:'street'}
+];
+let SPECIES=null;
+function progress(){
+  const C=st.get('tt.collect',[]),arr=Array.isArray(C)?C:[];
+  const sp=c=>c.species||(SPECIES&&SPECIES[c.id]&&SPECIES[c.id].sp)||'';
+  const pl=c=>c.place||(SPECIES&&SPECIES[c.id]&&SPECIES[c.id].pl)||'';
+  const realQd=arr.filter(c=>sp(c)==='茄苳').length, realN=arr.length;
+  const weeks=new Set(arr.filter(c=>pl(c)==='信義路二段').map(c=>Math.floor((c.at||0)/(7*864e5)))).size;
+  return {'q-first':Math.max(realN,5),'q-qd':Math.max(realQd,7),'q-street':Math.max(weeks,3)};
+}
+function badgeSVG(art){
+  const ribbon=(c)=>`<path d="M28 70 22 94l11-6 7 9 4-25z" fill="${c}"/><path d="M58 70l6 24-11-6-7 9-4-25z" fill="${c}"/>`;
+  if(art==='qd') return `<svg viewBox="0 0 86 100"><g class="art">${ribbon('#1f7a46')}<circle cx="43" cy="44" r="38" fill="#1f7a46"/><circle cx="43" cy="41" r="38" fill="#2e9e5b"/><circle cx="43" cy="41" r="30" fill="#bff0a8"/>
+    <path d="M43 44c-2-12 1-20 0-24 6 3 9 13 0 24z" fill="#2e9e5b"/><path d="M43 46c-10-4-16-11-18-15 7-1 15 3 18 15z" fill="#38b26a"/><path d="M43 46c10-4 16-11 18-15-7-1-15 3-18 15z" fill="#38b26a"/>
+    <path d="M43 46v12" stroke="#7a5230" stroke-width="4" stroke-linecap="round"/><circle cx="31" cy="25" r="4" fill="#fff" opacity=".8"/></g></svg>`;
+  if(art==='street') return `<svg viewBox="0 0 86 100"><g class="art">${ribbon('#0f2f47')}<circle cx="43" cy="44" r="38" fill="#0f2f47"/><circle cx="43" cy="41" r="38" fill="#17405e"/><circle cx="43" cy="41" r="30" fill="#c9ecff"/>
+    <path d="M14 58h58" stroke="#17405e" stroke-width="0"/><path d="M20 63 36 30h14l16 33z" fill="#8aa7ba"/><path d="M43 34v6M43 46v6M43 58v4" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="25" cy="34" r="9" fill="#2e9e5b"/><rect x="23.5" y="40" width="3" height="10" rx="1.5" fill="#7a5230"/><circle cx="61" cy="34" r="9" fill="#2e9e5b"/><rect x="59.5" y="40" width="3" height="10" rx="1.5" fill="#7a5230"/>
+    <circle cx="43" cy="18" r="5" fill="#ffcd2e"/><circle cx="31" cy="22" r="3" fill="#fff" opacity=".8"/></g></svg>`;
+  return `<svg viewBox="0 0 86 100"><g class="art">${ribbon('#c98a00')}<circle cx="43" cy="44" r="38" fill="#e8a300"/><circle cx="43" cy="41" r="38" fill="#ffcd2e"/><circle cx="43" cy="41" r="30" fill="#fff6cf"/>
+    <path d="M24 60c6-6 10-6 14-12s9-8 14-11 9-5 12-9" fill="none" stroke="#e8a300" stroke-width="4" stroke-linecap="round" stroke-dasharray="1 7"/>
+    <path d="M58 16v24" stroke="#17405e" stroke-width="3.5" stroke-linecap="round"/><path d="M59 17h14l-4 5 4 5H59z" fill="#ee4b6a"/>
+    <ellipse cx="27" cy="55" rx="4" ry="5.5" fill="#17405e" transform="rotate(-20 27 55)"/><ellipse cx="37" cy="48" rx="4" ry="5.5" fill="#17405e" transform="rotate(-20 37 48)"/><circle cx="31" cy="24" r="4" fill="#fff" opacity=".9"/></g></svg>`;
+}
+function claimed(){const R=st.get('tt.redeemed',[]);return new Set((Array.isArray(R)?R:[]).filter(r=>r.type==='quest').map(r=>r.id));}
+function renderQuests(){
+  const P=progress(),got=claimed();
+  const lockIc=`<svg viewBox="0 0 16 16"><rect x="3" y="7" width="10" height="7" rx="2" fill="#fff"/><path d="M5.5 7V5.5a2.5 2.5 0 0 1 5 0V7" fill="none" stroke="#fff" stroke-width="2"/></svg>`;
+  const order=[...QDEF].sort((a,b)=>(P[b.id]>=b.need)-(P[a.id]>=a.need));
+  $('#quests').innerHTML=order.map(q=>{
+    const p=Math.min(P[q.id],q.need),done=p>=q.need,has=got.has(q.id);
+    return `<article class="quest ${done?'done':'locked'}" data-q="${q.id}">
+      <div class="bd">${badgeSVG(q.art)}</div>${done?'':`<span class="lock">${lockIc}</span>`}
+      <div><h3>${q.task}</h3>
+        <div class="rw"><span class="gift">${q.badge}${q.gift?'＋'+q.gift:''}</span>${q.co?spn(q.co):''}</div>
+        <div class="prog"><div class="bar ${done?'gold':''}"><i style="width:${p/q.need*100}%"></i></div><b>${p}/${q.need}${q.unit==='週'?' 週':''}</b></div>
+        <div class="qa">${done?(has?`<span class="got">已領取</span>`:`<button class="btn" data-claim="${q.id}">領取</button>`):`<span class="short"><span>還差 <b>${q.need-p}</b> ${q.unit}</span></span>`}</div>
+      </div></article>`;}).join('');
+}
+$('#quests').onclick=e=>{const b=e.target.closest('[data-claim]');if(!b)return;
+  const R=st.get('tt.redeemed',[]),arr=Array.isArray(R)?R:[];arr.push({type:'quest',id:b.dataset.claim,at:Date.now(),sim:true});st.set('tt.redeemed',arr.slice(-50));
+  SFX.badge();buzz([20,30,60]);const card=b.closest('.quest');renderQuests();
+  const nc=$(`[data-q="${card.dataset.q}"]`);nc&&nc.classList.add('claimed');toast('徽章已領取');};
+
+/* ---------- 企業看板 ---------- */
+const BIZ={
+  ys:{redeem:412,visit:268,trees:1836,expo:24310,wk:[62,88,121,141],gifts:[['環保隨行杯',287],['樹木健檢導覽',96],['限定小盆栽',29]]},
+  gl:{redeem:356,visit:190,trees:1204,expo:19870,wk:[55,70,96,135],gifts:[['樹苗認領券（台灣原生種）',301],['和樹醫巡樹半日導覽',55]]},
+  sx:{redeem:538,visit:421,trees:977,expo:15640,wk:[90,118,149,181],gifts:[['咖啡兌換券',344],['書店折價 50 元',161],['限定帆布袋',33]]}
+};
+let bizK='ys';
+function renderBiz(){
+  $('#cos').innerHTML=Object.keys(CO).map(k=>`<button style="--c:${CO[k].c}" aria-pressed="${k===bizK}" data-co="${k}">${logo(k)}${CO[k].name}</button>`).join('');
+  const C=CO[bizK],D=BIZ[bizK],el=$('#bizc');el.style.setProperty('--c',C.c);el.style.setProperty('--tint',C.tint);
+  const n=v=>v.toLocaleString('en-US');
+  const W=300,H=130,bw=46,gap=(W-bw*4)/4,mx=Math.max(...D.wk)*1.18;
+  const lab=['9/27','10/4','10/11','10/18'];
+  const bars=D.wk.map((v,i)=>{const h=v/mx*(H-34),x=gap/2+i*(bw+gap),y=H-20-h;
+    return `<rect x="${x}" y="${y}" width="${bw}" height="${h}" rx="12" fill="${C.c}" opacity="${i===3?1:.45}"/><text x="${x+bw/2}" y="${y-6}" text-anchor="middle" font-family="Fredoka" font-weight="600" font-size="14" fill="#17405e">${v}</text><text x="${x+bw/2}" y="${H-3}" text-anchor="middle" font-family="Fredoka" font-weight="500" font-size="12" fill="#5d7f97">${lab[i]}</text>`;}).join('');
+  el.innerHTML=`<div class="bizh"><div class="lg">${logo(bizK)}</div><div><h3>${C.name} <span class="pill fake">虛構</span></h3>
+      <p><svg viewBox="0 0 18 18"><circle cx="9" cy="7" r="5.5" fill="#2e9e5b"/><rect x="8" y="10" width="2" height="6" rx="1" fill="#7a5230"/></svg>贊助 ${C.area}</p></div></div>
+    <div class="stats">
+      <div class="stat"><span>兌換次數</span><b>${n(D.redeem)}</b></div>
+      <div class="stat"><span>到店人次</span><b>${n(D.visit)}</b></div>
+      <div class="stat"><span>贊助區樹被收集</span><b>${n(D.trees)}</b></div>
+      <div class="stat"><span>卡片曝光</span><b>${n(D.expo)}</b></div>
+    </div>
+    <div class="chart"><div class="ct"><span>近 4 週兌換次數</span><span class="pill sim">模擬</span></div>
+      <svg viewBox="0 0 ${W} ${H}" role="img" aria-label="近 4 週兌換次數 ${D.wk.join('、')}"><path d="M0 ${H-20}H${W}" stroke="#d6e3ec" stroke-width="2"/>${bars}</svg></div>
+    <div class="top5"><div class="ct">獎品兌換</div>${D.gifts.map(g=>`<div class="tr"><span>${g[0]}</span><b>${n(g[1])}<small>次</small></b></div>`).join('')}</div>`;
+}
+$('#cos').onclick=e=>{const b=e.target.closest('[data-co]');if(!b)return;bizK=b.dataset.co;SFX.tap();renderBiz();};
+
+/* ---------- 其他 ---------- */
+let tt=0;function toast(s){const t=$('#toast');t.textContent=s;t.classList.remove('on');void t.offsetWidth;t.classList.add('on');clearTimeout(tt);tt=setTimeout(()=>t.classList.remove('on'),1600);}
+
+function route(){
+  const h=(location.hash||'#shop').slice(1);
+  const v=['shop','quests','biz'].includes(h)?h:'shop';
+  document.querySelectorAll('.view').forEach(s=>s.classList.toggle('on',s.id==='v-'+v));
+  document.querySelectorAll('.tabs a').forEach(a=>{if(a.dataset.v===v)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');});
+  $('#confirm').classList.remove('on');
+  if(v==='quests')renderQuests();
+  if(v==='biz')renderBiz();
+  if(h==='ticket'){
+    const R=st.get('tt.redeemed',[]),last=(Array.isArray(R)?R:[]).filter(r=>r.type==='item').pop();
+    showTicket(last||{co:'sx',name:'咖啡兌換券',cost:60,code:'SIM-7F3K-21',exp:Date.now()+30*864e5});
+  }else $('#tk').classList.remove('on');
+}
+$('#ptsNum').textContent=pts;renderNext();renderItems();
+addEventListener('hashchange',route);route();
+
+fetch('trees.json').then(r=>r.json()).then(J=>{
+  const ci=n=>J.cols.indexOf(n),I={id:ci('id'),sp:ci('species'),pl:ci('place')},pick=(a,v)=>typeof v==='number'?a[v]:v;
+  const C=st.get('tt.collect',[]),want=new Set((Array.isArray(C)?C:[]).map(c=>c.id));SPECIES={};
+  for(const r of J.rows)if(want.has(r[I.id]))SPECIES[r[I.id]]={sp:pick(J.species,r[I.sp]),pl:pick(J.places||[],r[I.pl])};
+  if(location.hash==='#quests')renderQuests();
+}).catch(()=>{});
+})();
+</script>
+</body>
+</html>

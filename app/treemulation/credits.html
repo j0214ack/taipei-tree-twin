@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<!-- ga-on-ship:start G-N8NSF80QXP -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-N8NSF80QXP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  (function () {
+    // Own-traffic mark (ga-on-ship): ?internal=1 remembers this device, ?internal=0 forgets it; automated browsers count too.
+    // Marked hits carry traffic_type=internal, which GA's "Internal Traffic" data filter excludes.
+    var q = null, mark = !!navigator.webdriver;
+    try {
+      var u = new URL(location.href);
+      q = u.searchParams.get('internal');
+      if (q !== null) { u.searchParams.delete('internal'); history.replaceState(history.state, '', u.pathname + u.search + u.hash); }
+    } catch (e) {}
+    try {
+      if (q === '1') localStorage.setItem('ga_internal', '1');
+      if (q === '0') localStorage.removeItem('ga_internal');
+      mark = mark || localStorage.getItem('ga_internal') === '1';
+    } catch (e) {}
+    if (q === '1') mark = true;
+    gtag('config', 'G-N8NSF80QXP', mark ? { traffic_type: 'internal' } : {});
+  })();
+</script>
+<!-- ga-on-ship:end -->
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>模樹 Treemulation・照片來源</title>
+<link rel="icon" href="icon.svg">
+<style>
+  :root { --sky:#6cc8ff; --sky2:#c9ecff; --navy:#17405e; --mute:#5d7f97; --card:#fff; }
+  * { box-sizing: border-box; }
+  body { margin:0; min-height:100dvh; background:linear-gradient(180deg,var(--sky) 0%,var(--sky2) 30%,#eef9ff 100%); color:var(--navy); font:15px/1.55 -apple-system,"PingFang TC","Noto Sans TC",sans-serif; padding:16px 16px 32px; }
+  main { max-width:520px; margin:0 auto; }
+  a.back { display:inline-block; background:#fff; color:var(--navy); text-decoration:none; font-weight:800; padding:9px 16px; border-radius:99px; box-shadow:0 4px 0 #c6dce9; }
+  h1 { font-size:24px; margin:18px 0 12px; }
+  ul { list-style:none; margin:0; padding:0; display:grid; gap:10px; }
+  li { background:var(--card); border-radius:18px; padding:10px; display:flex; gap:12px; align-items:center; box-shadow:0 4px 0 #c6dce9; }
+  li img { width:64px; height:64px; object-fit:contain; flex:none; }
+  li b { font-size:17px; }
+  li small { display:block; color:var(--mute); word-break:break-word; }
+  li a { color:var(--navy); }
+  p.note { color:var(--mute); font-size:13px; margin-top:16px; }
+</style>
+</head>
+<body>
+<main>
+  <a class="back" href="./">‹ 模樹</a>
+  <h1>樹照片來源</h1>
+  <ul id="list"></ul>
+  <p class="note">照片已去背、裁切、縮圖。CC BY-SA 照片的改作同樣以 CC BY-SA 授權。</p>
+</main>
+<script>
+const getJSON = u => fetch(u).then(r => r.json()).catch(() => []);
+Promise.all([getJSON('./wish-stages.json'), getJSON('./wish-trees.json')]).then(([stages, trees]) => {
+  const list = [
+    ...(Array.isArray(stages) ? stages : []).map(s => ({ ...s, name: `${s.name}（長大階段 ${s.stage}，通用示意）` })),
+    ...(Array.isArray(trees) ? trees : []),
+  ];
+  if (!list.length) throw new Error('empty');
+  const esc = s => String(s == null ? '' : s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  document.getElementById('list').innerHTML = list.map(t => `<li><img src="${esc(t.file)}" alt="">
+    <div><b>${esc(t.name)}</b><small>${esc(t.author)}・<a href="${esc(t.licenseUrl)}" rel="license noopener">${esc(t.license)}</a></small>
+    <small><a href="${esc(t.source)}" rel="noopener">原始照片</a></small></div></li>`).join('');
+}).catch(() => { document.getElementById('list').innerHTML = '<li>載入失敗</li>'; });
+</script>
+</body>
+</html>

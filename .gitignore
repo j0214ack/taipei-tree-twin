@@ -1,0 +1,12 @@
+# Downloaded source snapshots; provenance and inspection results remain tracked.
+data/raw/*/*.csv
+data/raw/*/*.json
+!data/raw/*/manifest.json
+!data/raw/*/inspection.json
+data/raw/*/*.html
+wt/
+runtime/
+.env
+.venv/
+dist/
+.wrangler/

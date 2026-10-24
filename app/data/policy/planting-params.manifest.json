@@ -1,0 +1,224 @@
+{
+ "output": [
+  "/Users/yo/workspace/shade-hackathon/data/derived/policy/planting-params.json"
+ ],
+ "query_date": "2026-10-23",
+ "timezone": "Asia/Taipei",
+ "sources": [
+  {
+   "title": "臺中市主要道路喬木植栽（開放資料 108167）CSV",
+   "url": "https://newdatacenter.taichung.gov.tw/api/v1/no-auth/resource.download?rid=56fa93c4-0c2c-4210-9f6a-3c4033e91c23",
+   "published": "2026-08-13（資料集修改日）；調查日 2018",
+   "local_path": "/Users/yo/workspace/shade-hackathon/data/raw/2026-10-23-policy/refs/taichung-108167/taichung-main-road-trees.csv",
+   "sha256": "4e6f2fd673147a4e8d320d35da8974463cc4e756fc4a976df8b9a26fcb184560",
+   "used_for": "擬合各樹種 W=a·D^b；發現約 61% 列樹冠面積疑似推算",
+   "status": "採用（低信心）"
+  },
+  {
+   "title": "詹為巽 2024 臺大博士論文 臺北市都市樹木重要效益評估之研究",
+   "url": "https://tdr.lib.ntu.edu.tw/handle/123456789/92929",
+   "published": "2024",
+   "local_path": "/Users/yo/workspace/shade-hackathon/data/raw/2026-10-23-policy/refs/ntu-2024-chan.pdf",
+   "sha256": "9e52e710e79f40d04d30ae4fb55a36b52c4535b145d1cb1d40eea471f4bed3f8",
+   "used_for": "茄苳／樟樹／楓香台北實測胸徑年生長量與 RGR 式（表4.16、4.17、4.20）；i-Tree 預設生長量轉引",
+   "status": "採用（主要）"
+  },
+  {
+   "title": "臺中 西屯區夏綠地公園25株樹木移除簡報",
+   "url": "https://www.construction.taichung.gov.tw/media/1315555/",
+   "published": "2025-08-14",
+   "local_path": "/Users/yo/workspace/shade-hackathon/data/raw/2026-10-23-policy/refs/tc-xilu-removal.pdf",
+   "sha256": "f7a208eb8e73701aa78ba140156cbed1eea60d8dd630e8d31287b1a559c76cf4",
+   "used_for": "補植杜英規格",
+   "status": "採用"
+  },
+  {
+   "title": "臺中 大雅區新天地公園樹木移除換植計畫",
+   "url": "https://www.construction.taichung.gov.tw/media/1457337/",
+   "published": "2026-07",
+   "local_path": "/Users/yo/workspace/shade-hackathon/data/raw/2026-10-23-policy/refs/tc-daya-replant.pdf",
+   "sha256": "599064257b0dac53ff5b1b5e3899df6b4e14019a6031b9b7d58d93c5a0e3b8a9",
+   "used_for": "補植光臘樹規格與單價",
+   "status": "採用"
+  },
+  {
+   "title": "臺中 北屯區23株黑板樹移除補植計畫書",
+   "url": "https://www.construction.taichung.gov.tw/media/1454877/",
+   "published": "2026-08-07",
+   "local_path": "/Users/yo/workspace/shade-hackathon/data/raw/2026-10-23-policy/refs/tc-beitun-23-replant-1150807.pdf",
+   "sha256": "c6c01d67781672a1f534fed866d0d0fc01d4a771ee8369a78a4b00274daa3e75",
+   "used_for": "補植小花紫薇規格；被移除樹規格",
+   "status": "採用"
+  },
+  {
+   "title": "桃園市 樹木植栽設計施工手冊",
+   "url": "https://ws.tycg.gov.tw/001/Upload/115/relfile/13461/985280/20230323152102.pdf",
+   "published": "PDF 建立 2016-08-01；上傳 2023-03-23",
+   "local_path": "/Users/yo/workspace/shade-hackathon/data/raw/2026-10-23-policy/refs/tycg-tree-handbook-2023.pdf",
+   "sha256": "f8a57fd21867d06761cf2e4f94931c11640541a6f8f19c736530b8bfda9e51e5",
+   "used_for": "進場苗木樹冠≥綠覆面積1/8、容許差、根球表",
+   "status": "採用"
+  },
+  {
+   "title": "高公局 植物種植工程施工技術規範（02902 等）",
+   "url": "https://www.freeway.gov.tw/Upload/DownloadFiles/%E6%A4%8D%E7%89%A9%E7%A8%AE%E6%A4%8D%E5%B7%A5%E7%A8%8B%E6%96%BD%E5%B7%A5%E6%8A%80%E8%A1%93%E8%A6%8F%E7%AF%84_531435.pdf",
+   "published": "2020-02",
+   "local_path": "/Users/yo/workspace/shade-hackathon/data/raw/2026-10-23-policy/refs/freeway-02902.pdf",
+   "sha256": "affc4f783e19e9be4b654be9eab9ea63ee42448940fc2801a610a390b00f3209",
+   "used_for": "米徑、冠幅、樹高定義與選苗規則",
+   "status": "採用（定義）"
+  },
+  {
+   "title": "內政部 建築基地綠化設計技術規範（修正規定）",
+   "url": "https://www.nlma.gov.tw/uploads/files/570f0fafb4e7fc5fd174a4f184618467.pdf",
+   "published": "PDF 建立 2020-11-12（版次未逐條核對）",
+   "local_path": "/Users/yo/workspace/shade-hackathon/data/raw/2026-10-23-policy/refs/nlma-570f0f.pdf",
+   "sha256": "0165adc29a9dad8e43229b50753e4f179089d334a5eae7ca281ffbf07124e4f7",
+   "used_for": "新種喬木樹冠投影面積基準 16/25/36 m²",
+   "status": "採用（上限選項）"
+  },
+  {
+   "title": "McPherson et al. 2016 PSW-GTR-253 Urban Tree Database",
+   "url": "https://research.fs.usda.gov/download/treesearch/52933.pdf",
+   "published": "2016-10",
+   "local_path": "/Users/yo/workspace/shade-hackathon/data/raw/2026-10-23-policy/refs/psw-gtr-253.pdf",
+   "sha256": "0765570cf3513a8cc91ba07b4abd7702611b5e765b07e93cde67555b4097b1c7",
+   "used_for": "同屬／同種樣本數與氣候區；係數未取得",
+   "status": "採用（僅樣本清單）"
+  },
+  {
+   "title": "USDA RDS-2016-0005 資料庫",
+   "url": "https://doi.org/10.2737/RDS-2016-0005",
+   "published": "2016（勘誤 2020-01）",
+   "local_path": "/Users/yo/workspace/shade-hackathon/data/raw/2026-10-23-policy/refs/utd/figshare-27006565.json",
+   "sha256": "1bf6a520ec94c49f7ef46a5f37e74622628456aa94088f56b5c74a55027b7cbc",
+   "used_for": "嘗試下載係數：fs.usda.gov 回 403；Ag Data Commons 只有連結",
+   "status": "查不到係數"
+  },
+  {
+   "title": "臺北市新建建築物綠化實施規則 第7條",
+   "url": "https://laws.gov.taipei/Law/LawSearch/LawArticleContent/FL080927",
+   "published": "2025-07-31 修正／2026-01-01 施行",
+   "local_path": null,
+   "sha256": null,
+   "used_for": "初植樹冠≥長成後1/3、分枝高≥2.5 m",
+   "status": "採用（WebFetch 讀取）"
+  },
+  {
+   "title": "臺北市行道樹管理維護自治條例 第10條",
+   "url": "https://laws.gov.taipei/law/LawSearch/LawArticleContent/FL004003",
+   "published": "2024-10-21",
+   "local_path": null,
+   "sha256": null,
+   "used_for": "規格單價由公園處另定（內容查不到）",
+   "status": "採用（證明缺口）"
+  },
+  {
+   "title": "臺北市樹木保護自治條例",
+   "url": "https://laws.gov.taipei/Law/LawSearch/LawArticleContent/FL024478",
+   "published": "2025-12-30 修正",
+   "local_path": null,
+   "sha256": null,
+   "used_for": "無補植規格條文",
+   "status": "查無相關"
+  },
+  {
+   "title": "公園處 行道樹樹種選擇原則頁",
+   "url": "https://pkl.gov.taipei/cp.aspx?n=3B57F65C422316A5",
+   "published": "頁面資料更新 2024-11-27",
+   "local_path": null,
+   "sha256": null,
+   "used_for": "無苗木規格",
+   "status": "查無相關"
+  },
+  {
+   "title": "UF/IFAS 種植規範（建立期）",
+   "url": "https://hort.ifas.ufl.edu/woody/abbreviated-planting-specs.shtml",
+   "published": "未標日期（2026-10-23 查閱，經搜尋摘要）",
+   "local_path": null,
+   "sha256": null,
+   "used_for": "zone 9–11 每英吋幹徑約 3 個月",
+   "status": "採用（國外，未開原頁）"
+  },
+  {
+   "title": "Gilman 1992 南方木蘭建立期摘要",
+   "url": "https://hort.ifas.ufl.edu/woody/abstracts/efg/EFG9202.shtm",
+   "published": "1992",
+   "local_path": null,
+   "sha256": null,
+   "used_for": "最多每英吋 1 年",
+   "status": "採用（國外，經搜尋摘要）"
+  },
+  {
+   "title": "Roman & Scatena 2011 Street tree survival rates meta-analysis",
+   "url": "https://earth.sas.upenn.edu/content/street-tree-survival-rates-meta-analysis-previous-studies-and-application-field-survey",
+   "published": "2011",
+   "local_path": null,
+   "sha256": null,
+   "used_for": "年存活率 94.9–96.5%",
+   "status": "採用（國外，經摘要頁）"
+  },
+  {
+   "title": "Hilbert et al. 2019 Urban tree mortality: a literature review",
+   "url": "https://researchconnect.suny.edu/en/publications/urban-tree-mortality-a-literature-review/",
+   "published": "2019",
+   "local_path": null,
+   "sha256": null,
+   "used_for": "種植世代年死亡率四分位；前5年最高",
+   "status": "採用（國外，經搜尋摘要，未開全文）"
+  },
+  {
+   "title": "Hui, Jim & Zhang 2020 Allometry of urban trees in subtropical Hong Kong",
+   "url": "https://doi.org/10.1007/s10980-020-01006-8",
+   "published": "2020",
+   "local_path": null,
+   "sha256": null,
+   "used_for": "28,622 株、30 種；係數在付費全文",
+   "status": "查不到係數"
+  },
+  {
+   "title": "臺北 樹木移植技術文件（www-ws 6161758312）",
+   "url": "https://www-ws.gov.taipei/001/Upload/public/Attachment/6161758312.pdf",
+   "published": "未標",
+   "local_path": "/Users/yo/workspace/shade-hackathon/data/raw/2026-10-23-policy/refs/tp-6161758312.pdf",
+   "sha256": "e1ec30db4942cbf7f108bd8f1753f1baac369af5597ff30d929fc0c495e3af1a",
+   "used_for": "只有移植作業，無補植規格",
+   "status": "下載但未採用"
+  },
+  {
+   "title": "桃園市樹木植栽種植及維護指引",
+   "url": "https://memorial-tree.tycg.gov.tw/download/planting/3/67d9c6a1ba0e406a96db12906afeb012.pdf",
+   "published": "PDF 建立 2024-12-31",
+   "local_path": "/Users/yo/workspace/shade-hackathon/data/raw/2026-10-23-policy/refs/tycg-memorial-planting.pdf",
+   "sha256": "1fd2265217888889ebed11e20c28d7970038d41ed2e8f9bcf1e28d212e39c12c",
+   "used_for": "無規格數字",
+   "status": "下載但未採用"
+  },
+  {
+   "title": "臺北市行道樹 CSV（本倉 2026-10-13 已下載）",
+   "url": "https://data.gov.tw/dataset/128274",
+   "published": "2026-10-13 下載",
+   "local_path": "/Users/yo/workspace/shade-hackathon/data/raw/2026-10-13/TaipeiTree.csv",
+   "sha256": "3d59d96ebf13d7a1c25407bd5871697defa221d30d90b193132e54d31089b6ac",
+   "used_for": "各樹種胸徑分布（給網站預設與外推警示）",
+   "status": "採用"
+  }
+ ],
+ "processing": [
+  "1. WebSearch／WebFetch 查苗木規格與生長文獻；PDF 以 curl 下載到 data/raw/2026-10-23-policy/refs/，以 /opt/homebrew/bin/pdftotext -layout 轉文字後只讀取需要的段落（不執行任何下載內容）。",
+  "2. 臺中 108167 CSV：W=√(4·樹冠投影面數值/π)；同『路段×樹種』群組內『面積/胸徑』（取到小數 3 位）相同者 ≥3 列視為疑似推算值並剔除（clean）；ln W = ln a + b ln D 最小平方擬合（planting-params-scripts/fit_tc3.py；結果 taichung-crown-fit.json）。",
+  "3. 臺北行道樹 CSV：計算目標樹種 Diameter／TreeHeight 分位數（tp_stats.py；taipei-inventory-dbh-stats.json）。Diameter 單位推定為 cm、未經資料字典確認。",
+  "4. build_params.py 組 planting-params.json 並以預設模型算範例；alt.py 加入敏感度（直接套式、合併式、存活率 0.97、無死亡）。",
+  "5. 所有 python 以 python3 -I 執行。腳本放 data/derived/policy/planting-params-scripts/。"
+ ],
+ "not_found": [
+  "臺北市公園處行道樹新植／補植苗木規格（米徑、樹高、冠幅、土球）",
+  "工程會施工綱要規範第02931章原文",
+  "臺北市行道樹規格單價表（自治條例第10條另定）",
+  "臺灣欒樹、大花紫薇、水黃皮、榕樹、小葉欖仁、白千層的台灣胸徑年生長實測",
+  "任何台灣論文的胸徑—冠幅異速生長係數（高清、鄭榮峰 1998 僅書目）",
+  "UTD 係數（403）",
+  "香港 30 種異速係數（付費）",
+  "台北新植行道樹存活率"
+ ]
+}

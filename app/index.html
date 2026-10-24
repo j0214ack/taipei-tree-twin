@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<!-- ga-on-ship:start G-N8NSF80QXP -->
+<script>addEventListener('load', function () { setTimeout(function () { var g = document.createElement('script'); g.async = true; g.src = 'https://www.googletagmanager.com/gtag/js?id=G-N8NSF80QXP'; document.head.appendChild(g); }, 1500); });</script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  (function () {
+    // Own-traffic mark (ga-on-ship): ?internal=1 remembers this device, ?internal=0 forgets it; automated browsers count too.
+    // Marked hits carry traffic_type=internal, which GA's "Internal Traffic" data filter excludes.
+    var q = null, mark = !!navigator.webdriver;
+    try {
+      var u = new URL(location.href);
+      q = u.searchParams.get('internal');
+      if (q !== null) { u.searchParams.delete('internal'); history.replaceState(history.state, '', u.pathname + u.search + u.hash); }
+    } catch (e) {}
+    try {
+      if (q === '1') localStorage.setItem('ga_internal', '1');
+      if (q === '0') localStorage.removeItem('ga_internal');
+      mark = mark || localStorage.getItem('ga_internal') === '1';
+    } catch (e) {}
+    if (q === '1') mark = true;
+    gtag('config', 'G-N8NSF80QXP', mark ? { traffic_type: 'internal' } : {});
+  })();
+</script>
+<!-- ga-on-ship:end -->
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cut">
+<title>「樹」位孿生｜台北市</title>
+<meta name="description" content="台北市 16 萬棵登錄樹木的數位孿生：每棵樹的前世今生、民眾回報、施工前查核，避免誤砍。">
+<meta name="theme-color" content="#1f3d2b">
+<link rel="icon" href="/img/icon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<link href="/vendor/maplibre-gl.css" rel="stylesheet">
+<link href="/css/app.css" rel="stylesheet">
+</head>
+<body>
+<div id="iab" hidden>你在 App 的內建瀏覽器裡：拖地圖時如果視窗被往下拉走，請點右上角「⋯」→「在瀏覽器中開啟」<button id="iabClose" aria-label="關閉提示">✕</button></div>
+<header class="top">
+  <a class="brand" href="#/" id="brand" aria-label="回到地圖">
+    <img src="/img/icon.svg" alt="" width="28" height="28">
+    <span class="brand-text"><b>「樹」位孿生</b><small>台北市</small></span>
+  </a>
+  <form class="search" id="search" role="search">
+    <input id="q" type="search" placeholder="找樹：樹種、路名、公園或樹籍編號" autocomplete="off" aria-label="搜尋樹木">
+    <div class="search-results" id="results" hidden></div>
+  </form>
+  <label class="role-switch" title="切換角色">
+    <span class="sr">角色</span>
+    <select id="role" aria-label="切換角色"></select>
+  </label>
+  <a id="vote" href="https://puma.taipei/hackathon/vote" target="_blank" rel="noopener">🗳 幫我們投票</a>
+  <a id="tm-entry" href="/treemulation/" style="flex:none;color:#fff;text-decoration:none;font-size:13px;white-space:nowrap;padding:7px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.1)">🌱 開啟模樹</a>
+  <nav class="nav" id="nav" aria-label="主要功能"></nav>
+</header>
+
+<main id="map" aria-label="台北市樹木地圖"></main>
+<div class="watermark" id="watermark" role="note"></div>
+<div class="filterbar" id="filterbar" hidden></div>
+
+<section class="layers" id="layers" aria-label="圖層">
+  <div class="stat"><b id="stat-count">載入樹木中…</b><span>棵登錄樹木</span></div>
+  <div class="purposes" id="chips" role="group" aria-label="用途：同時只開一個"></div>
+  <div class="aha" id="aha" role="status" hidden></div>
+  <div class="plant-legend" id="review-legend" hidden>
+    <b>複查優先序 <span class="badge est">推估</span></b>
+    <span><i class="dot" style="background:#6e0d0d"></i>前 50 株</span>
+    <span><i class="dot" style="background:#c2362b"></i>前 1%</span>
+    <span><i class="dot" style="background:#e8862b"></i>前 5%</span>
+    <span><i class="dot" style="background:#f2c14e"></i>前 15%</span>
+    <span>非病況診斷</span>
+  </div>
+  <div class="plant-legend" id="nonew-legend" hidden>
+    <b>不再新植樹種 <span class="badge real">真實</span></b>
+    <span><i class="dot" style="background:#4a5a50"></i>黑板樹、木棉、橡膠樹等</span>
+    <span>不代表要移除</span>
+  </div>
+  <div class="plant-legend" id="shade-legend" hidden>
+    <b>樹蔭×人流 <span class="badge est">推估</span></b>
+    <span><i class="dot" style="background:#b2182b"></i>人多樹蔭少</span>
+    <span><i class="dot" style="background:#fddbc7"></i>樹蔭較多</span>
+    <span>圓越大＝人越多</span>
+  </div>
+  <div class="plant-legend" id="stale-legend" hidden>
+    <b>多久沒人拍 <span class="badge sim">模擬</span></b>
+    <span><i class="dot" style="background:#c2362b"></i>從沒人拍</span>
+    <span><i class="dot" style="background:#e07a1f"></i>超過一年</span>
+    <span><i class="dot" style="background:#f2c14e"></i>3–12 個月</span>
+    <span><i class="dot" style="background:#b8c4bb"></i>最近拍過</span>
+  </div>
+  <div class="plant-legend" id="plant-legend" hidden>
+    <b>推薦種樹點 <span class="badge est">推估</span></b>
+    <span><i class="dot" style="background:#e07a1f"></i>人行道＞3.5 m</span>
+    <span><i class="dot" style="background:#f2a541"></i>2–3.5 m</span>
+    <span><i class="dot" style="background:#8a5a9e"></i>＜2 m 移動植栽</span>
+    <span><i class="dot" style="background:#e07a1f;opacity:.35"></i>疑資料缺漏</span>
+  </div>
+</section>
+
+<section class="keycard" id="keycard" aria-label="第一眼重點" hidden></section>
+
+<aside class="panel" id="panel" aria-live="polite" hidden>
+  <button class="panel-handle" id="panel-handle" aria-label="展開或收合"></button>
+  <button class="panel-close" id="panel-close" aria-label="關閉">×</button>
+  <div class="panel-body" id="panel-body"></div>
+</aside>
+
+<div class="modal" id="modal" hidden role="dialog" aria-modal="true"><div class="modal-card" id="modal-card"></div></div>
+<div class="toast" id="toast" role="status" hidden></div>
+
+<script src="/vendor/maplibre-gl.js" defer></script>
+<script type="module" src="/js/app.js"></script>
+</body>
+</html>
